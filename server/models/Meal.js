@@ -12,7 +12,7 @@ const mealSchema = new Schema(
         required: true,
       },
    
-      protien: {
+      protein: {
         type: Number,
       },
 
