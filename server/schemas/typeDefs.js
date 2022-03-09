@@ -12,7 +12,7 @@ const typeDefs = gql`
 		age: Int
 		gender: String
 		measurement_system: String
-        exercises: [Exercises]
+        exercises: [Exercise]
         exercise_goal: Int
         mindfulness_sessions: [Mindfulness]
         mindful_goal: Int
@@ -55,6 +55,7 @@ const typeDefs = gql`
     }
 
     type Query {
+        user: [User]
         exercise: [Exercise]
         meal: [Meal]
         mindfulness: [Mindfulness]
