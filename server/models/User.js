@@ -96,6 +96,23 @@ userSchema.methods.isCorrectPassword = async (password) => {
 // virtuals
 userSchema.virtual('exercise_stats').get(() => {
 	// returns object with total, monthly, weekly and daily duration of exercises
+
+	// exercise_daily: 400
+
+	// exercise_stats: {
+	//   total: 500,
+	//   monthly: 40,
+	//   weekly: 2,
+	//   daily: 0,
+	// }
+
+	// todays date -> get month, find all dates with that month
+
+	let sum = 0;
+	const totalMinutes = exercises.map((exercise) => {
+		sum += exercise.duration;
+		return sum;
+	});
 });
 
 userSchema.virtual('mindful_stats').get(() => {
