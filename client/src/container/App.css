@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
