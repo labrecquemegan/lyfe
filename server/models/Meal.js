@@ -16,7 +16,7 @@ const mealSchema = new Schema(
         type: Number,
       },
 
-      carbs: {
+      carbohydrates: {
         type: Number,
       },
 
