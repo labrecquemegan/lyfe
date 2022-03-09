@@ -2,6 +2,10 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // import schemas here
+const exerciseSchema = require('./Exercise');
+const mindfulnessSchema = require('./Mindfulness');
+const waterSchema = require('./Water');
+const mealSchema = require('./Meal');
 
 const userSchema = new Schema(
 	{
@@ -45,7 +49,7 @@ const userSchema = new Schema(
 			default: 30,
 		},
 		// uses mindfulSchema
-		mindful_sessions: [mindfulSchema],
+		mindful_sessions: [mindfulnessSchema],
 		mindful_goal: {
 			type: Number,
 			// default 15 minutes/day
