@@ -21,7 +21,6 @@ const mindfulnessSchema = new Schema(
     toJSON: {
       getters: true,
     },
-    id: false,
   }
 );
 
