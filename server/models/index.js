@@ -1,7 +1,3 @@
-const Exercise = require('./exercise');
-const Nutrition = require('./nutrition');
-const Water = require('./water');
-const Mindfulness = require('./mindfulness');
+const User = require('./User');
 
-
-module.exports = { Exercise, Nutrition, Water, Mindfulness };
+module.exports = { User };
