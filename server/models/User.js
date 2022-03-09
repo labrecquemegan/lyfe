@@ -39,16 +39,32 @@ const userSchema = new Schema(
 		measurement_system: String,
 		// uses exerciseSchema
 		exercises: [exerciseSchema],
-		exercise_goal: Number,
+		exercise_goal: {
+			type: Number,
+			// default 30 minutes/day
+			default: 30,
+		},
 		// uses mindfulSchema
 		mindful_sessions: [mindfulSchema],
-		mindful_goal: Number,
+		mindful_goal: {
+			type: Number,
+			// default 15 minutes/day
+			default: 15,
+		},
 		// uses mindfulSchema
 		water_intake: [waterSchema],
-		water_goal: Number,
+		water_goal: {
+			type: Number,
+			// default 64 ounces of water/day
+			default: 64,
+		},
 		// uses mealSchema
 		meals: [mealSchema],
-		calorie_goal: Number,
+		calorie_goal: {
+			type: Number,
+			// default 2000 calories/day
+			default: 2000,
+		},
 	},
 	{
 		// for use with virtuals
@@ -57,3 +73,22 @@ const userSchema = new Schema(
 		},
 	}
 );
+
+// hash user password
+userSchema.pre('save', async (next) => {
+	if (this.isNew || this.isModified('password')) {
+		const saltRounds = 10;
+		this.password = await bcrypt.hash(this.password, saltRounds);
+	}
+
+	next();
+});
+
+// custom method to compare and validate password for logging in
+userSchema.methods.isCorrectPassword = async (password) => {
+	return bcrypt.compare(password, this.password);
+};
+
+const User = model('user', userSchema);
+
+module.exports = User;
