@@ -89,6 +89,23 @@ userSchema.methods.isCorrectPassword = async (password) => {
 	return bcrypt.compare(password, this.password);
 };
 
+// virtuals
+userSchema.virtual('exercise_stats').get(() => {
+	// returns object with total, monthly, weekly and daily duration of exercises
+});
+
+userSchema.virtual('mindful_stats').get(() => {
+	// returns object with total, monthly, weekly and daily duration of mindfulness activities
+});
+
+userSchema.virtual('water_stats').get(() => {
+	// returns object with total, monthly, weekly and daily intake of water
+});
+
+userSchema.virtual('nutrition_stats').get(() => {
+	// returns object with total calories, macros, daily calories, etc.
+});
+
 const User = model('user', userSchema);
 
 module.exports = User;
