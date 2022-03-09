@@ -1,6 +1,6 @@
 const { Schema, Types } = require('mongoose');
 
-const mindfullnessSchema = new Schema(
+const mindfulnessSchema = new Schema(
   {
     date: {
         type: Date,
