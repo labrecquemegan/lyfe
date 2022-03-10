@@ -1,7 +1,5 @@
 const { Schema, Types } = require('mongoose');
 
-console.log('inside Exercise.js');
-
 const exerciseSchema = new Schema(
 	{
 		date: {

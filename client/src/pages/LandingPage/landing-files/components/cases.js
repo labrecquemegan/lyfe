@@ -1,25 +1,23 @@
 import React from "react";
-import { ReactComponent as CasesNext } from "../assets/arrow-right.svg";
-import { ReactComponent as CasesPrev } from "../assets/arrow-left.svg";
 
 const caseStudies = [
   {
     id: 1,
-    subtitle: "Curology",
-    title: "A custom formula for your skin’s unique needs",
-    img: "curology-min"
+    subtitle: "Exercises",
+    title: "The only bad workout is the one that didn’t happen",
+    img: "exer-img"
   },
   {
     id: 2,
-    subtitle: "Yourspace",
-    title: "Open space floor plans for you next venture",
-    img: "yourspace-min"
+    subtitle: "Mindfulness",
+    title: "Meditation designed to benefit the body, mind, and soul",
+    img: "yoga-img"
   },
   {
     id: 3,
-    subtitle: "Lumin",
-    title: "For your best look ever",
-    img: "lumin-min"
+    subtitle: "Nutrition",
+    title: "To eat is a necessity, but to eat intelligently is an art.",
+    img: "food-img"
   }
 ];
 
@@ -27,14 +25,6 @@ const Cases = () => {
   return (
     <section className='cases'>
       <div className='container-fluid'>
-        <div className='cases-navigation'>
-          <div className='cases-arrow prev disabled'>
-            <CasesPrev />
-          </div>
-          <div className='cases-arrow next'>
-            <CasesNext />
-          </div>
-        </div>
         <div className='row'>
           {caseStudies.map(caseItem => (
             <div className='case' key={caseItem.id}>
