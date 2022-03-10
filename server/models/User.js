@@ -96,6 +96,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 	return bcrypt.compare(password, this.password);
 };
 
+// Exercise stats
 userSchema.virtual('exercise_stats').get(function () {
 	let stats = {};
 	let userExercises = this.exercises;
@@ -121,6 +122,35 @@ userSchema.virtual('exercise_stats').get(function () {
 
 	stats.total_exercise_duration = getTotalExercise(userExercises);
 	stats.todays_exercise_duration = getTodaysExercise(userExercises);
+
+	return stats;
+});
+
+// Mindfulness stats
+userSchema.virtual('mindfulness_stats').get(function () {
+	let stats = {};
+	let userMindfulness = this.mindful_sessions;
+
+	function getTotalMindfulSessions(mindful_sessions) {
+		let total = 0;
+		mindful_sessions.map((session) => (total += session.duration));
+		return total;
+	}
+
+	function getTodaysMindfulSessions(mindful_sessions) {
+		let today = new Date().toISOString().slice(0, 10);
+
+		let todaysSessions = mindful_sessions.filter(
+			(session) => session.createdAt.toISOString().slice(0, 10) === today
+		);
+
+		let total = 0;
+		todaysSessions.map((session) => (total += session.duration));
+		return total;
+	}
+
+	stats.total_mindful_duration = getTotalMindfulSessions(userMindfulness);
+	stats.todays_mindful_duration = getTodaysMindfulSessions(userMindfulness);
 
 	return stats;
 });
