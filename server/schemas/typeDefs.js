@@ -98,6 +98,15 @@ const typeDefs = gql`
 		login(email: String!, password: String!): Auth
 		removeUser(userId: ID!): User
 
+		updateUser(
+			first_name: String!
+			last_name: String!
+			username: String!
+			email: String!
+			password: String!
+			exercise_goal: Int
+		): User
+
 		# setExerciseGoal
 		# setMindfulGoal
 		# setWaterGoal

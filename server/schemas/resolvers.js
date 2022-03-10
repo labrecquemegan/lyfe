@@ -48,10 +48,20 @@ const resolvers = {
 			const token = signToken(user);
 			return { token, user };
 		},
+		// update user (should allow user to set goals?)
+		updateUser: async (parent, args, context) => {
+			if (context.user) {
+			  return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+			}
+	  
+			throw new AuthenticationError('Not logged in');
+		},
 		// Remove user
 		removeUser: async (parent, { userId }) => {
 			return User.findOneAndDelete({ _id: userId });
 		},
+
+	
 	},
 };
 
