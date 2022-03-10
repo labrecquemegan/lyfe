@@ -96,6 +96,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 	return bcrypt.compare(password, this.password);
 };
 
+// Exercise stats
 userSchema.virtual('exercise_stats').get(function () {
 	let stats = {};
 	let userExercises = this.exercises;
@@ -125,12 +126,91 @@ userSchema.virtual('exercise_stats').get(function () {
 	return stats;
 });
 
-// Returns total duration of mindfulness sessions in array
-userSchema.virtual('total_mindfulness_duration').get(function () {
-	// total
-	let total = 0;
-	this.mindful_sessions.map((session) => (total += session.duration));
-	return total;
+// Mindfulness stats
+userSchema.virtual('mindfulness_stats').get(function () {
+	let stats = {};
+	let userMindfulness = this.mindful_sessions;
+
+	function getTotalMindfulSessions(mindful_sessions) {
+		let total = 0;
+		mindful_sessions.map((session) => (total += session.duration));
+		return total;
+	}
+
+	function getTodaysMindfulSessions(mindful_sessions) {
+		let today = new Date().toISOString().slice(0, 10);
+
+		let todaysSessions = mindful_sessions.filter(
+			(session) => session.createdAt.toISOString().slice(0, 10) === today
+		);
+
+		let total = 0;
+		todaysSessions.map((session) => (total += session.duration));
+		return total;
+	}
+
+	stats.total_mindful_duration = getTotalMindfulSessions(userMindfulness);
+	stats.todays_mindful_duration = getTodaysMindfulSessions(userMindfulness);
+
+	return stats;
+});
+
+// Water stats
+userSchema.virtual('water_stats').get(function () {
+	let stats = {};
+	let userWater = this.water_intake;
+
+	function getTotalWater(water_intake) {
+		let total = 0;
+		water_intake.map((water) => (total += water.amount));
+		return total;
+	}
+
+	function getTodaysWater(water_intake) {
+		let today = new Date().toISOString().slice(0, 10);
+
+		let todaysWater = water_intake.filter(
+			(water) => water.createdAt.toISOString().slice(0, 10) === today
+		);
+
+		let total = 0;
+		todaysWater.map((water) => (total += water.amount));
+		return total;
+	}
+
+	stats.total_water_intake = getTotalWater(userWater);
+	stats.todays_water_intake = getTodaysWater(userWater);
+
+	return stats;
+});
+
+// Nutrition stats
+userSchema.virtual('nutrition_stats').get(function () {
+	let stats = {};
+	let userNutrition = this.meals;
+
+	function getTotalCalories(meals) {
+		let total = 0;
+		meals.map((meal) => (total += meal.calories));
+		return total;
+	}
+
+	function getTodaysCalories(meals) {
+		let today = new Date().toISOString().slice(0, 10);
+
+		let todaysMeal = meals.filter(
+			(meal) => meal.createdAt.toISOString().slice(0, 10) === today
+		);
+
+		let total = 0;
+		todaysMeal.map((meal) => (total += meal.calories));
+		return total;
+	}
+
+	stats.total_calories = getTotalCalories(userNutrition);
+	stats.todays_calories = getTodaysCalories(userNutrition);
+
+	return stats;
 });
 
 const User = model('User', userSchema);
