@@ -1,7 +1,5 @@
 const { Schema, Types } = require('mongoose');
 
-console.log('inside Mindfulness.js');
-
 const mindfulnessSchema = new Schema(
 	{
 		date: {

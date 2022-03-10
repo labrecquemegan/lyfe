@@ -1,7 +1,5 @@
 const { Schema, Types } = require('mongoose');
 
-console.log('inside Water.js');
-
 const waterSchema = new Schema(
 	{
 		date: {

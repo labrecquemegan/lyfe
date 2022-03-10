@@ -1,7 +1,5 @@
 const { Schema, model } = require('mongoose');
 
-console.log('inside Meal.js');
-
 const mealSchema = new Schema(
 	{
 		date: {
