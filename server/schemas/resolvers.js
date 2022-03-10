@@ -1,6 +1,6 @@
+const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
-// const { signToken } = require('../utils/auth');
-// const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
 	Query: {
@@ -11,8 +11,15 @@ const resolvers = {
 
 		// Get single user
 		user: async (parent, { userId }) => {
-			// const user = User.findOne({ _id: context.user._id || { _id } });
 			return User.findOne({ _id: userId });
+		},
+
+		// Get logged in user
+		me: async (parent, args, context) => {
+			if (context.user) {
+				return User.findOne({ _id: context.user._id });
+			}
+			throw new AuthenticationError('You need to be logged in!');
 		},
 
 		// weekly_water: async (parent, args, context) => {
