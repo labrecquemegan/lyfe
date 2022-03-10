@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import { useEffect } from "react";
 import { useRef } from "react";
+import useLocoScroll from "../hooks/useLocoScroll";
 
 import './App.css'
 
-// import Navbar from '../components/NavBar/nav'
+// Pages 
+
 import LandingPage from '../pages/LandingPage/landing';
-
-// import SideBar from '../components/SideBar'
-
-import useLocoScroll from "../hooks/useLocoScroll";
 
 const App = () => {
   const ref = useRef(null);

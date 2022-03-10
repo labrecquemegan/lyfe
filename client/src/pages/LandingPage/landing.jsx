@@ -54,8 +54,7 @@ function Landing() {
   return (
     <>
       <Header dimensions={dimensions} />
-
-      <div className='Landing'>
+      <div className='App'>
         {routes.map(({ path, Component }) => (
           <Route key={path} exact path={path}>
             <Component dimensions={dimensions} />
