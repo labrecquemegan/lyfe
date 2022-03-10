@@ -125,13 +125,6 @@ userSchema.virtual('exercise_stats').get(function () {
 	return stats;
 });
 
-// Returns total duration based on exercises in array
-// userSchema.virtual('total_exercise_duration').get(function (exercises) {
-// 	let total = 0;
-// 	this.exercises.map((exercise) => (total += exercise.duration));
-// 	return total;
-// });
-
 // Returns total duration of mindfulness sessions in array
 userSchema.virtual('total_mindfulness_duration').get(function () {
 	// total
