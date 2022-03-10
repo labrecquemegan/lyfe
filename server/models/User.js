@@ -32,6 +32,7 @@ const userSchema = new Schema(
 		password: {
 			type: String,
 			required: true,
+			minlength: 5,
 			match: [
 				/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
 				'Password must contain at least one letter and one number',
@@ -80,66 +81,20 @@ const userSchema = new Schema(
 );
 
 // hash user password
-// userSchema.pre('save', async (next) => {
-// 	if (this.isNew || this.isModified('password')) {
-// 		const saltRounds = 10;
-// 		this.password = await bcrypt.hash(this.password, saltRounds);
-// 	}
+userSchema.pre('save', async function (next) {
+	if (this.isNew || this.isModified('password')) {
+		const saltRounds = 10;
+		this.password = await bcrypt.hash(this.password, saltRounds);
+	}
 
-// 	next();
-// });
+	next();
+});
 
 // custom method to compare and validate password for logging in
-// userSchema.methods.isCorrectPassword = async (password) => {
-// 	return bcrypt.compare(password, this.password);
-// };
+userSchema.methods.isCorrectPassword = async function (password) {
+	return bcrypt.compare(password, this.password);
+};
 
-// virtuals
-// userSchema.virtual('exercise_stats').get(() => {
-// returns object with total, monthly, weekly and daily duration of exercises
-
-// exercise_daily: 400
-
-// exercise_stats: {
-//   total: 500,
-//   monthly: 40,
-//   weekly: 2,
-//   daily: 0,
-// }
-
-// todays date -> get month, find all dates with that month
-
-// 	let sum = 0;
-// 	const totalMinutes = exercises.map((exercise) => {
-// 		sum += exercise.duration;
-// 		return sum;
-// 	});
-// });
-
-// userSchema.virtual('mindful_stats').get(() => {
-// 	// returns object with total, monthly, weekly and daily duration of mindfulness activities
-// });
-
-// userSchema.virtual('water_stats').get(() => {
-// 	// // return today's water
-// 	// return this.water_intake[this.water_intake.length-1]
-
-// 	// returns object with weekly intake of water
-// 	const weekly_water = this.water_intake.slice(
-// 		this.water_intake.length - 7,
-// 		this.weekly_water.length
-// 	);
-// 	let waterweek = 0;
-// 	for (i = 0; i < weekly_water; i++) {
-// 		waterweek = waterweek + weekly_water[i].amount;
-// 	}
-// 	return waterweek;
-// });
-
-// userSchema.virtual('nutrition_stats').get(() => {
-// 	// returns object with total calories, macros, daily calories, etc.
-// });
-
-const User = model('user', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;
