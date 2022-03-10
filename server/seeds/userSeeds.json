@@ -4,7 +4,7 @@
 		"last_name": "Doe",
 		"username": "johndoe",
 		"email": "johndoe@mail.com",
-		"password": "password10",
+		"password": "password01",
 		"weight": 165,
 		"height": 120,
 		"age": 32,
@@ -16,26 +16,96 @@
 				"duration": 13,
 				"intensity": "low",
 				"met_rating": 2,
-				"notes": "great!"
+				"notes": "I did some pushups and now my arms hurt."
 			},
 			{
 				"date": 1646874534010,
 				"duration": 12,
 				"intensity": "medium",
 				"met_rating": 3,
-				"notes": "great!"
+				"notes": "Great!"
+			},
+			{
+				"date": 1646874534010,
+				"duration": 25,
+				"intensity": "medium",
+				"met_rating": 4,
+				"notes": "Not as great as I hoped."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 5,
+				"intensity": "light",
+				"met_rating": 2,
+				"notes": "Went for a short walk with the pup."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 18,
+				"intensity": "high",
+				"met_rating": 6,
+				"notes": "What a crazy workout!"
 			}
 		],
 		"exercise_goal": 30,
 		"mindful_sessions": [
 			{
 				"date": 1646874534010,
+				"duration": 20,
+				"notes": "Did some yoga."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 16,
+				"notes": "Meditated outside by the beach."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 30,
+				"notes": "Did some yoga with some friends."
+			},
+			{
+				"date": 1646874534010,
 				"duration": 5,
-				"notes": "awesome"
+				"notes": "Journaled."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 8,
+				"notes": "Went outside for a stroll."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 25,
+				"notes": "Went bird watching."
 			}
 		],
 		"mindful_goal": 15,
 		"water_intake": [
+			{
+				"date": 1646874534010,
+				"amount": 20
+			},
+			{
+				"date": 1646874534010,
+				"amount": 16
+			},
+			{
+				"date": 1646874534010,
+				"amount": 8
+			},
+			{
+				"date": 1646874534010,
+				"amount": 20
+			},
+			{
+				"date": 1646874534010,
+				"amount": 8
+			},
+			{
+				"date": 1646874534010,
+				"amount": 16
+			},
 			{
 				"date": 1646874534010,
 				"amount": 20
@@ -49,6 +119,41 @@
 				"protein": 10,
 				"carbohydrates": 8,
 				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 120,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 300,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 80,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 170,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 1000,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
 			}
 		],
 		"calorie_goal": 2000
@@ -58,51 +163,315 @@
 		"last_name": "Low",
 		"username": "janelow",
 		"email": "janelow@mail.com",
-		"password": "password10",
-		"weight": 123,
-		"height": 102,
-		"age": 25,
+		"password": "password02",
+		"weight": 124,
+		"height": 106,
+		"age": 24,
 		"gender": "female",
 		"measurement_system": "imperial",
 		"exercises": [
 			{
-				"date": 1646874532010,
-				"duration": 20,
-				"intensity": "high",
-				"met_rating": 6,
-				"notes": "awesome!"
+				"date": 1646874534010,
+				"duration": 24,
+				"intensity": "low",
+				"met_rating": 2,
+				"notes": "I did some pushups and now my arms hurt."
 			},
 			{
-				"date": 1646874524010,
-				"duration": 12,
+				"date": 1646874534010,
+				"duration": 15,
 				"intensity": "medium",
 				"met_rating": 3,
-				"notes": "wonderful!"
+				"notes": "Great!"
+			},
+			{
+				"date": 1646874534010,
+				"duration": 40,
+				"intensity": "medium",
+				"met_rating": 4,
+				"notes": "Not as great as I hoped."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 15,
+				"intensity": "light",
+				"met_rating": 2,
+				"notes": "Went for a short walk with the pup."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 30,
+				"intensity": "high",
+				"met_rating": 6,
+				"notes": "What a crazy workout!"
 			}
 		],
-		"exercise_goal": 30,
+		"exercise_goal": 45,
 		"mindful_sessions": [
 			{
-				"date": 1646874532010,
-				"duration": 20,
-				"notes": "ahh"
+				"date": 1646874534010,
+				"duration": 25,
+				"notes": "Did some yoga."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 10,
+				"notes": "Meditated outside by the beach."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 30,
+				"notes": "Did some yoga with some friends."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 40,
+				"notes": "Journaled."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 15,
+				"notes": "Went outside for a stroll."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 40,
+				"notes": "Went bird watching."
 			}
 		],
 		"mindful_goal": 15,
 		"water_intake": [
 			{
-				"date": 1646874334010,
-				"amount": 12
+				"date": 1646874534010,
+				"amount": 24
+			},
+			{
+				"date": 1646874534010,
+				"amount": 14
+			},
+			{
+				"date": 1646874534010,
+				"amount": 24
+			},
+			{
+				"date": 1646874534010,
+				"amount": 24
+			},
+			{
+				"date": 1646874534010,
+				"amount": 24
+			},
+			{
+				"date": 1646874534010,
+				"amount": 14
+			},
+			{
+				"date": 1646874534010,
+				"amount": 24
 			}
 		],
 		"water_goal": 64,
 		"meals": [
 			{
-				"date": 1646874534310,
+				"date": 1646874534010,
 				"calories": 120,
-				"protein": 12,
-				"carbohydrates": 4,
-				"fat": 1
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 120,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 500,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 100,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 130,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 1200,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			}
+		],
+		"calorie_goal": 2000
+	},
+	{
+		"first_name": "Jimbo",
+		"last_name": "Fisher",
+		"username": "jimbofisher",
+		"email": "gonoles@mail.com",
+		"password": "password03",
+		"weight": 200,
+		"height": 140,
+		"age": 50,
+		"gender": "male",
+		"measurement_system": "metric",
+		"exercises": [
+			{
+				"date": 1646874534010,
+				"duration": 20,
+				"intensity": "medium",
+				"met_rating": 3,
+				"notes": "Went for a short walk with the pup."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 20,
+				"intensity": "medium",
+				"met_rating": 3,
+				"notes": "Went for a short walk with the pup."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 20,
+				"intensity": "medium",
+				"met_rating": 3,
+				"notes": "Went for a short walk with the pup."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 20,
+				"intensity": "medium",
+				"met_rating": 3,
+				"notes": "Went for a short walk with the pup."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 20,
+				"intensity": "medium",
+				"met_rating": 3,
+				"notes": "Went for a short walk with the pup."
+			}
+		],
+		"exercise_goal": 30,
+		"mindful_sessions": [
+			{
+				"date": 1646874534010,
+				"duration": 15,
+				"notes": "Did some yoga."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 15,
+				"notes": "Meditated outside by the beach."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 30,
+				"notes": "Did some yoga with some friends."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 15,
+				"notes": "Journaled."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 15,
+				"notes": "Went outside for a stroll."
+			},
+			{
+				"date": 1646874534010,
+				"duration": 15,
+				"notes": "Went bird watching."
+			}
+		],
+		"mindful_goal": 15,
+		"water_intake": [
+			{
+				"date": 1646874534010,
+				"amount": 24
+			},
+			{
+				"date": 1646874534010,
+				"amount": 24
+			},
+			{
+				"date": 1646874534010,
+				"amount": 24
+			},
+			{
+				"date": 1646874534010,
+				"amount": 24
+			},
+			{
+				"date": 1646874534010,
+				"amount": 24
+			},
+			{
+				"date": 1646874534010,
+				"amount": 24
+			},
+			{
+				"date": 1646874534010,
+				"amount": 24
+			}
+		],
+		"water_goal": 64,
+		"meals": [
+			{
+				"date": 1646874534010,
+				"calories": 200,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 200,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 200,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 200,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 200,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			},
+			{
+				"date": 1646874534010,
+				"calories": 200,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
 			}
 		],
 		"calorie_goal": 2000
