@@ -23,6 +23,7 @@ const mindfulnessSchema = new Schema(
 		toJSON: {
 			getters: true,
 		},
+		timestamps: true,
 	}
 );
 

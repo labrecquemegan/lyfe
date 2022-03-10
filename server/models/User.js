@@ -77,6 +77,7 @@ const userSchema = new Schema(
 		toJSON: {
 			virtuals: true,
 		},
+		timestamps: true,
 	}
 );
 
@@ -95,10 +96,48 @@ userSchema.methods.isCorrectPassword = async function (password) {
 	return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual('total_exercise_duration').get(function () {
-	let sum = 0;
-	this.exercises.map((exercise) => (sum += exercise.duration));
-	return sum;
+userSchema.virtual('exercise_stats').get(function () {
+	let stats = {};
+	let userExercises = this.exercises;
+
+	function getTotalExercise(exercises) {
+		let total = 0;
+		exercises.map((exercise) => (total += exercise.duration));
+		return total;
+	}
+
+	function getTodaysExercise(exercises) {
+		let today = new Date().toISOString().slice(0, 10);
+
+		let todaysExercises = exercises.filter(
+			(exercise) =>
+				exercise.createdAt.toISOString().slice(0, 10) === today
+		);
+
+		let total = 0;
+		todaysExercises.map((exercise) => (total += exercise.duration));
+		return total;
+	}
+
+	stats.total_exercise_duration = getTotalExercise(userExercises);
+	stats.todays_exercise_duration = getTodaysExercise(userExercises);
+
+	return stats;
+});
+
+// Returns total duration based on exercises in array
+// userSchema.virtual('total_exercise_duration').get(function (exercises) {
+// 	let total = 0;
+// 	this.exercises.map((exercise) => (total += exercise.duration));
+// 	return total;
+// });
+
+// Returns total duration of mindfulness sessions in array
+userSchema.virtual('total_mindfulness_duration').get(function () {
+	// total
+	let total = 0;
+	this.mindful_sessions.map((session) => (total += session.duration));
+	return total;
 });
 
 const User = model('User', userSchema);
