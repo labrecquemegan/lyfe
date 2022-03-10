@@ -23,16 +23,8 @@ const typeDefs = gql`
 		calorie_goal: Int
 		exercise_stats: ExerciseStats
 		mindfulness_stats: MindfulnessStats
-	}
-
-	type ExerciseStats {
-		total_exercise_duration: Int
-		todays_exercise_duration: Int
-	}
-
-	type MindfulnessStats {
-		total_mindful_duration: Int
-		todays_mindful_duration: Int
+		water_stats: WaterStats
+		nutrition_stats: NutritionStats
 	}
 
 	type Exercise {
@@ -62,6 +54,26 @@ const typeDefs = gql`
 		fat: Int
 	}
 
+	type ExerciseStats {
+		total_exercise_duration: Int
+		todays_exercise_duration: Int
+	}
+
+	type MindfulnessStats {
+		total_mindful_duration: Int
+		todays_mindful_duration: Int
+	}
+
+	type WaterStats {
+		total_water_intake: Int
+		todays_water_intake: Int
+	}
+
+	type NutritionStats {
+		total_calories: Int
+		todays_calories: Int
+	}
+
 	type Auth {
 		token: ID!
 		user: User
@@ -85,10 +97,16 @@ const typeDefs = gql`
 		): Auth
 		login(email: String!, password: String!): Auth
 		removeUser(userId: ID!): User
+
 		# setExerciseGoal
 		# setMindfulGoal
 		# setWaterGoal
 		# setCalorieGoal
+
+		# addExercise
+		# addWater
+		# addMindfulSession
+		# addNutrition
 	}
 `;
 
