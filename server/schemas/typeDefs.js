@@ -1,15 +1,6 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-	# Inputs
-	input UserInput {
-		first_name: String
-		last_name: String
-		username: String
-		email: String
-		password: String
-	}
-
 	# Types
 	type User {
 		_id: ID
@@ -30,6 +21,37 @@ const typeDefs = gql`
 		water_goal: Int
 		meals: [Meal]
 		calorie_goal: Int
+	}
+
+	type Exercise {
+		exerciseId: ID
+		date: String
+		duration: Int
+		intensity: String
+		met_rating: Int
+		notes: String
+	}
+
+	type Mindfulness {
+		mindfulnessId: ID
+		date: String
+		duration: Int
+		notes: String
+	}
+
+	type Water {
+		waterId: ID
+		date: String
+		amount: Int
+	}
+
+	type Meal {
+		mealId: ID
+		date: String
+		calories: Int
+		protein: Int
+		carbohydrates: Int
+		fat: Int
 	}
 
 	type Auth {
@@ -54,7 +76,11 @@ const typeDefs = gql`
 			password: String!
 		): Auth
 		login(email: String!, password: String!): Auth
-		removeUser: User
+		removeUser(userId: ID!): User
+		# setExerciseGoal
+		# setMindfulGoal
+		# setWaterGoal
+		# setCalorieGoal
 	}
 `;
 
