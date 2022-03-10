@@ -10,9 +10,15 @@ const typeDefs = gql`
 		password: String
 	}
 
+	type Auth {
+		token: ID!
+		user: User
+	}
+
 	type Query {
 		users: [User]!
 		user(userId: ID!): User
+		me: User
 	}
 
 	type Mutation {
@@ -22,54 +28,10 @@ const typeDefs = gql`
 			username: String!
 			email: String!
 			password: String!
-		): User
+		): Auth
+		login(email: String!, password: String!): Auth
+		removeUser: User
 	}
 `;
 
 module.exports = typeDefs;
-
-// ! From User
-// weight: Int
-// height: Int
-// age: Int
-// gender: String
-// measurement_system: String
-// exercises: [Exercise]
-// exercise_goal: Int
-// mindfulness_sessions: [Mindfulness]
-// mindful_goal: Int
-// water_intake: [Water]
-// water_goal: Int
-// meals: [Meal]
-// calorie_goal: Int
-
-// type Exercise {
-//   _id: ID
-//   date: String
-//   duration: Int
-//   internsity: String
-//   met_rating: Int
-//   notes: String
-// }
-
-// type Meal {
-//   _id: ID
-//   date: String
-//   calories: Int
-//   protein: Int
-//   carbohydrates: Int
-//   fat: Int
-// }
-
-// type Mindfulness {
-//   _id: ID
-//   date: String
-//   duration: Int
-//   notes: String
-// }
-
-// type Water {
-//   _id: ID
-//   date: String
-//   amount: Int
-// }
