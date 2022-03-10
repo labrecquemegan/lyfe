@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import { ReactComponent as UpArrow } from "../assets/up-arrow-circle.svg";
 import { openMenu, closeMenu } from "../animations/menuAnimation";
+import logo from '../assets/logo.png'
 
 // Define reducer
 
@@ -26,7 +27,7 @@ const Header = ({ history, dimensions }) => {
         <div className='row v-center space-between'>
           <div className='logo'>
             <NavLink to='/' exact>
-              AGENCY
+              <img src={logo} />
             </NavLink>
           </div>
           <div className='nav-toggle'>

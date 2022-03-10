@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { useEffect } from "react";
 import { useRef } from "react";
 
-import './App.scss'
+import './App.css'
 
 // import Navbar from '../components/NavBar/nav'
-import Landing from '../pages/LandingPage/Landing';
+import LandingPage from '../pages/LandingPage/landing';
 
 // import SideBar from '../components/SideBar'
 
@@ -64,7 +64,7 @@ const App = () => {
           data-scroll-container
           ref={ref}
         >
-          <Landing />
+          <LandingPage />
         </div>
       )}
     </>

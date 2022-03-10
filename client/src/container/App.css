@@ -28,16 +28,17 @@ html {
   transition: "all 0.25s ease-in-out";
   background-color: rgb(9, 9, 9);
   color: #dbd8d6;
-  h1 {
-    font-size: 1.5vw;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-  h2 {
-    font-size: 1.5vw;
+}
 
-    text-transform: uppercase;
-    font-style: italic;
-    margin-top: 10px;
-  }
+.loader-wrapper h1 {
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.loader-wrapper h2 {
+  font-size: 1.5vw;
+
+  text-transform: uppercase;
+  font-style: italic;
+  margin-top: 10px;
 }

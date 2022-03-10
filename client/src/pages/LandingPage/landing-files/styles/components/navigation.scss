@@ -7,7 +7,7 @@ nav {
   display: none;
   position: fixed;
   overflow: hidden;
-  background: $yellow;
+  background: $navgreen;
   a {
     position: relative;
     &:after {
@@ -30,6 +30,25 @@ nav {
       }
     }
   }
+  button {
+    color: $black;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    outline: none;
+    cursor: pointer;
+    padding: 9px 25px;
+    background-color: rgb(216, 243, 220, 1);
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+    margin: 0 30px;
+    &:hover {
+      background-color: rgb(216, 243, 220, 0.8);
+      transform: translate(0, -5px);
+    }
+  }
+
   .nav-columns {
     transform: translateY(125px);
     display: flex;
@@ -109,6 +128,7 @@ nav {
           margin-bottom: 2.4rem;
           @include media("<=phone") {
             margin-bottom: 1.6rem;
+            display: none;
           }
           a {
             font-weight: 600;
