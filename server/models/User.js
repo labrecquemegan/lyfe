@@ -95,6 +95,12 @@ userSchema.methods.isCorrectPassword = async function (password) {
 	return bcrypt.compare(password, this.password);
 };
 
+userSchema.virtual('total_exercise_duration').get(function () {
+	let sum = 0;
+	this.exercises.map((exercise) => (sum += exercise.duration));
+	return sum;
+});
+
 const User = model('User', userSchema);
 
 module.exports = User;

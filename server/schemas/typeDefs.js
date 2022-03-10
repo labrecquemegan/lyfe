@@ -21,6 +21,7 @@ const typeDefs = gql`
 		water_goal: Int
 		meals: [Meal]
 		calorie_goal: Int
+		total_exercise_duration: Int
 	}
 
 	type Exercise {
