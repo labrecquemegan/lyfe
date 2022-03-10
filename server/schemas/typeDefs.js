@@ -1,71 +1,87 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-    type User {
-        first_name: String
-        last_name: String
-        username: String
-        email: String
-        password: String
-        weight: Int
-        height: Int
+	# Types
+	type User {
+		_id: ID
+		first_name: String
+		last_name: String
+		username: String
+		email: String
+		password: String
+		weight: Int
+		height: Int
 		age: Int
 		gender: String
-		measurement_system: String
-        exercises: [Exercise]
-        exercise_goal: Int
-        mindfulness_sessions: [Mindfulness]
-        mindful_goal: Int
-        water_intake: [Water]
-        water_goal: Int
-        meals: [Meal]
-        calorie_goal: Int
-    }
+		exercises: [Exercise]
+		exercise_goal: Int
+		mindful_sessions: [Mindfulness]
+		mindful_goal: Int
+		water_intake: [Water]
+		water_goal: Int
+		meals: [Meal]
+		calorie_goal: Int
+	}
 
-    type Exercise {
-        _id: ID
-        date: Date
-        duration: Int
-        internsity: String
-        met_rating: Int
-        notes: String
-    }
+	type Exercise {
+		exerciseId: ID
+		date: String
+		duration: Int
+		intensity: String
+		met_rating: Int
+		notes: String
+	}
 
-    type Meal {
-        _id: ID
-        date: Date
-        calories: Int
-        protein: Int
-        carbohydrates: Int
-        fat: Int
+	type Mindfulness {
+		mindfulnessId: ID
+		date: String
+		duration: Int
+		notes: String
+	}
 
-    }
+	type Water {
+		waterId: ID
+		date: String
+		amount: Int
+	}
 
-    type Mindfulness {
-        _id: ID
-        date: Date
-        duration: Int
-        notes: String
-    }
+	type Meal {
+		mealId: ID
+		date: String
+		calories: Int
+		protein: Int
+		carbohydrates: Int
+		fat: Int
+	}
 
-    type Water {
-        _id: ID
-        date: Date
-        amount: Int
-    }
+	type Auth {
+		token: ID!
+		user: User
+	}
 
-    type Query {
-        user: [User]
-        exercise: [Exercise]
-        meal: [Meal]
-        mindfulness: [Mindfulness]
-        water: [Water]
-    }
+	# Queries
+	type Query {
+		users: [User]!
+		user(userId: ID!): User
+		me: User
+	}
 
-    type Mutation {
-        daily_water(amount: Int!) : Water
-        daily_calories(amount: Int!) : Meal
-    }
+	# Mutations
+	type Mutation {
+		addUser(
+			first_name: String!
+			last_name: String!
+			username: String!
+			email: String!
+			password: String!
+		): Auth
+		login(email: String!, password: String!): Auth
+		removeUser(userId: ID!): User
+		# setExerciseGoal
+		# setMindfulGoal
+		# setWaterGoal
+		# setCalorieGoal
+	}
 `;
 
 module.exports = typeDefs;
