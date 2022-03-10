@@ -1,45 +1,33 @@
-import React, {useEffect} from 'react'
-import gsap from 'gsap'
-import SplitText from '../../utils/Split3.min'
-import './style.scss'
-import logo from '../../images/png/logo-white.png'
-
-// Href Imports
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import SplitText from "../../utils/Split3.min";
+import "./style.scss";
+import logo from "../../images/png/logo-white.png";
 
 export default function Header() {
-  useEffect(() => {
-    const split = new SplitText('.nav_links', {
-      type: 'lines',
-      linesClass: 'lineChildren'
-    });
+  const navMenu = document.querySelector('.nav_menu');
 
-    const splitParent = new SplitText('.nav_links', {
-      type: 'lines',
-      linesClass: 'lineParent'
-    });
-
-    gsap.to(split.lines, {
-      duration: 1,
-      y: 0,
-      opacity: 1,
-      stagger: 0.1,
-      ease: "power2"
-    })
-  })
+  const classTog = (e) => {
+      e.target.classList.toggle('active');
+      navMenu.classList.toggle('active');
+  };
   return (
     <header data-scroll-section>
-        <img 
-        className='logo'
-        src={logo} />
-      <nav>
-        <ul class="nav_links hide">
-          <li><a href='#'>Exercise</a></li>
-          <li><a href='#'>Nutrition</a></li>
-          <li><a href="#">Mindfulness</a></li>
-          <li><a href="#">Water Intake</a></li>
-          <a class="end-button" href="#"><button>Log In</button></a>
+      <img className="logo" src={logo} />
+      <nav className="nav_links">
+        <ul className="nav_menu">
+          <li><a href='#' className="nav_items">Exercise</a></li>
+          <li><a href='#' className="nav_items">Nutrition</a></li>
+          <li><a href="#" className="nav_items">Mindfulness</a></li>
+          <li><a href="#" className="nav_items">Water Intake</a></li>
+          <a className="end-button" href="#"><button>Log In</button></a>
         </ul>
+          {/* <button className="button-circle" onClick={classTog}>
+            <span className="line"></span>
+            <span className="line"></span>
+            <span className="line"></span>
+          </button> */}
       </nav>
     </header>
-  )
+  );
 }
