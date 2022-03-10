@@ -1,0 +1,110 @@
+[
+	{
+		"first_name": "John",
+		"last_name": "Doe",
+		"username": "johndoe",
+		"email": "johndoe@mail.com",
+		"password": "password10",
+		"weight": 165,
+		"height": 120,
+		"age": 32,
+		"gender": "male",
+		"measurement_system": "imperial",
+		"exercises": [
+			{
+				"date": 1646874534010,
+				"duration": 13,
+				"intensity": "low",
+				"met_rating": 2,
+				"notes": "great!"
+			},
+			{
+				"date": 1646874534010,
+				"duration": 12,
+				"intensity": "medium",
+				"met_rating": 3,
+				"notes": "great!"
+			}
+		],
+		"exercise_goal": 30,
+		"mindful_sessions": [
+			{
+				"date": 1646874534010,
+				"duration": 5,
+				"notes": "awesome"
+			}
+		],
+		"mindful_goal": 15,
+		"water_intake": [
+			{
+				"date": 1646874534010,
+				"amount": 20
+			}
+		],
+		"water_goal": 64,
+		"meals": [
+			{
+				"date": 1646874534010,
+				"calories": 140,
+				"protein": 10,
+				"carbohydrates": 8,
+				"fat": 2
+			}
+		],
+		"calorie_goal": 2000
+	},
+	{
+		"first_name": "Jane",
+		"last_name": "Low",
+		"username": "janelow",
+		"email": "janelow@mail.com",
+		"password": "password10",
+		"weight": 123,
+		"height": 102,
+		"age": 25,
+		"gender": "female",
+		"measurement_system": "imperial",
+		"exercises": [
+			{
+				"date": 1646874532010,
+				"duration": 20,
+				"intensity": "high",
+				"met_rating": 6,
+				"notes": "awesome!"
+			},
+			{
+				"date": 1646874524010,
+				"duration": 12,
+				"intensity": "medium",
+				"met_rating": 3,
+				"notes": "wonderful!"
+			}
+		],
+		"exercise_goal": 30,
+		"mindful_sessions": [
+			{
+				"date": 1646874532010,
+				"duration": 20,
+				"notes": "ahh"
+			}
+		],
+		"mindful_goal": 15,
+		"water_intake": [
+			{
+				"date": 1646874334010,
+				"amount": 12
+			}
+		],
+		"water_goal": 64,
+		"meals": [
+			{
+				"date": 1646874534310,
+				"calories": 120,
+				"protein": 12,
+				"carbohydrates": 4,
+				"fat": 1
+			}
+		],
+		"calorie_goal": 2000
+	}
+]
