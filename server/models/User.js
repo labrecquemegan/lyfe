@@ -103,7 +103,16 @@ userSchema.virtual('mindful_stats').get(() => {
 });
 
 userSchema.virtual('water_stats').get(() => {
-	// returns object with total, monthly, weekly and daily intake of water
+	// // return today's water
+	// return this.water_intake[this.water_intake.length-1]
+	
+	// returns object with weekly intake of water
+	const weekly_water = this.water_intake.slice(this.water_intake.length-7, this.weekly_water.length);
+	let waterweek = 0
+	for (i =0; i < weekly_water; i++) {
+		waterweek = waterweek + weekly_water[i].amount
+	}
+	return waterweek
 });
 
 userSchema.virtual('nutrition_stats').get(() => {

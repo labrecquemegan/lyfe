@@ -61,6 +61,11 @@ const typeDefs = gql`
         mindfulness: [Mindfulness]
         water: [Water]
     }
+
+    type Mutation {
+        daily_water(amount: Int!) : Water
+        daily_calories(amount: Int!) : Meal
+    }
 `;
 
 module.exports = typeDefs;
