@@ -79,14 +79,14 @@ const userSchema = new Schema(
 );
 
 // hash user password
-userSchema.pre('save', async (next) => {
-	if (this.isNew || this.isModified('password')) {
-		const saltRounds = 10;
-		this.password = await bcrypt.hash(this.password, saltRounds);
-	}
+// userSchema.pre('save', async (next) => {
+// 	if (this.isNew || this.isModified('password')) {
+// 		const saltRounds = 10;
+// 		this.password = await bcrypt.hash(this.password, saltRounds);
+// 	}
 
-	next();
-});
+// 	next();
+// });
 
 // custom method to compare and validate password for logging in
 userSchema.methods.isCorrectPassword = async (password) => {
