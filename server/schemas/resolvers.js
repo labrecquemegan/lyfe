@@ -11,7 +11,8 @@ const resolvers = {
 
 		// Get single user
 		user: async (parent, { userId }) => {
-			return User.findOne({ _id: userId });
+			const user = User.findOne({ _id: userId });
+			return user;
 		},
 
 		// Get logged in user

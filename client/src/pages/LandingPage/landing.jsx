@@ -30,7 +30,7 @@ function debounce(fn, ms) {
   };
 }
 
-function LandingPage() {
+function Landing() {
   const [dimensions, setDimensions] = React.useState({
     height: window.innerHeight,
     width: window.innerWidth
@@ -54,7 +54,8 @@ function LandingPage() {
   return (
     <>
       <Header dimensions={dimensions} />
-      <div className='App'>
+
+      <div className='Landing'>
         {routes.map(({ path, Component }) => (
           <Route key={path} exact path={path}>
             <Component dimensions={dimensions} />
@@ -66,4 +67,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default Landing;
