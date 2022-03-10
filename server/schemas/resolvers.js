@@ -21,23 +21,33 @@ const resolvers = {
 			}
 			throw new AuthenticationError('You need to be logged in!');
 		},
-
-		// weekly_water: async (parent, args, context) => {
-		//     let user = User.findOne(
-		//         {_id},
-		//         {$inc: {[`waterSchema${daily_water}`]: daily_water}},
-		//         {new: true},
-		//     )
-		// },
 	},
 
 	Mutation: {
 		// Add new user
 		addUser: async (parent, args) => {
 			const user = await User.create(args);
-			// const token = signToken(user);
-			// return { token, user };
-			return { user };
+			const token = signToken(user);
+			return { token, user };
+		},
+		// Login
+		login: async (parent, { email, password }) => {
+			const profile = await Profile.findOne({ email });
+
+			if (!profile) {
+				throw new AuthenticationError(
+					'No profile with this email found!'
+				);
+			}
+
+			const correctPw = await profile.isCorrectPassword(password);
+
+			if (!correctPw) {
+				throw new AuthenticationError('Incorrect password!');
+			}
+
+			const token = signToken(profile);
+			return { token, profile };
 		},
 	},
 };
