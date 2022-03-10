@@ -4,12 +4,15 @@ const { User } = require('../models');
 
 const resolvers = {
 	Query: {
+		// Get all users
 		users: async () => {
 			return User.find({});
 		},
 
-		user: async (parent, args, context) => {
-			let user = User.findOne({ _id: context.user._id });
+		// Get single user
+		user: async (parent, { userId }) => {
+			// const user = User.findOne({ _id: context.user._id || { _id } });
+			return User.findOne({ _id: userId });
 		},
 
 		// weekly_water: async (parent, args, context) => {
@@ -22,9 +25,9 @@ const resolvers = {
 	},
 
 	Mutation: {
+		// Add new user
 		addUser: async (parent, args) => {
 			const user = await User.create(args);
-			// const user = await User.create({ username, email, password });
 			// const token = signToken(user);
 			// return { token, user };
 			return { user };

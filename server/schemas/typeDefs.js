@@ -29,7 +29,6 @@ const typeDefs = gql`
 module.exports = typeDefs;
 
 // ! From User
-// password: String
 // weight: Int
 // height: Int
 // age: Int
