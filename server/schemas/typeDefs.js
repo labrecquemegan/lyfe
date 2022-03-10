@@ -21,10 +21,16 @@ const typeDefs = gql`
 		water_goal: Int
 		meals: [Meal]
 		calorie_goal: Int
+		total_mindfulness_duration: Int
+		exercise_stats: ExerciseStats
+	}
+
+	type ExerciseStats {
+		total_exercise_duration: Int
+		todays_exercise_duration: Int
 	}
 
 	type Exercise {
-		exerciseId: ID
 		date: String
 		duration: Int
 		intensity: String
@@ -33,20 +39,17 @@ const typeDefs = gql`
 	}
 
 	type Mindfulness {
-		mindfulnessId: ID
 		date: String
 		duration: Int
 		notes: String
 	}
 
 	type Water {
-		waterId: ID
 		date: String
 		amount: Int
 	}
 
 	type Meal {
-		mealId: ID
 		date: String
 		calories: Int
 		protein: Int

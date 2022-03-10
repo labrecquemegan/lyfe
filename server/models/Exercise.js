@@ -34,6 +34,7 @@ const exerciseSchema = new Schema(
 		toJSON: {
 			getters: true,
 		},
+		timestamps: true,
 	}
 );
 
