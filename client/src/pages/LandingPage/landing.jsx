@@ -10,13 +10,17 @@ import Approach from "./landing-files/pages/approach";
 import Services from "./landing-files/pages/services";
 import About from "./landing-files/pages/about";
 import Home from "./landing-files/pages/home";
+import Contact from "./landing-files/pages/contact";
 
 const routes = [
   { path: "/", name: "Home", Component: Home },
-  { path: "/case-studies", name: "caseStudies", Component: CaseStudies },
-  { path: "/approach", name: "approach", Component: Approach },
-  { path: "/services", name: "services", Component: Services },
-  { path: "/about-us", name: "about", Component: About }
+  { path: "/exercises", name: "exercises", Component: CaseStudies },
+  { path: "/mindfulness", name: "mindfulness", Component: Approach },
+  { path: "/nutrition", name: "nutrition", Component: Services },
+  { path: "/water", name: "water", Component: About },
+  { path: "/contact", name: "contact", Component: Contact },
+  // { path: "/signin", name: "signin", Component: SignIn },
+  // { path: "/signup", name: "signup", Component: SignUp }
 ];
 
 function debounce(fn, ms) {
