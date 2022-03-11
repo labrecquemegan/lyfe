@@ -1,11 +1,7 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const waterSchema = new Schema(
 	{
-		date: {
-			type: Date,
-			default: Date.now(),
-		},
 		amount: {
 			type: Number,
 			required: true,
@@ -16,4 +12,6 @@ const waterSchema = new Schema(
 	}
 );
 
-module.exports = waterSchema;
+const Water = model('Water', waterSchema);
+
+module.exports = { Water, waterSchema };

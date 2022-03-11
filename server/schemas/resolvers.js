@@ -1,5 +1,9 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
+const { Exercise } = require('../models/Exercise');
+const { Mindfulness } = require('../models/Mindfulness');
+const { Meal } = require('../models/Meal');
+const { Water } = require('../models/Water');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -51,17 +55,90 @@ const resolvers = {
 		// update user (should allow user to set goals?)
 		updateUser: async (parent, args, context) => {
 			if (context.user) {
-			  return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+				return await User.findByIdAndUpdate(context.user._id, args, {
+					new: true,
+				});
 			}
-	  
+
 			throw new AuthenticationError('Not logged in');
 		},
 		// Remove user
 		removeUser: async (parent, { userId }) => {
 			return User.findOneAndDelete({ _id: userId });
 		},
+		// Add to exercise array
+		addExercise: async (
+			parent,
+			{ duration, intensity, met_rating, notes },
+			context
+		) => {
+			if (context.user) {
+				const exercise = await Exercise.create({
+					duration,
+					intensity,
+					met_rating,
+					notes,
+				});
 
-	
+				await User.findByIdAndUpdate(context.user._id, {
+					$push: { exercises: exercise },
+				});
+
+				return exercise;
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
+		addMindfulness: async (parent, { duration, notes }, context) => {
+			if (context.user) {
+				const mindful = await Mindfulness.create({ duration, notes });
+
+				await User.findByIdAndUpdate(context.user._id, {
+					$push: { mindful_sessions: mindful },
+				});
+
+				return mindful;
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
+		addMeal: async (
+			parent,
+			{ calories, protein, carbohydrates, fat },
+			context
+		) => {
+			if (context.user) {
+				const meal = await Meal.create({
+					calories,
+					protein,
+					carbohydrates,
+					fat,
+				});
+
+				await User.findByIdAndUpdate(context.user._id, {
+					$push: { meals: meal },
+				});
+
+				return meal;
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
+		addWater: async (parent, { amount }, context) => {
+			if (context.user) {
+				const water = await Water.create({
+					amount,
+				});
+
+				await User.findByIdAndUpdate(context.user._id, {
+					$push: { water_intake: water },
+				});
+
+				return water;
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
 	},
 };
 

@@ -1,12 +1,7 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const mindfulnessSchema = new Schema(
 	{
-		date: {
-			type: Date,
-			default: Date.now(),
-		},
-
 		duration: {
 			type: Number,
 		},
@@ -25,4 +20,6 @@ const mindfulnessSchema = new Schema(
 	}
 );
 
-module.exports = mindfulnessSchema;
+const Mindfulness = model('Mindfulness', mindfulnessSchema);
+
+module.exports = { Mindfulness, mindfulnessSchema };
