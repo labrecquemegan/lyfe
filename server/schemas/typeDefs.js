@@ -42,10 +42,12 @@ const typeDefs = gql`
 	}
 
 	type Water {
+		_id: ID
 		amount: Int
 	}
 
 	type Meal {
+		_id: ID
 		calories: Int
 		protein: Int
 		carbohydrates: Int
@@ -93,7 +95,9 @@ const typeDefs = gql`
 			email: String!
 			password: String!
 		): Auth
+
 		login(email: String!, password: String!): Auth
+
 		removeUser(userId: ID!): User
 
 		updateUser(
@@ -125,10 +129,9 @@ const typeDefs = gql`
 			fat: Int
 		): Meal
 
-		# addExercise
+		addWater(amount: Int!): Water
+
 		# addWater
-		# addMindfulSession
-		# addNutrition
 	}
 `;
 

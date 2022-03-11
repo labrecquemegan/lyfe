@@ -3,6 +3,7 @@ const { User } = require('../models');
 const { Exercise } = require('../models/Exercise');
 const { Mindfulness } = require('../models/Mindfulness');
 const { Meal } = require('../models/Meal');
+const { Water } = require('../models/Water');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -119,6 +120,21 @@ const resolvers = {
 				});
 
 				return meal;
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
+		addWater: async (parent, { amount }, context) => {
+			if (context.user) {
+				const water = await Water.create({
+					amount,
+				});
+
+				await User.findByIdAndUpdate(context.user._id, {
+					$push: { water_intake: water },
+				});
+
+				return water;
 			}
 
 			throw new AuthenticationError('Not logged in');
