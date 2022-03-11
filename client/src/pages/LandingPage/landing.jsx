@@ -11,6 +11,9 @@ import Services from "./landing-files/pages/services";
 import About from "./landing-files/pages/about";
 import Home from "./landing-files/pages/home";
 import Contact from "./landing-files/pages/contact";
+import LogIn from "./landing-files/pages/login";
+import SignUp from "./landing-files/pages/signup";
+
 
 const routes = [
   { path: "/", name: "Home", Component: Home },
@@ -19,8 +22,8 @@ const routes = [
   { path: "/nutrition", name: "nutrition", Component: Services },
   { path: "/water", name: "water", Component: About },
   { path: "/contact", name: "contact", Component: Contact },
-  // { path: "/signin", name: "signin", Component: SignIn },
-  // { path: "/signup", name: "signup", Component: SignUp }
+  { path: "/login", name: "Login", Component: LogIn },
+  { path: "/signup", name: "signup", Component: SignUp }
 ];
 
 function debounce(fn, ms) {
