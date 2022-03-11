@@ -3,9 +3,9 @@ const bcrypt = require('bcrypt');
 
 // Schemas
 const { exerciseSchema } = require('./Exercise');
-const mindfulnessSchema = require('./Mindfulness');
-const waterSchema = require('./Water');
-const mealSchema = require('./Meal');
+const { mindfulnessSchema } = require('./Mindfulness');
+const { waterSchema } = require('./Water');
+const { mealSchema } = require('./Meal');
 
 const userSchema = new Schema(
 	{
