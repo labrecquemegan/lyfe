@@ -2,6 +2,7 @@ const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
 const { Exercise } = require('../models/Exercise');
 const { Mindfulness } = require('../models/Mindfulness');
+const { Meal } = require('../models/Meal');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -96,6 +97,28 @@ const resolvers = {
 				});
 
 				return mindful;
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
+		addMeal: async (
+			parent,
+			{ calories, protein, carbohydrates, fat },
+			context
+		) => {
+			if (context.user) {
+				const meal = await Meal.create({
+					calories,
+					protein,
+					carbohydrates,
+					fat,
+				});
+
+				await User.findByIdAndUpdate(context.user._id, {
+					$push: { meals: meal },
+				});
+
+				return meal;
 			}
 
 			throw new AuthenticationError('Not logged in');

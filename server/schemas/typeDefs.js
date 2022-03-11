@@ -118,6 +118,13 @@ const typeDefs = gql`
 
 		addMindfulness(duration: Int!, notes: String!): Mindfulness
 
+		addMeal(
+			calories: Int!
+			protein: Int
+			carbohydrates: Int
+			fat: Int
+		): Meal
+
 		# addExercise
 		# addWater
 		# addMindfulSession
