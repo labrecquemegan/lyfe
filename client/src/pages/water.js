@@ -21,10 +21,12 @@ const Water = () => {
     <>
     <div className='page'>
       <div className='container'>
+      <div className='row'>
         <div >
         <p><Calendar values={values} until={until} /></p>
       
           <p>tehbhjewbicwe</p>
+        </div>
         </div>
       </div>
     </div>
