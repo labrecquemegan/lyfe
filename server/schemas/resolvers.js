@@ -1,5 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
+const { Exercise } = require('../models/Exercise');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -51,17 +52,40 @@ const resolvers = {
 		// update user (should allow user to set goals?)
 		updateUser: async (parent, args, context) => {
 			if (context.user) {
-			  return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+				return await User.findByIdAndUpdate(context.user._id, args, {
+					new: true,
+				});
 			}
-	  
+
 			throw new AuthenticationError('Not logged in');
 		},
 		// Remove user
 		removeUser: async (parent, { userId }) => {
 			return User.findOneAndDelete({ _id: userId });
 		},
+		// Add to exercise array
+		addExercise: async (
+			parent,
+			{ duration, intensity, met_rating, notes },
+			context
+		) => {
+			if (context.user) {
+				const exercise = await Exercise.create({
+					duration,
+					intensity,
+					met_rating,
+					notes,
+				});
 
-	
+				await User.findByIdAndUpdate(context.user._id, {
+					$push: { exercises: exercise },
+				});
+
+				return exercise;
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
 	},
 };
 

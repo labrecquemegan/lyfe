@@ -28,6 +28,7 @@ const typeDefs = gql`
 	}
 
 	type Exercise {
+		_id: ID
 		date: String
 		duration: Int
 		intensity: String
@@ -110,6 +111,13 @@ const typeDefs = gql`
 			water_goal: Int
 			calorie_goal: Int
 		): User
+
+		addExercise(
+			duration: Int!
+			intensity: String!
+			met_rating: Int!
+			notes: String!
+		): Exercise
 
 		# addExercise
 		# addWater
