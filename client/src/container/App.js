@@ -1,71 +1,96 @@
-import React, { useState } from 'react'
-import { useEffect } from "react";
-import { useRef } from "react";
-import useLocoScroll from "../hooks/useLocoScroll";
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { gsap } from 'gsap';
+import {
+	ApolloClient,
+	InMemoryCache,
+	ApolloProvider,
+	createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
-import './App.css'
+import './App.css';
+import '../styles/style.scss';
 
-// Pages 
+// Pages
+import Landing from '../pages/landing';
+import Home from '../pages/home';
+import Login from '../pages/login';
+import Signup from '../pages/signup';
+import About from '../pages/about';
+import Contact from '../pages/contact';
+import Approach from '../pages/approach';
+import CaseStudies from '../pages/caseStudies';
+import Services from '../pages/services';
 
-import LandingPage from '../pages/LandingPage/landing';
+// Components
+import Header from '../components/Header';
+import Navigation from '../components/Navigation';
+
+const httpLink = createHttpLink({
+	uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+	const token = localStorage.getItem('id_token');
+	return {
+		headers: {
+			...headers,
+			authorization: token ? `Bearer ${token}` : '',
+		},
+	};
+});
+
+const client = new ApolloClient({
+	link: authLink.concat(httpLink),
+	cache: new InMemoryCache(),
+});
+
+function debounce(fn, ms) {
+	let timer;
+	return () => {
+		clearTimeout(timer);
+		timer = setTimeout(() => {
+			timer = null;
+			fn.apply(this, arguments);
+		}, ms);
+	};
+}
 
 const App = () => {
-  const ref = useRef(null);
-  const [preloader, setPreload] = useState(true);
+	const [dimensions, setDimensions] = React.useState({
+		height: window.innerHeight,
+		width: window.innerWidth,
+	});
 
+	useEffect(() => {
+		// prevents flashing
+		gsap.to('body', 0, { css: { visibility: 'visible' } });
+		const debouncedHandleResize = debounce(function handleResize() {
+			setDimensions({
+				height: window.innerHeight,
+				width: window.innerWidth,
+			});
+		}, 1000);
 
-  useLocoScroll(!preloader);
+		window.addEventListener('resize', debouncedHandleResize);
+		return () => {
+			window.removeEventListener('resize', debouncedHandleResize);
+		};
+	});
 
-  useEffect(() => {
-    if (!preloader && ref) {
-      if (typeof window === "undefined" || !window.document) {
-        return;
-      }
-    }
-  }, [preloader]);
-
-  const [timer, setTimer] = React.useState(0);
-
-  const id = React.useRef(null);
-
-  const clear = () => {
-    window.clearInterval(id.current);
-    setPreload(false);
-  };
-
-  React.useEffect(() => {
-    id.current = window.setInterval(() => {
-      setTimer((time) => time - 1);
-    }, 1000);
-    return () => clear();
-  }, []);
-
-  React.useEffect(() => {
-    if (timer === 0) {
-      clear();
-    }
-  }, [timer]);
-
-  if (typeof window === "undefined" || !window.document) {
-    return null;
-  }
-
-  return (
-    <>
-      {preloader ? (
-        <div className="loader-wrapper absolute">
-        </div>
-      ) : (
-        <div
-          className="main-container"
-          id="main-container"
-          data-scroll-container
-          ref={ref}
-        >
-          <LandingPage />
-        </div>
-      )}
-    </>
-  );
+	return (
+		<ApolloProvider client={client}>
+			<Router>
+				<Header dimension={dimensions} />
+				<Landing />
+				<div className="App">
+					<Route path="/" element={<Home />} />
+				</div>
+			</Router>
+			<Navigation />
+		</ApolloProvider>
+	);
 };
+
 export default App;
