@@ -36,6 +36,7 @@ const typeDefs = gql`
 	}
 
 	type Mindfulness {
+		_id: ID
 		duration: Int
 		notes: String
 	}
@@ -114,6 +115,8 @@ const typeDefs = gql`
 			met_rating: Int!
 			notes: String!
 		): Exercise
+
+		addMindfulness(duration: Int!, notes: String!): Mindfulness
 
 		# addExercise
 		# addWater

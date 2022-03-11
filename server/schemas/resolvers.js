@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
 const { Exercise } = require('../models/Exercise');
+const { Mindfulness } = require('../models/Mindfulness');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -82,6 +83,19 @@ const resolvers = {
 				});
 
 				return exercise;
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
+		addMindfulness: async (parent, { duration, notes }, context) => {
+			if (context.user) {
+				const mindful = await Mindfulness.create({ duration, notes });
+
+				await User.findByIdAndUpdate(context.user._id, {
+					$push: { mindful_sessions: mindful },
+				});
+
+				return mindful;
 			}
 
 			throw new AuthenticationError('Not logged in');
