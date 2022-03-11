@@ -14,5 +14,8 @@
 	"license": "ISC",
 	"devDependencies": {
 		"concurrently": "^5.3.0"
+	},
+	"dependencies": {
+		"react-github-contribution-calendar": "^2.1.1"
 	}
 }

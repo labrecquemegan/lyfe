@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import moment from 'moment';
+
 
 const dayNames = {
     1: 'S',
@@ -39,16 +39,20 @@ function Month({ startDate, index }) {
 function WeekDay({ index }) {
     return (
         <div className='timeline-weekdays-weekday'>
-        {dayNames[i]}
+        {dayNames[index]}
         </div>
     )
 }
 
+
+
+
 function Timeline({ range,data }) {
+    
     let days = Math.abs(range[0].diff(range[1], 'days'));
     let cells = Array.from(new Array(days));
     let weekDays = Array.from(new(7));
-    let months = Array.from(new Array(Math.floor(day / 7)));
+    let months = Array.from(new Array(Math.floor(days / 7)));
 
     let min = Math.min(0, ...data.map(d => d.value));
     let max = Math.max(...data.map(d => d.value));
@@ -82,7 +86,7 @@ function Timeline({ range,data }) {
                                 key={index}
                                 index={index}
                                 date={date}
-                                alpha={alpa}
+                                alpha={alpha}
                             />
                         );
                         }
@@ -90,5 +94,8 @@ function Timeline({ range,data }) {
                 </div>
             </div>
         </div>
-    )
-}
+    )}
+
+
+
+export default Calendar;
