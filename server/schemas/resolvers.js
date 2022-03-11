@@ -139,6 +139,9 @@ const resolvers = {
 
 			throw new AuthenticationError('Not logged in');
 		},
+		deleteExercise: async (parent, { exerciseId }) => {
+			return Exercise.findOneAndDelete({ _id: exerciseId });
+		},
 	},
 };
 

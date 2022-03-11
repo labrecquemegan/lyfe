@@ -131,7 +131,14 @@ const typeDefs = gql`
 
 		addWater(amount: Int!): Water
 
-		# addWater
+		#deleteExercise
+		deleteExercise(exerciseId: ID!): Exercise
+
+		#deleteMindfulness
+
+		#deleteMeal
+
+		#deleteWater
 	}
 `;
 
