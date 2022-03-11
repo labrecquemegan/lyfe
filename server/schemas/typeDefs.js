@@ -29,7 +29,6 @@ const typeDefs = gql`
 
 	type Exercise {
 		_id: ID
-		date: String
 		duration: Int
 		intensity: String
 		met_rating: Int
@@ -37,18 +36,15 @@ const typeDefs = gql`
 	}
 
 	type Mindfulness {
-		date: String
 		duration: Int
 		notes: String
 	}
 
 	type Water {
-		date: String
 		amount: Int
 	}
 
 	type Meal {
-		date: String
 		calories: Int
 		protein: Int
 		carbohydrates: Int
