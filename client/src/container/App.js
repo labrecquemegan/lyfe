@@ -17,11 +17,11 @@ import Landing from '../pages/landing';
 import Home from '../pages/home';
 import Login from '../pages/login';
 import Signup from '../pages/signup';
-import About from '../pages/about';
+import About from '../pages/water';
 import Contact from '../pages/contact';
-import Approach from '../pages/approach';
-import CaseStudies from '../pages/caseStudies';
-import Services from '../pages/services';
+import Approach from '../pages/mindfulness';
+import CaseStudies from '../pages/exercise';
+import Services from '../pages/nutrition';
 
 // Components
 import Header from '../components/Header';
