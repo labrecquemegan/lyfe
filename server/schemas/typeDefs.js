@@ -99,18 +99,17 @@ const typeDefs = gql`
 		removeUser(userId: ID!): User
 
 		updateUser(
-			first_name: String!
-			last_name: String!
-			username: String!
 			email: String!
 			password: String!
+			weight: Int
+			height: Int
+			age: Int
+			gender: String
 			exercise_goal: Int
+			mindful_goal: Int
+			water_goal: Int
+			calorie_goal: Int
 		): User
-
-		# setExerciseGoal
-		# setMindfulGoal
-		# setWaterGoal
-		# setCalorieGoal
 
 		# addExercise
 		# addWater
