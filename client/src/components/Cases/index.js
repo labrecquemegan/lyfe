@@ -10,7 +10,7 @@ const caseStudies = [
 	{
 		id: 2,
 		subtitle: 'Mindfulness',
-		title: 'Meditation designed to benefit the body, mind, and soul',
+		title: 'Meditation designed to benefit the mind, body and soul',
 		img: 'yoga-img',
 	},
 	{
