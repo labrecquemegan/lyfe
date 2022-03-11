@@ -1,15 +1,15 @@
 import React from "react";
 
-const About = () => {
+const Nutrition = () => {
   return (
     <div className='page'>
       <div className='container'>
         <div className='row'>
-          <h3>This is the Water page</h3>
+          <h3>This is the Nutrition page</h3>
         </div>
       </div>
     </div>
   );
 };
 
-export default About;
+export default Nutrition;

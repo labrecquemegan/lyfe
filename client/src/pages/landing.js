@@ -4,20 +4,21 @@ import { gsap } from 'gsap';
 import '../styles/style.scss';
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
-import CaseStudies from './caseStudies';
-import Approach from './approach';
-import Services from './services';
-import About from './about';
+import Exercise from './exercise';
+import Mindfulness from './mindfulness';
+import Nutrition from './nutrition';
+import Water from './water';
 import Home from './home';
 import Contact from './contact';
 import LogIn from './login';
 import SignUp from './signup';
+
 const routes = [
 	{ path: '/', name: 'Home', Component: Home },
-	{ path: '/exercises', name: 'exercises', Component: CaseStudies },
-	{ path: '/mindfulness', name: 'mindfulness', Component: Approach },
-	{ path: '/nutrition', name: 'nutrition', Component: Services },
-	{ path: '/water', name: 'water', Component: About },
+	{ path: '/exercises', name: 'exercises', Component: Exercise },
+	{ path: '/mindfulness', name: 'mindfulness', Component: Mindfulness },
+	{ path: '/nutrition', name: 'nutrition', Component: Nutrition },
+	{ path: '/water', name: 'water', Component: Water },
 	{ path: '/contact', name: 'contact', Component: Contact },
 	{ path: '/login', name: 'Login', Component: LogIn },
 	{ path: '/signup', name: 'signup', Component: SignUp },

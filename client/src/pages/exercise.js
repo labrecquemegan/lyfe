@@ -1,15 +1,15 @@
 import React from "react";
 
-const Approach = () => {
+const Exercise = () => {
   return (
     <div className='page'>
       <div className='container'>
         <div className='row'>
-          <h3>This is the Mindfulness page</h3>
+          <h3>This is the exercise page</h3>
         </div>
       </div>
     </div>
   );
 };
 
-export default Approach;
+export default Exercise;
