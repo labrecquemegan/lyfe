@@ -13,6 +13,7 @@ import './App.css';
 import '../styles/style.scss';
 
 // Pages
+import Landing from '../pages/landing';
 import Home from '../pages/home';
 import Login from '../pages/login';
 import Signup from '../pages/signup';
@@ -82,6 +83,7 @@ const App = () => {
 		<ApolloProvider client={client}>
 			<Router>
 				<Header dimension={dimensions} />
+				<Landing />
 				<div className="App">
 					<Route path="/" element={<Home />} />
 				</div>
