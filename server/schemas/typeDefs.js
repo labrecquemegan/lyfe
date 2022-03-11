@@ -132,7 +132,7 @@ const typeDefs = gql`
 		addWater(amount: Int!): Water
 
 		#deleteExercise
-		deleteExercise(exerciseId: ID!): Exercise
+		deleteExercise(exerciseId: ID!): User
 
 		#deleteMindfulness
 
