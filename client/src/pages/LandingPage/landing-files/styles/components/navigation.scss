@@ -33,7 +33,7 @@ nav {
   button {
     color: $black;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.4rem;
     line-height: 25px;
     outline: none;
     cursor: pointer;
@@ -46,6 +46,15 @@ nav {
     &:hover {
       background-color: rgb(216, 243, 220, 0.8);
       transform: translate(0, -5px);
+    }
+    @include media("<=tablet") {
+      font-size: 1rem;
+      margin-bottom: 1.4rem;
+    }
+    @include media("<=phone") {
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      margin: 0 5px;
     }
   }
 

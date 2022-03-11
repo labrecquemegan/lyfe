@@ -9,22 +9,22 @@ const Navigation = () => {
           <div className='nav-column'>
             <ul className='nav-links'>
               <li>
-                <NavLink to='/case-studies' exact>
+                <NavLink to='/exercises' exact>
                   Exercise
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/approach' exact>
+                <NavLink to='/mindfulness' exact>
                   Mindfulness
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/services' exact>
+                <NavLink to='/nutrition' exact>
                   Nutrition
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/about-us' exact>
+                <NavLink to='/water' exact>
                   Water
                 </NavLink>
               </li>
@@ -38,7 +38,9 @@ const Navigation = () => {
                   <NavLink to='/signup' exact>
                     Sign Up
                   </NavLink>
+                  <NavLink to='/signin' exact>
                     <button type="button">Sign In</button>
+                  </NavLink>
                 </li>
                 <li className='nav-info-label'>Contact</li>
                 <li>
