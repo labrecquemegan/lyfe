@@ -38,8 +38,8 @@ const Navigation = () => {
 									<NavLink to="/signup" exact>
 										Sign Up
 									</NavLink>
-									<NavLink to="/signin" exact>
-										<button type="button">Sign In</button>
+									<NavLink to="/login" exact>
+										<button type="button">Log In</button>
 									</NavLink>
 								</li>
 								<li className="nav-info-label">Contact</li>
