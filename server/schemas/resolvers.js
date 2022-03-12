@@ -154,6 +154,51 @@ const resolvers = {
 
 			throw new AuthenticationError('Not logged in');
 		},
+		deleteMindfulness: async (parent, { mindfulnessId }, context) => {
+			if (context.user) {
+				const user = await User.findByIdAndUpdate(
+					context.user._id,
+					{
+						$pull: { mindful_sessions: { _id: mindfulnessId } },
+					},
+					{ new: true }
+				);
+
+				return user;
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
+		deleteWater: async (parent, { waterId }, context) => {
+			if (context.user) {
+				const user = await User.findByIdAndUpdate(
+					context.user._id,
+					{
+						$pull: { water_intake: { _id: waterId } },
+					},
+					{ new: true }
+				);
+
+				return user;
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
+		deleteMeal: async (parent, { mealId }, context) => {
+			if (context.user) {
+				const user = await User.findByIdAndUpdate(
+					context.user._id,
+					{
+						$pull: { meals: { _id: mealId } },
+					},
+					{ new: true }
+				);
+
+				return user;
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
 	},
 };
 
