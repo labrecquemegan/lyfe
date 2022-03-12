@@ -140,6 +140,7 @@ const typeDefs = gql`
 		#deleteMeal
 
 		#deleteWater
+		deleteWater(waterId: ID!): User
 	}
 `;
 
