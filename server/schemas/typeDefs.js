@@ -138,6 +138,7 @@ const typeDefs = gql`
 		deleteMindfulness(mindfulnessId: ID!): User
 
 		#deleteMeal
+		deleteMeal(mealId: ID!): User
 
 		#deleteWater
 		deleteWater(waterId: ID!): User
