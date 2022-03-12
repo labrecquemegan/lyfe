@@ -135,6 +135,7 @@ const typeDefs = gql`
 		deleteExercise(exerciseId: ID!): User
 
 		#deleteMindfulness
+		deleteMindfulness(mindfulnessId: ID!): User
 
 		#deleteMeal
 
