@@ -1,12 +1,13 @@
 import React from "react";
+import Stats from '../components/Exercises/Stats'
+import Workouts from '../components/Exercises/Workouts'
 
 const Exercise = () => {
   return (
     <div className='page'>
       <div className='container'>
-        <div className='row'>
-          <h3>This is the exercise page</h3>
-        </div>
+          <Stats />
+          <Workouts />
       </div>
     </div>
   );
