@@ -1,6 +1,5 @@
 import React from "react";
 import moment from "moment";
-import ReactDOM from "react-dom";
 
 const dayNames = {
   0: "S",
@@ -31,22 +30,22 @@ function Cell({ date, alpha }) {
 }
 
 // reads the months
-function Month({ startDate, index }) {
-  let date = moment(startDate.add(index * 5, "day"));
-  let monthName = date.format("MMM");
+// function Month({ startDate, index }) {
+//   let date = moment(startDate.add(index * 5, "day"));
+//   let monthName = date.format("MMM");
 
-  let style = {
-    display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    height: '#{(15 + 2) * 8}px',
-  }
-  return (
-    <div className='timeline-months-month' style={style}>{monthName}</div>
-  );
-}
+//   let style = {
+//     display: 'flex',
+//     flexDirection: 'column',
+//     flexWrap: 'wrap',
+//     height: '#{(15 + 2) * 8}px',
+//   }
+//   return (
+//     <div className='timeline-months-month' style={style}>{monthName}</div>
+//   );
+// }
 
-// will show the weeks that include the 3 weekday names
+// will show the weeks that include the 7 weekday names
 function WeekDay({ index }) {
     let style = {
         display: 'flex',
@@ -65,7 +64,7 @@ function Timeline({ range, data }) {
   let days = Math.abs(range[0].diff(range[1], "days"));
   let cells = Array.from(new Array(days));
   let weekDays = Array.from(new Array(7));
-  let months = Array.from(new Array(Math.floor(days/7)));
+  // let months = Array.from(new Array(Math.floor(days/7)));
 
   let min = Math.min(0, ...data.map((d) => d.value));
   let max = Math.max(...data.map((d) => d.value));
@@ -81,7 +80,6 @@ function Timeline({ range, data }) {
     flexWrap: 'wrap',
     alignContent: 'center',
     alignItems: 'center',
-    // justifyContent: 'space-evenly',
     height: 'height: #{(15 + 2) * 8}px',
     maxWidth: '175px'
   }
@@ -89,7 +87,6 @@ function Timeline({ range, data }) {
   let timelineStyle = {
     display: 'flex',
     justifyContent: 'space-evenly',
-    // marginTop: '100px'
   }
 
   return (
@@ -126,7 +123,7 @@ function Timeline({ range, data }) {
 }
 
 function App() {
-  // 1 year range
+  // 1 month range
   let startDate = moment().add(-30, 'days');
   let dateRange = [startDate, moment()];
 
