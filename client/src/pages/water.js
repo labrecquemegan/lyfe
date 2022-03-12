@@ -1,5 +1,6 @@
 import React from "react";
 import Calendar from '../components/Calendar/index';
+import Wateranimation  from '../components/waterAnimation/index'
 
 let style = {
   display: 'flex',
@@ -17,7 +18,7 @@ const Water = () => {
       <div className='container' style={style}>
         <div>
         <Calendar  />
-      
+        <Wateranimation />
           <p>Water Annimation goes here</p>
           </div>
       </div>
