@@ -117,8 +117,8 @@ function Timeline({ range, data }) {
             return <Cell key={index} index={index} date={date} alpha={alpha} />;
           })}
         </div>
+        </div>
       </div>
-    </div>
   );
 }
 
