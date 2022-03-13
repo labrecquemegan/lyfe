@@ -96,8 +96,6 @@ const typeDefs = gql`
 			password: String!
 		): Auth
 
-		login(email: String!, password: String!): Auth
-
 		removeUser(userId: ID!): User
 
 		updateUser(
@@ -112,6 +110,8 @@ const typeDefs = gql`
 			water_goal: Int
 			calorie_goal: Int
 		): User
+
+		login(email: String!, password: String!): Auth
 
 		addExercise(
 			duration: Int!
@@ -131,16 +131,20 @@ const typeDefs = gql`
 
 		addWater(amount: Int!): Water
 
-		#deleteExercise
+		# updateExercise
+
+		# updateMindfulness
+
+		# updateMeal
+
+		# updateWater
+
 		deleteExercise(exerciseId: ID!): User
 
-		#deleteMindfulness
 		deleteMindfulness(mindfulnessId: ID!): User
 
-		#deleteMeal
 		deleteMeal(mealId: ID!): User
 
-		#deleteWater
 		deleteWater(waterId: ID!): User
 	}
 `;

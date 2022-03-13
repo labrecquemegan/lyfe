@@ -35,6 +35,20 @@ const resolvers = {
 			const token = signToken(user);
 			return { token, user };
 		},
+		// update user
+		updateUser: async (parent, args, context) => {
+			if (context.user) {
+				return await User.findByIdAndUpdate(context.user._id, args, {
+					new: true,
+				});
+			}
+
+			throw new AuthenticationError('Not logged in');
+		},
+		// Remove user
+		removeUser: async (parent, { userId }) => {
+			return User.findOneAndDelete({ _id: userId });
+		},
 		// Login
 		login: async (parent, { email, password }) => {
 			const user = await User.findOne({ email });
@@ -52,21 +66,7 @@ const resolvers = {
 			const token = signToken(user);
 			return { token, user };
 		},
-		// update user (should allow user to set goals?)
-		updateUser: async (parent, args, context) => {
-			if (context.user) {
-				return await User.findByIdAndUpdate(context.user._id, args, {
-					new: true,
-				});
-			}
-
-			throw new AuthenticationError('Not logged in');
-		},
-		// Remove user
-		removeUser: async (parent, { userId }) => {
-			return User.findOneAndDelete({ _id: userId });
-		},
-		// Add to exercise array
+		// Add exercise to exercises
 		addExercise: async (
 			parent,
 			{ duration, intensity, met_rating, notes },
@@ -89,19 +89,21 @@ const resolvers = {
 
 			throw new AuthenticationError('Not logged in');
 		},
+		// Add session to mindful_sessiosn
 		addMindfulness: async (parent, { duration, notes }, context) => {
 			if (context.user) {
-				const mindful = await Mindfulness.create({ duration, notes });
+				const session = await Mindfulness.create({ duration, notes });
 
 				await User.findByIdAndUpdate(context.user._id, {
-					$push: { mindful_sessions: mindful },
+					$push: { mindful_sessions: session },
 				});
 
-				return mindful;
+				return session;
 			}
 
 			throw new AuthenticationError('Not logged in');
 		},
+		// Add meal to meals
 		addMeal: async (
 			parent,
 			{ calories, protein, carbohydrates, fat },
@@ -124,6 +126,7 @@ const resolvers = {
 
 			throw new AuthenticationError('Not logged in');
 		},
+		// Add water to water_intake
 		addWater: async (parent, { amount }, context) => {
 			if (context.user) {
 				const water = await Water.create({
@@ -139,6 +142,7 @@ const resolvers = {
 
 			throw new AuthenticationError('Not logged in');
 		},
+		// Delete exercise from exercises
 		deleteExercise: async (parent, { exerciseId }, context) => {
 			if (context.user) {
 				const user = await User.findByIdAndUpdate(
@@ -154,6 +158,7 @@ const resolvers = {
 
 			throw new AuthenticationError('Not logged in');
 		},
+		// Delete session from mindful_sessions
 		deleteMindfulness: async (parent, { mindfulnessId }, context) => {
 			if (context.user) {
 				const user = await User.findByIdAndUpdate(
@@ -169,6 +174,7 @@ const resolvers = {
 
 			throw new AuthenticationError('Not logged in');
 		},
+		// Delete water from water_intake
 		deleteWater: async (parent, { waterId }, context) => {
 			if (context.user) {
 				const user = await User.findByIdAndUpdate(
@@ -184,6 +190,7 @@ const resolvers = {
 
 			throw new AuthenticationError('Not logged in');
 		},
+		// Delete meal from meals
 		deleteMeal: async (parent, { mealId }, context) => {
 			if (context.user) {
 				const user = await User.findByIdAndUpdate(
