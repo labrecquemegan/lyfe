@@ -1,7 +1,7 @@
 @import '../../../styles/breakpoints.scss';
 @import '../../../styles/varibles.scss';
 
-.main {
+.workouts-container {
     height: 50vh; //fallback option
     height: calc(var(--vh, 1vh) * 50);
     background-color: $white;
@@ -27,78 +27,3 @@
       }
     }
 }
-
-
-  .skills {
-    color: rgb(228, 228, 228);
-    height: 100vh;
-    padding: 0 5vw;
-}
-
-.skills h1 {
-    padding: 80px 0;
-    font-size: clamp(20px, 8vw, 60px);
-    font-weight: 600;
-    color: rgba(0,136,169,1);
-    text-transform: uppercase;
-
-    clip-path: inset(100% 0% 0% 0%);
-    transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
-  
-    &.is-reveal {
-      clip-path: inset(0% 0% 0% 0%);
-    }
-}
-
-.skills h2 {
-    font-size: clamp(20px, 8vw, 60px);
-    line-height: 1.12;
-}
-
-.skills p {
-    font-size: clamp(20px, 8vw, 30px);
-    line-height: 1.12;
-    display: flex;
-    flex-direction: column;
-    color: rgb(192, 192, 192);
-    margin: 5px 0 0 0;
-}
-
-.skill-title {
-    margin: 20px 0;
-    flex-grow: 1;
-}
-
-.skill {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    justify-content: space-evenly;
-
-    transition-duration: 294ms;
-    transition-property: background-color;
-    transition-timing-function: ease-out;
-
-    border-radius: 1em;
-    margin: 5px 0;
-    padding: 10px 20px;
-}
-
-.skill:hover {
-    background-color: rgba(0,136,169,1);
-    border-radius: 1em;
-}
-
-img {
-    height: auto;
-    max-height: 100%;
-    max-width: 100%;
-    width: auto;
-    height: 4rem;
-    margin: 40px 40px 0 0;
-}
-
-.skill-svg {
-   display: flex;
-}
-

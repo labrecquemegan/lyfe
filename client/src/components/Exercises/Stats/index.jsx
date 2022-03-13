@@ -3,8 +3,7 @@ import "./style.scss";
 
 export default function Stats() {
   return (
-    <section className="main">
-      <div className="container">
+    <section className="stats-container">
         <div className="row">
           <h2>Your Exercise Statistics</h2>
           <div className="btn-row">
@@ -29,7 +28,6 @@ export default function Stats() {
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );
