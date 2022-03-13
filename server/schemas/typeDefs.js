@@ -132,12 +132,32 @@ const typeDefs = gql`
 		addWater(amount: Int!): Water
 
 		# updateExercise
+		updateExercise(
+			exerciseId: ID!
+			duration: Int
+			intensity: String
+			met_rating: Int
+			notes: String
+		): User
 
 		# updateMindfulness
+		updateMindfulness(
+			mindfulnessId: ID!
+			duration: Int
+			notes: String
+		): User
 
 		# updateMeal
+		updateMeal(
+			mealId: ID!
+			calories: Int
+			protein: Int
+			carbohydrates: Int
+			fat: Int
+		): User
 
 		# updateWater
+		updateWater(waterId: ID!, amount: Int): User
 
 		deleteExercise(exerciseId: ID!): User
 

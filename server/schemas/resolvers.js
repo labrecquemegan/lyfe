@@ -142,6 +142,14 @@ const resolvers = {
 
 			throw new AuthenticationError('Not logged in');
 		},
+		// Update exercise in exercises
+		updateExercise: async (parent, args, context) => {},
+		// Update session in mindul_sessions
+		updateMindfulness: async (parent, args, context) => {},
+		// Update meal in meals
+		updateMeal: async (parent, args, context) => {},
+		// Update water in water_intake
+		updateWater: async (parent, args, context) => {},
 		// Delete exercise from exercises
 		deleteExercise: async (parent, { exerciseId }, context) => {
 			if (context.user) {
