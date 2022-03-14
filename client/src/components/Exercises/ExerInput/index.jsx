@@ -6,17 +6,19 @@ import './exerciseinput.scss';
 const ExerciseInput = () => {
 	// declare state of formData
 	const [formData, setFormData] = useState({
-		duration: 0,
+		duration: '0',
 		intensity: '',
-		metRating: 0,
-		notes: '',
+		metRating: '0',
+		notes: 'Type your note here...',
 	});
+
 	// bring in addExercise mutation
 	const [addExercise, { error }] = useMutation(ADD_EXERCISE);
 
 	// handle submitting the form
 	const handleFormSubmit = async (event) => {
 		event.preventDefault();
+
 		try {
 			await addExercise({
 				variables: {
@@ -30,12 +32,16 @@ const ExerciseInput = () => {
 			console.error(err);
 		}
 
+		// reset form data
 		setFormData({
-			duration: '',
+			duration: '0',
 			intensity: '',
-			metRating: '',
-			notes: '',
+			metRating: '0',
+			notes: 'Type your note here...',
 		});
+
+		// reset form values
+		document.getElementById('submit-exercise-form').reset();
 	};
 
 	// handle changes in the form
@@ -51,7 +57,7 @@ const ExerciseInput = () => {
 				<p>Log your exercise and get customized exercises!</p>
 			</div>
 			<div className="second-row">
-				<form onSubmit={handleFormSubmit}>
+				<form id="submit-exercise-form" onSubmit={handleFormSubmit}>
 					<div className="time">
 						<h3>Time</h3>
 						<input
@@ -59,7 +65,7 @@ const ExerciseInput = () => {
 							name="duration"
 							id="duration"
 							className="time-counter"
-							placeholder="0"
+							placeholder={formData.duration}
 							onChange={handleInputChange}
 						/>
 					</div>
@@ -102,7 +108,7 @@ const ExerciseInput = () => {
 							type="number"
 							name="metRating"
 							className="met-rating"
-							placeholder="1"
+							placeholder={formData.metRating}
 							onChange={handleInputChange}
 						/>
 					</div>
@@ -112,6 +118,7 @@ const ExerciseInput = () => {
 							type="text"
 							name="notes"
 							className="notes-input"
+							placeholder={formData.notes}
 							onChange={handleInputChange}
 						/>
 					</div>
