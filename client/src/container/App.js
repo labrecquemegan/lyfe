@@ -13,7 +13,6 @@ import './App.css';
 import '../styles/style.scss';
 
 // Pages
-import Landing from '../pages/landing';
 import Home from '../pages/home';
 import LogIn from '../pages/login';
 import SignUp from '../pages/signup';
