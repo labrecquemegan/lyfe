@@ -1,0 +1,176 @@
+@import "../../../styles/breakpoints.scss";
+@import "../../../styles/varibles.scss";
+
+.exercise-input-container {
+  height: 50vh; //fallback option
+  height: calc(var(--vh, 1vh) * 50);
+  background-color: $white;
+  margin-top: 275px;
+  text-align: center;
+
+  @include media("<=tablet") {
+    margin-top: 72px;
+  }
+  @include media("<=phone") {
+    margin-top: 260px;
+  }
+  .rows {
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      @include media("<=tablet") {
+        font-size: 2.4rem;
+        line-height: 3rem;
+      }
+      @include media("<=phone") {
+        margin-top: 72px;
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+      }
+    }
+
+    p {
+      font-size: 2rem;
+      font-weight: 500;
+      text-align: center;
+
+      @include media("<=tablet") {
+        font-size: 2rem;
+        line-height: 3rem;
+      }
+      @include media("<=phone") {
+        margin-top: 72px;
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+      }
+    }
+  }
+  .second-row {
+      margin: 100px 0;
+    .time {
+      h3 {
+        font-size: 2rem;
+        font-weight: 500;
+        @include media("<=tablet") {
+          font-size: 2rem;
+          line-height: 3rem;
+        }
+        @include media("<=phone") {
+          font-size: 1.7rem;
+          line-height: 2.2rem;
+        }
+      }
+
+      .time-counter {
+        font-size: 2rem;
+        font-weight: 500;
+
+        @include media("<=tablet") {
+          font-size: 2rem;
+          line-height: 3rem;
+        }
+        @include media("<=phone") {
+          margin-top: 72px;
+          font-size: 1.7rem;
+          line-height: 2.2rem;
+        }
+      }
+    }
+
+    .intensity {
+      h3 {
+        font-size: 2rem;
+        font-weight: 500;
+        @include media("<=tablet") {
+          font-size: 2rem;
+          line-height: 3rem;
+        }
+        @include media("<=phone") {
+          font-size: 1.7rem;
+          line-height: 2.2rem;
+        }
+      }
+
+      button {
+        color: #000000;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 25px;
+        outline: none;
+        cursor: pointer;
+        padding: 9px 25px;
+        background-color: #d8f3dc;
+        border: none;
+        border-radius: 50px;
+        transition: all 0.3s ease 0s;
+        margin-right: 30px;
+
+        &:hover {
+          transform: translate(0, 5px);
+          background-color: rgb(216, 243, 220, 0.8);
+        }
+      }
+    }
+
+    .notes {
+      h3 {
+        font-size: 2rem;
+        font-weight: 500;
+
+        @include media("<=tablet") {
+          font-size: 2rem;
+          line-height: 3rem;
+        }
+        @include media("<=phone") {
+          margin-top: 72px;
+          font-size: 1.7rem;
+          line-height: 2.2rem;
+        }
+      }
+
+      .notes-input {
+        font-size: 2rem;
+        font-weight: 500;
+        width: 700px;
+        height: 300px;
+
+        @include media("<=tablet") {
+          font-size: 2rem;
+          line-height: 3rem;
+        }
+        @include media("<=phone") {
+          margin-top: 72px;
+          font-size: 1.7rem;
+          line-height: 2.2rem;
+          width: 350px;
+          height: 100px;
+        }
+      }
+    }
+
+    .add-button {
+      button {
+        color: #000000;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 25px;
+        outline: none;
+        cursor: pointer;
+        padding: 9px 25px;
+        background-color: #d8f3dc;
+        border: none;
+        border-radius: 50px;
+        transition: all 0.3s ease 0s;
+        margin-right: 30px;
+        margin-top: 30px;
+
+        &:hover {
+          transform: translate(0, 5px);
+          background-color: rgb(216, 243, 220, 0.8);
+        }
+      }
+    }
+  }
+}

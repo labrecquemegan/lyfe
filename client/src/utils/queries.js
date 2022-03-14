@@ -48,4 +48,64 @@ export const QUERY_USERS = gql`
     }
 `;
 
+export const QUERY_ME = gql`
+    query me {
+		me {
+			_id
+			first_name
+			last_name
+			username
+			email
+			password
+			weight
+			height
+			age
+			gender
+			exercises {
+			  _id
+			  duration
+			  intensity
+			  met_rating
+			  notes
+			}
+			exercise_goal
+			mindful_sessions {
+			  _id
+			  duration
+			  notes
+			}
+			mindful_goal
+			water_intake {
+			  _id
+			  amount
+			}
+			water_goal
+			meals {
+			  _id
+			  calories
+			  protein
+			  carbohydrates
+			  fat
+			}
+			calorie_goal
+			exercise_stats {
+			  total_exercise_duration
+			  todays_exercise_duration
+			}
+			mindfulness_stats {
+			  total_mindful_duration
+			  todays_mindful_duration
+			}
+			water_stats {
+			  total_water_intake
+			  todays_water_intake
+			}
+			nutrition_stats {
+			  total_calories
+			  todays_calories
+			}
+		  }
+		}
+		`;
+
 
