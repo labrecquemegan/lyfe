@@ -1,31 +1,35 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-// TODO: Write mutation for adding nutrition stats
-import { ADD_EXERCISE } from '../../../utils/mutations';
+// * Write mutation for adding nutrition stats
+import { ADD_MEAL } from '../../../utils/mutations';
 import './foodinput.scss';
 
 const FoodInput = () => {
 	// declare state of formData
 	const [formData, setFormData] = useState({
-		// TODO: Add in default states for formData
+		// * Add in default states for formData
+		calories: '',
+		protein: '',
+		carbohydrates: '',
+		fat: '',
 	});
 
-	// bring in addExercise mutation
-	// TODO: Update mutation to use ADD_MEAL
-	const [addExercise, { error }] = useMutation(ADD_EXERCISE);
+	// bring in addMeal mutation
+	// * Update mutation to use ADD_MEAL
+	const [addMeal, { error }] = useMutation(ADD_MEAL);
 
 	// handle submitting the form
 	const handleFormSubmit = async (event) => {
 		event.preventDefault();
 
 		try {
-			// TODO: Update promise to use addMeal() with the correct variables. Don't forget to parseInt() anything that's supposed to be a number!
-			await addExercise({
+			// * Update promise to use addMeal() with the correct variables. Don't forget to parseInt() anything that's supposed to be a number!
+			await addMeal({
 				variables: {
-					duration: parseInt(formData.duration),
-					intensity: formData.intensity,
-					metRating: parseInt(formData.metRating),
-					notes: formData.notes,
+					calories: parseInt(formData.calories),
+					protein: parseInt(formData.protein),
+					carbohydrates: parseInt(formData.carbohydrates),
+					fat: parseInt(formData.fat),
 				},
 			});
 		} catch (err) {
