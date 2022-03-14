@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_EXERCISE } from '../../../utils/mutations';
+import { ADD_MEAL } from '../../../utils/mutations';
 import './foodinput.scss';
 
 const FoodInput = () => {
 	// declare state of formData
 	const [formData, setFormData] = useState({
-		duration: '0',
-		intensity: '',
-		metRating: '0',
-		notes: 'Type your note here...',
+		calories: '',
+		protein: '',
+		carbohydrates: '',
+		fat: '',
 	});
 
-	// bring in addExercise mutation
-	const [addExercise, { error }] = useMutation(ADD_EXERCISE);
+	// bring in addMeal mutation
+	const [addMeal, { error }] = useMutation(ADD_MEAL);
 
 	// handle submitting the form
 	const handleFormSubmit = async (event) => {
 		event.preventDefault();
 
 		try {
-			await addExercise({
+			await addMeal({
 				variables: {
-					duration: parseInt(formData.duration),
-					intensity: formData.intensity,
-					metRating: parseInt(formData.metRating),
-					notes: formData.notes,
+					calories: parseInt(formData.calories),
+					protein: parseInt(formData.protein),
+					carbohydrates: parseInt(formData.carbohydrates),
+					fat: parseInt(formData.fat),
 				},
 			});
 		} catch (err) {
@@ -34,14 +34,14 @@ const FoodInput = () => {
 
 		// reset form data
 		setFormData({
-			duration: '0',
-			intensity: '',
-			metRating: '0',
-			notes: 'Type your note here...',
+			calories: '',
+			protein: '',
+			carbohydrates: '',
+			fat: '',
 		});
 
 		// reset form values
-		document.getElementById('submit-exercise-form').reset();
+		document.getElementById('submit-meal-form').reset();
 	};
 
 	// handle changes in the form
@@ -57,28 +57,29 @@ const FoodInput = () => {
 				<p>Log your meals and snacks!</p>
 			</div>
 			<div className="second-row">
-				<form id="submit-exercise-form" onSubmit={handleFormSubmit}>
+				<form id="submit-meal-form" onSubmit={handleFormSubmit}>
 					<div className="time">
 						<h3>Calories</h3>
 						<input
 							type="number"
-							name="duration"
-							id="duration"
+							name="calories"
+							id="calories-input"
+							// TODO: Update class time-counter to be descriptive of this form as well
 							className="time-counter"
-							placeholder={formData.duration}
+							placeholder={formData.calories}
 							onChange={handleInputChange}
 						/>
 					</div>
-                    <div className="macros-title">
-                        <h3>Macros</h3>
-                    </div>
+					<div className="macros-title">
+						<h3>Macros</h3>
+					</div>
 					<div className="macros">
 						<h3>Carbs</h3>
 						<input
 							type="number"
-							name="metRating"
-							className="met-rating"
-							placeholder={formData.metRating}
+							name="carbohydrates"
+							id="carbohydrates-input"
+							placeholder={formData.carbohydrates}
 							onChange={handleInputChange}
 						/>
 					</div>
@@ -86,9 +87,9 @@ const FoodInput = () => {
 						<h3>Protein</h3>
 						<input
 							type="number"
-							name="metRating"
-							className="met-rating"
-							placeholder={formData.metRating}
+							name="protein"
+							id="protein-input"
+							placeholder={formData.protein}
 							onChange={handleInputChange}
 						/>
 					</div>
@@ -96,26 +97,29 @@ const FoodInput = () => {
 						<h3>Fats</h3>
 						<input
 							type="number"
-							name="metRating"
-							className="met-rating"
-							placeholder={formData.metRating}
+							name="fat"
+							id="fat-input"
+							placeholder={formData.fat}
 							onChange={handleInputChange}
 						/>
 					</div>
-                    <div className="servings">
-					<div className="servings-div">
-						<h3>Servings</h3>
-                        <button className='left'> - </button>
-						<input
-							type="number"
-							name="metRating"
-							className="met-rating"
-							placeholder={formData.metRating}
-							onChange={handleInputChange}
-						/>
-                        <button className='right'> + </button>
+					<div className="servings">
+						<div className="servings-div">
+							<h3>Servings</h3>
+							{/* // TODO: Add pointer to mouse */}
+							<button className="left"> - </button>
+							{/* // ? Might not need to be an input since there are increment and decrement buttons */}
+							{/* // TODO: Update name, className and placeholder -> Add ID */}
+							<input
+								type="number"
+								name="metRating"
+								className="met-rating"
+								placeholder={formData.metRating}
+								onChange={handleInputChange}
+							/>
+							<button className="right"> + </button>
+						</div>
 					</div>
-                    </div>
 					<div className="notes">
 						<h3>Notes</h3>
 						<textarea

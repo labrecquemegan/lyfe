@@ -55,3 +55,25 @@ export const ADD_EXERCISE = gql`
 		}
 	}
 `;
+
+export const ADD_MEAL = gql`
+	mutation addMeal(
+		$calories: Int!
+		$protein: Int
+		$carbohydrates: Int
+		$fat: Int
+	) {
+		addMeal(
+			calories: $calories
+			protein: $protein
+			carbohydrates: $carbohydrates
+			fat: $fat
+		) {
+			_id
+			calories
+			protein
+			carbohydrates
+			fat
+		}
+	}
+`;
