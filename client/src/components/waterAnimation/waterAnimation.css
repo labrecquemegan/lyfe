@@ -1,22 +1,49 @@
-.parent {
-    background-color: hsla(200, 100%, 20%);
-    height: 400px;
-    width: 400px;
-}
-
-.child {
-    background-color: red;
-    height: 50%;
+.gauge {
     width: 100%;
-    transition: transform 1s;
+    max-width: 250px;
+    font-family: "Roboto", sans-serif;
+    color: #004033;
 }
 
-.parent:hover .child {
-    animation: down-up 1s forwards;
+
+
+.gauge__body {
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    background: #b4c0be;
+    position: relative;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    overflow: hidden; 
 }
 
-@keyframes down-up {
-    100% {
-        transform: translateY(100%);    
-    }
+.gauge__fill {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    background: #009578;
+    transform-origin: center top;
+    transform: rotate(.25turn);
+    transition: transform 1s ease-out;
+}
+
+.gauge__cover {
+    width: 75%;
+    height: 150%;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25%;
+    box-sizing: border-box;
 }
