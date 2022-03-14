@@ -27,7 +27,7 @@ import Header from '../components/Header';
 import Navigation from '../components/Navigation';
 
 const httpLink = createHttpLink({
-	uri: 'http://localhost:3001/graphql',
+	uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
