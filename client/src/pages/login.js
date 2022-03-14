@@ -62,9 +62,7 @@ const Login = (props) => {
 						</div>
 						{error ? (
 							<div>
-								<p className="error-text">
-									The provided credentials are incorrect
-								</p>
+								<p className="error-text">{error}</p>
 							</div>
 						) : null}
 						<div className="flex-row flex-end">

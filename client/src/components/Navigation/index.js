@@ -1,4 +1,5 @@
 import React from 'react';
+import Auth from '../../utils/auth';
 import { NavLink } from 'react-router-dom';
 import Auth from "../../utils/auth";
 
@@ -44,7 +45,12 @@ const Navigation = () => {
 										<button type="button">Log In</button>
 									</NavLink>
 									<NavLink to="/" exact>
-									<button type="button" onClick={() => Auth.logout()}>Log Out</button>
+										<button
+											type="button"
+											onClick={() => Auth.logout()}
+										>
+											Log Out
+										</button>
 									</NavLink>
 								</li>
 								<li className="nav-info-label">Contact</li>

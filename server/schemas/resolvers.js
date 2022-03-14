@@ -67,18 +67,9 @@ const resolvers = {
 			return { token, user };
 		},
 		// Add exercise to exercises
-		addExercise: async (
-			parent,
-			{ duration, intensity, met_rating, notes },
-			context
-		) => {
+		addExercise: async (parent, args, context) => {
 			if (context.user) {
-				const exercise = await Exercise.create({
-					duration,
-					intensity,
-					met_rating,
-					notes,
-				});
+				const exercise = await Exercise.create(args);
 
 				await User.findByIdAndUpdate(context.user._id, {
 					$push: { exercises: exercise },

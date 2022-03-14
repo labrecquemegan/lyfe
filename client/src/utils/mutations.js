@@ -33,3 +33,25 @@ export const LOGIN = gql`
 		}
 	}
 `;
+
+export const ADD_EXERCISE = gql`
+	mutation addExercise(
+		$duration: Int!
+		$intensity: String!
+		$metRating: Int!
+		$notes: String!
+	) {
+		addExercise(
+			duration: $duration
+			intensity: $intensity
+			met_rating: $metRating
+			notes: $notes
+		) {
+			_id
+			duration
+			intensity
+			met_rating
+			notes
+		}
+	}
+`;
