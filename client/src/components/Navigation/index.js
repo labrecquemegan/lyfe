@@ -1,8 +1,6 @@
 import React from 'react';
 import Auth from '../../utils/auth';
 import { NavLink } from 'react-router-dom';
-import Auth from "../../utils/auth";
-
 
 const Navigation = () => {
 	return (
