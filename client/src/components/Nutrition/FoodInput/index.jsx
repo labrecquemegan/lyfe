@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-// * Write mutation for adding nutrition stats
 import { ADD_MEAL } from '../../../utils/mutations';
 import './foodinput.scss';
 
 const FoodInput = () => {
 	// declare state of formData
 	const [formData, setFormData] = useState({
-		// * Add in default states for formData
 		calories: '',
 		protein: '',
 		carbohydrates: '',
@@ -15,7 +13,6 @@ const FoodInput = () => {
 	});
 
 	// bring in addMeal mutation
-	// * Update mutation to use ADD_MEAL
 	const [addMeal, { error }] = useMutation(ADD_MEAL);
 
 	// handle submitting the form
@@ -23,7 +20,6 @@ const FoodInput = () => {
 		event.preventDefault();
 
 		try {
-			// * Update promise to use addMeal() with the correct variables. Don't forget to parseInt() anything that's supposed to be a number!
 			await addMeal({
 				variables: {
 					calories: parseInt(formData.calories),
@@ -37,7 +33,6 @@ const FoodInput = () => {
 		}
 
 		// reset form data
-		// * Update reset to match what is declared in formData
 		setFormData({
 			calories: '',
 			protein: '',
@@ -46,7 +41,6 @@ const FoodInput = () => {
 		});
 
 		// reset form values
-		// * Update to grab nutrition form ID
 		document.getElementById('submit-meal-form').reset();
 	};
 
@@ -63,11 +57,9 @@ const FoodInput = () => {
 				<p>Log your meals and snacks!</p>
 			</div>
 			<div className="second-row">
-				{/* // * Update ID and change in getElementById above  */}
 				<form id="submit-meal-form" onSubmit={handleFormSubmit}>
 					<div className="time">
 						<h3>Calories</h3>
-						{/* // * Update name, id, className and placeHolder  */}
 						<input
 							type="number"
 							name="calories"
@@ -83,7 +75,6 @@ const FoodInput = () => {
 					</div>
 					<div className="macros">
 						<h3>Carbs</h3>
-						{/* // * Update name, className and placeholder -> Add ID  */}
 						<input
 							type="number"
 							name="carbohydrates"
@@ -94,7 +85,6 @@ const FoodInput = () => {
 					</div>
 					<div className="macros">
 						<h3>Protein</h3>
-						{/* // * Update name, className and placeholder -> Add ID  */}
 						<input
 							type="number"
 							name="protein"
@@ -105,7 +95,6 @@ const FoodInput = () => {
 					</div>
 					<div className="macros">
 						<h3>Fats</h3>
-						{/* // * Update name, className and placeholder -> Add ID  */}
 						<input
 							type="number"
 							name="fat"
