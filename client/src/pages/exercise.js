@@ -1,6 +1,7 @@
 import React from "react";
 import Stats from '../components/Exercises/Stats'
 import Workouts from '../components/Exercises/Workouts'
+import ExerciseInput from '../components/Exercises/ExerInput'
 
 const Exercise = () => {
   return (
@@ -10,6 +11,7 @@ const Exercise = () => {
         <div>
           <Stats />
           <Workouts />
+          <ExerciseInput />
         </div>
       </div>
     </div>
