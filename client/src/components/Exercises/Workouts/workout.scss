@@ -5,6 +5,16 @@
     height: 50vh; //fallback option
     height: calc(var(--vh, 1vh) * 50);
     background-color: $white;
+    margin-top: 150px;
+
+    @include media("<=tablet") {
+      font-size: 2.4rem;
+      line-height: 3rem;
+    }
+    @include media("<=phone") {
+      margin-top: 260px;
+      
+    }
     .row {
       flex-direction: column;
       justify-content: center;
@@ -12,9 +22,6 @@
         font-size: 3rem;
         line-height: 4.2rem;
         font-weight: 700;
-        z-index: 10;
-        color: $white;
-        mix-blend-mode: difference;
         @include media("<=tablet") {
           font-size: 2.4rem;
           line-height: 3rem;
@@ -23,6 +30,64 @@
           margin-top: 72px;
           font-size: 1.7rem;
           line-height: 2.2rem;
+        }
+      }
+
+      .skills {
+        h2 {
+          font-size: 2.5rem;
+          line-height: 4.2rem;
+          font-weight: 600;
+          text-align: center;
+        
+
+          @include media("<=tablet") {
+            font-size: 2rem;
+            line-height: 3rem;
+          }
+          @include media("<=phone") {
+            margin-top: 72px;
+            font-size: 1.7rem;
+            line-height: 2.2rem;
+          }
+        }
+
+        p {
+          font-size: 2rem;
+          line-height: 4.2rem;
+          font-weight:500;
+          text-align: center;
+          
+
+          @include media("<=tablet") {
+            font-size: 2rem;
+            line-height: 3rem;
+          }
+          @include media("<=phone") {
+            margin-top: 72px;
+            font-size: 1.7rem;
+            line-height: 2.2rem;
+          }
+        }
+
+        .skill {
+          display: flex;
+          flex-direction: row;
+          flex-grow: 1;
+          justify-content: space-evenly;
+      
+          transition-duration: 294ms;
+          transition-property: background-color;
+          transition-timing-function: ease-out;
+      
+          border-radius: 1rem;
+          margin: 5px 0;
+          padding: 10px 20px;
+
+          &:hover {
+            background-color: $navgreen;
+            border-radius: 1em;
+        }
         }
       }
     }

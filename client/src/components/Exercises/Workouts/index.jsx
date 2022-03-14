@@ -12,19 +12,19 @@ export default function Workouts() {
                   <div className="skill">
                     <div className="skill-title">
                       <h2>Beginner</h2>
-                      <p>Frontend Development and Single-Page Apps</p>
+                      <p>Beginner workouts to start your fitness journey</p>
                     </div>
                   </div>
                   <div className="skill">
                     <div className="skill-title">
                       <h2>Intermediate</h2>
-                      <p>Design Systems and Smart Interfaces</p>
+                      <p>Take your fitness up a notch with these intermediate exercises</p>
                     </div>
                   </div>
                   <div className="skill">
                     <div className="skill-title">
                       <h2>Difficult</h2>
-                      <p>Content Management Systems</p>
+                      <p>Designed to make your life utterly miserable</p>
                     </div>
                   </div>
                 </div>
