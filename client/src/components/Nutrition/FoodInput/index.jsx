@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+// TODO: Write mutation for adding nutrition stats
 import { ADD_EXERCISE } from '../../../utils/mutations';
 import './foodinput.scss';
 
 const FoodInput = () => {
 	// declare state of formData
 	const [formData, setFormData] = useState({
-		duration: '0',
-		intensity: '',
-		metRating: '0',
-		notes: 'Type your note here...',
+		// TODO: Add in default states for formData
 	});
 
 	// bring in addExercise mutation
+	// TODO: Update mutation to use ADD_MEAL
 	const [addExercise, { error }] = useMutation(ADD_EXERCISE);
 
 	// handle submitting the form
@@ -20,6 +19,7 @@ const FoodInput = () => {
 		event.preventDefault();
 
 		try {
+			// TODO: Update promise to use addMeal() with the correct variables. Don't forget to parseInt() anything that's supposed to be a number!
 			await addExercise({
 				variables: {
 					duration: parseInt(formData.duration),
@@ -33,6 +33,7 @@ const FoodInput = () => {
 		}
 
 		// reset form data
+		// TODO: Update reset to match what is declared in formData
 		setFormData({
 			duration: '0',
 			intensity: '',
@@ -41,6 +42,7 @@ const FoodInput = () => {
 		});
 
 		// reset form values
+		// TODO: Update to grab nutrition form ID
 		document.getElementById('submit-exercise-form').reset();
 	};
 
@@ -57,9 +59,11 @@ const FoodInput = () => {
 				<p>Log your meals and snacks!</p>
 			</div>
 			<div className="second-row">
+				{/* // TODO: Update ID and change in getElementById above  */}
 				<form id="submit-exercise-form" onSubmit={handleFormSubmit}>
 					<div className="time">
 						<h3>Calories</h3>
+						{/* // TODO: Update name, id, className and placeHolder  */}
 						<input
 							type="number"
 							name="duration"
@@ -69,11 +73,12 @@ const FoodInput = () => {
 							onChange={handleInputChange}
 						/>
 					</div>
-                    <div className="macros-title">
-                        <h3>Macros</h3>
-                    </div>
+					<div className="macros-title">
+						<h3>Macros</h3>
+					</div>
 					<div className="macros">
 						<h3>Carbs</h3>
+						{/* // TODO: Update name, className and placeholder -> Add ID  */}
 						<input
 							type="number"
 							name="metRating"
@@ -84,6 +89,7 @@ const FoodInput = () => {
 					</div>
 					<div className="macros">
 						<h3>Protein</h3>
+						{/* // TODO: Update name, className and placeholder -> Add ID  */}
 						<input
 							type="number"
 							name="metRating"
@@ -94,6 +100,7 @@ const FoodInput = () => {
 					</div>
 					<div className="macros">
 						<h3>Fats</h3>
+						{/* // TODO: Update name, className and placeholder -> Add ID  */}
 						<input
 							type="number"
 							name="metRating"
@@ -102,20 +109,23 @@ const FoodInput = () => {
 							onChange={handleInputChange}
 						/>
 					</div>
-                    <div className="servings">
-					<div className="servings-div">
-						<h3>Servings</h3>
-                        <button className='left'> - </button>
-						<input
-							type="number"
-							name="metRating"
-							className="met-rating"
-							placeholder={formData.metRating}
-							onChange={handleInputChange}
-						/>
-                        <button className='right'> + </button>
+					<div className="servings">
+						<div className="servings-div">
+							<h3>Servings</h3>
+							{/* // TODO: Add pointer to mouse */}
+							<button className="left"> - </button>
+							{/* // ? Might not need to be an input since there are increment and decrement buttons */}
+							{/* // TODO: Update name, className and placeholder -> Add ID */}
+							<input
+								type="number"
+								name="metRating"
+								className="met-rating"
+								placeholder={formData.metRating}
+								onChange={handleInputChange}
+							/>
+							<button className="right"> + </button>
+						</div>
 					</div>
-                    </div>
 					<div className="notes">
 						<h3>Notes</h3>
 						<textarea
