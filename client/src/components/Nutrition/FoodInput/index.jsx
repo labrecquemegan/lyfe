@@ -37,17 +37,17 @@ const FoodInput = () => {
 		}
 
 		// reset form data
-		// TODO: Update reset to match what is declared in formData
+		// * Update reset to match what is declared in formData
 		setFormData({
-			duration: '0',
-			intensity: '',
-			metRating: '0',
-			notes: 'Type your note here...',
+			calories: '',
+			protein: '',
+			carbohydrates: '',
+			fat: '',
 		});
 
 		// reset form values
-		// TODO: Update to grab nutrition form ID
-		document.getElementById('submit-exercise-form').reset();
+		// * Update to grab nutrition form ID
+		document.getElementById('submit-meal-form').reset();
 	};
 
 	// handle changes in the form
@@ -63,17 +63,18 @@ const FoodInput = () => {
 				<p>Log your meals and snacks!</p>
 			</div>
 			<div className="second-row">
-				{/* // TODO: Update ID and change in getElementById above  */}
-				<form id="submit-exercise-form" onSubmit={handleFormSubmit}>
+				{/* // * Update ID and change in getElementById above  */}
+				<form id="submit-meal-form" onSubmit={handleFormSubmit}>
 					<div className="time">
 						<h3>Calories</h3>
-						{/* // TODO: Update name, id, className and placeHolder  */}
+						{/* // * Update name, id, className and placeHolder  */}
 						<input
 							type="number"
-							name="duration"
-							id="duration"
+							name="calories"
+							id="calories-input"
+							// TODO: Update class time-counter to be descriptive of this form as well
 							className="time-counter"
-							placeholder={formData.duration}
+							placeholder={formData.calories}
 							onChange={handleInputChange}
 						/>
 					</div>
@@ -82,34 +83,34 @@ const FoodInput = () => {
 					</div>
 					<div className="macros">
 						<h3>Carbs</h3>
-						{/* // TODO: Update name, className and placeholder -> Add ID  */}
+						{/* // * Update name, className and placeholder -> Add ID  */}
 						<input
 							type="number"
-							name="metRating"
-							className="met-rating"
-							placeholder={formData.metRating}
+							name="carbohydrates"
+							id="carbohydrates-input"
+							placeholder={formData.carbohydrates}
 							onChange={handleInputChange}
 						/>
 					</div>
 					<div className="macros">
 						<h3>Protein</h3>
-						{/* // TODO: Update name, className and placeholder -> Add ID  */}
+						{/* // * Update name, className and placeholder -> Add ID  */}
 						<input
 							type="number"
-							name="metRating"
-							className="met-rating"
-							placeholder={formData.metRating}
+							name="protein"
+							id="protein-input"
+							placeholder={formData.protein}
 							onChange={handleInputChange}
 						/>
 					</div>
 					<div className="macros">
 						<h3>Fats</h3>
-						{/* // TODO: Update name, className and placeholder -> Add ID  */}
+						{/* // * Update name, className and placeholder -> Add ID  */}
 						<input
 							type="number"
-							name="metRating"
-							className="met-rating"
-							placeholder={formData.metRating}
+							name="fat"
+							id="fat-input"
+							placeholder={formData.fat}
 							onChange={handleInputChange}
 						/>
 					</div>
