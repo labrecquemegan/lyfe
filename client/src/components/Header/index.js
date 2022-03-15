@@ -15,6 +15,7 @@ const Header = ({ history, dimensions }) => {
 			setMenuState({ menuOpened: false });
 		});
 		if (menuState.menuOpened === true) {
+			window.scrollTo(0,0);
 			openMenu(dimensions.width);
 		} else if (menuState.menuOpened === false) {
 			closeMenu();

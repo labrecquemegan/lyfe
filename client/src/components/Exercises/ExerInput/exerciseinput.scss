@@ -13,6 +13,7 @@
 	}
 	@include media('<=phone') {
 		margin-top: 260px;
+		padding-top: 300px;
 	}
 	.rows {
 		flex-direction: column;
