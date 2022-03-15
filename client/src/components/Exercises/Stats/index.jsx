@@ -2,7 +2,6 @@ import React from 'react';
 import './style.scss';
 
 export default function Stats({ user }) {
-	console.log(user);
 	return (
 		<section className="stats-container">
 			<div className="row">
