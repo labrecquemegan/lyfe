@@ -3,7 +3,7 @@ import Calendar from '../components/Calendar/index';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import Stats from '../components/Mindfulness/Stats';
-import MindfulnessInput from '../components/Mindfulness/MindfulInput/index';
+import MindModal from '../components/Mindfulness/MindModal';
 
 const Mindfulness = () => {
 	const { loading, data } = useQuery(QUERY_ME, {
@@ -20,7 +20,7 @@ const Mindfulness = () => {
 				<div className="container">
 					<div>
 						<Stats user={user} />
-						<MindfulnessInput />
+						<MindModal />
 					</div>
 				</div>
 			</div>
