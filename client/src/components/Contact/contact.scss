@@ -1,0 +1,48 @@
+@import "../../styles/varibles.scss";
+
+.Everyone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 200px;
+}
+
+.Card {
+    width: 300px;
+    height: 480px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 10px 1px black;
+    margin-right: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.upper-container {
+    height: 100px;
+    background: $navgreen;
+}
+
+.image-container img {
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 5px;
+    transform: translate(95px, 45px);
+}
+
+.lower-container {
+    margin-top: 60px;
+    height: 300px;
+    background: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+button {
+    color: gray;
+    border-radius: 6px;
+    font: bold;
+}

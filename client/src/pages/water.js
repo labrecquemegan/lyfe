@@ -19,7 +19,7 @@ const Water = () => {
 					<div>
 						<Calendar />
 						<Wateranimation />
-						<p>Water Annimation goes here</p>
+						
 					</div>
 				</div>
 			</div>
