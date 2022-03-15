@@ -7,13 +7,6 @@ export default function UserBars({ user }) {
 	return (
 		<section className="userbars-container">
 			<div className="row">
-				<h2>
-					Welcome Back,
-					<span className="user-name">
-						{' '}
-						{`${user.first_name} ${user.last_name}!`}
-					</span>
-				</h2>
 				<div className="skills" id="skills" data-scroll-section>
 					<div>
 						<div className="skills-tree" data-scroll>

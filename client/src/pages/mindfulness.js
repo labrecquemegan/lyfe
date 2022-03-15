@@ -20,7 +20,7 @@ const Mindfulness = () => {
 				<div className="container">
 					<div>
 						<Stats user={user} />
-						<MindfulnessInput />
+						{/* <MindfulnessInput /> */}
 					</div>
 				</div>
 			</div>
