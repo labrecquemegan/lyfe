@@ -29,22 +29,6 @@ function Cell({ date, alpha }) {
   return <div className="timeline-cells-fill" style={style}></div>;
 }
 
-// reads the months
-// function Month({ startDate, index }) {
-//   let date = moment(startDate.add(index * 5, "day"));
-//   let monthName = date.format("MMM");
-
-//   let style = {
-//     display: 'flex',
-//     flexDirection: 'column',
-//     flexWrap: 'wrap',
-//     height: '#{(15 + 2) * 8}px',
-//   }
-//   return (
-//     <div className='timeline-months-month' style={style}>{monthName}</div>
-//   );
-// }
-
 // will show the weeks that include the 7 weekday names
 function WeekDay({ index }) {
     let style = {
@@ -64,10 +48,9 @@ function Timeline({ range, data }) {
   let days = Math.abs(range[0].diff(range[1], "days"));
   let cells = Array.from(new Array(days));
   let weekDays = Array.from(new Array(7));
-  // let months = Array.from(new Array(Math.floor(days/7)));
 
-  let min = Math.min(0, ...data.map((d) => d.value));
-  let max = Math.max(...data.map((d) => d.value));
+  let min = Math.min(0, ...data.map((d) => data.value));
+  let max = Math.max(...data.map((d) => data.value));
 
   let colorMultiplier = 1 / (max - min);
 
@@ -91,12 +74,7 @@ function Timeline({ range, data }) {
 
   return (
     <div className="timeline" style={timelineStyle}>
-      {/* <div className="timeline-months">
-        {months.map((_, index) => (
-          <Month key={index} index={index + 1} startDate={startDate} />
-        ))}
-      </div> */}
-
+  
       <div className="timeline-body">
         <div className="timeline-weekDays" style={style}>
           {weekDays.map((_, index) => (
