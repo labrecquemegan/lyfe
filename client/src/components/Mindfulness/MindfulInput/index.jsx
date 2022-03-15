@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_MINDFULNESS } from "../../../utils/mutations";
+import { ADD_MINDFULNESS } from '../../../utils/mutations';
 import './mindfulinput.scss';
 
-
 const MindfulnessInput = () => {
-
-    const [formData, setFormData] = useState({
-		duration: '0',
+	const [formData, setFormData] = useState({
+		duration: 0,
 	});
 
-    	// bring in addMindfulness mutation
+	// bring in addMindfulness mutation
 	const [addMindfulness, { error }] = useMutation(ADD_MINDFULNESS);
 
-    // handles submitting the form
-    const handleFormSubmit = async (event) => {
+	// handles submitting the form
+	const handleFormSubmit = async (event) => {
 		event.preventDefault();
 
+		console.log(formData);
 
 		try {
 			await addMindfulness({
@@ -24,20 +23,23 @@ const MindfulnessInput = () => {
 					duration: parseInt(formData.duration),
 				},
 			});
+
+			// reload the page
+			window.location.reload(false);
 		} catch (err) {
 			console.error(err);
 		}
 
 		// reset form data
 		setFormData({
-			duration: '0',
+			duration: 0,
 		});
 
 		// reset form values
 		document.getElementById('submit-mindful-form').reset();
 	};
 
-    	// handle changes in the form
+	// handle changes in the form
 	const handleInputChange = (event) => {
 		const { name, value } = event.target;
 		setFormData({ ...formData, [name]: value });
@@ -50,7 +52,7 @@ const MindfulnessInput = () => {
 				<p>Log your mindful activities!</p>
 			</div>
 			<div className="second-row">
-				<form id="submit-exercise-form" onSubmit={handleFormSubmit}>
+				<form id="submit-mindful-form" onSubmit={handleFormSubmit}>
 					<div className="time">
 						<h3>Time</h3>
 						<input

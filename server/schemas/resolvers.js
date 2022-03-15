@@ -81,9 +81,9 @@ const resolvers = {
 			throw new AuthenticationError('Not logged in');
 		},
 		// Add session to mindful_sessiosn
-		addMindfulness: async (parent, { duration, notes }, context) => {
+		addMindfulness: async (parent, args, context) => {
 			if (context.user) {
-				const session = await Mindfulness.create({ duration, notes });
+				const session = await Mindfulness.create(args);
 
 				await User.findByIdAndUpdate(context.user._id, {
 					$push: { mindful_sessions: session },
