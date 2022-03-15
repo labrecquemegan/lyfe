@@ -1,18 +1,30 @@
-import UserBars from '../components/Dashboard/UserBars'
+import UserBars from '../components/Dashboard/UserBars';
+import { useQuery } from '@apollo/client';
+import { QUERY_ME } from '../utils/queries';
 
+import Auth from '../utils/auth';
 
 const Dashboard = () => {
-  return (
-    <>
-    <div className='page'>
-      <div className='container'>
-        <div>
-          <UserBars />
-        </div>
-      </div>
-    </div>
-    </>
-  );
+	const { loading, data } = useQuery(QUERY_ME, {
+		nextFetchPolicy: 'cache-first',
+	});
+	const user = data?.me || [];
+
+	if (loading) {
+		return <div>Loading...</div>;
+	}
+
+	return (
+		<>
+			<div className="page">
+				<div className="container">
+					<div>
+						<UserBars user={user} />
+					</div>
+				</div>
+			</div>
+		</>
+	);
 };
 
 export default Dashboard;
