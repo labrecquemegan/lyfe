@@ -1,29 +1,68 @@
-@import '../../../styles/breakpoints.scss';
-@import '../../../styles/varibles.scss';
+@import "../../../styles/breakpoints.scss";
+@import "../../../styles/varibles.scss";
 
 .userinfo-container {
-	height: 50vh; //fallback option
-	height: calc(var(--vh, 1vh) * 50);
-	background-color: $white;
-	padding-top: 800px;
-	.row {
-		flex-direction: column;
-		justify-content: center;
-		text-align: center;
-		h2 {
-			font-size: 3rem;
-			line-height: 4.2rem;
-			font-weight: 700;
-			@include media('<=tablet') {
-				font-size: 2.4rem;
-				line-height: 3rem;
-			}
-			@include media('<=phone') {
-				margin-top: 72px;
-				font-size: 1.7rem;
-				line-height: 2.2rem;
-			}
-		}
+  height: 50vh; //fallback option
+  height: calc(var(--vh, 1vh) * 50);
+  background-color: $white;
+  padding-top: 630px;
+  .row {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    h2 {
+      font-size: 3rem;
+      line-height: 4.2rem;
+      font-weight: 700;
+      @include media("<=tablet") {
+        font-size: 2.4rem;
+        line-height: 3rem;
+      }
+      @include media("<=phone") {
+        margin-top: 72px;
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+      }
+    }
 
-	}
+    .user-info {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 100px;
+      h3 {
+        font-size: 2.3rem;
+        font-weight: 600;
+        @include media("<=tablet") {
+          font-size: 2.4rem;
+          line-height: 3rem;
+        }
+        @include media("<=phone") {
+          margin-top: 72px;
+          font-size: 1.7rem;
+          line-height: 2.2rem;
+        }
+      }
+
+      .user-row {
+        margin: 0 10px;
+
+        input {
+            font-size: 2rem;
+				font-weight: 500;
+				text-align: center;
+				width: 6rem;
+
+				@include media('<=tablet') {
+					font-size: 2rem;
+					line-height: 3rem;
+				}
+				@include media('<=phone') {
+					margin-top: 72px;
+					font-size: 1.7rem;
+					line-height: 2.2rem;
+				}
+        }
+      }
+    }
+  }
 }
