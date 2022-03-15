@@ -19,6 +19,7 @@
         }
         @include media("<=phone") {
           margin-top: 72px;
+          padding-top: 200px;
           font-size: 1.7rem;
           line-height: 2.2rem;
         }
@@ -40,6 +41,8 @@
           }
           @include media("<=phone") {
             font-size: 1.1rem;
+            padding-top: 10px;
+            margin-left: 130px;
           }
         }
         .streak {
@@ -54,6 +57,8 @@
           }
           @include media("<=phone") {
             font-size: 1.1rem;
+            padding-top: 10px;
+            margin-left: 90px;
           }
         }
         .total {
@@ -68,6 +73,8 @@
           }
           @include media("<=phone") {
             font-size: 1.1rem;
+            padding-top: 10px;
+            margin-left: 130px;
           }
         }
         .stats {
@@ -78,8 +85,9 @@
               }
               @include media("<=phone") {
                 display: flex;
-                flex-wrap: wrap;
-                margin-left: 40px;
+                flex-direction: column;
+                margin-left: 25px;
+                margin-top: 10px;
               }
         }
         .stat-boxes span {
