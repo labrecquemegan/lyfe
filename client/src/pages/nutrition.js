@@ -3,7 +3,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import CalStats from '../components/Nutrition/CalsStats';
-import FoodInput from '../components/Nutrition/FoodInput';
+import FoodModal from '../components/Nutrition/FoodModal';
 
 const Nutrition = () => {
 	const { loading, data } = useQuery(QUERY_ME, {
@@ -19,7 +19,7 @@ const Nutrition = () => {
 		<>
 			<div className="page">
 				<CalStats user={user} />
-				{/* <FoodInput /> */}
+				<FoodModal />
 			</div>
 		</>
 	);

@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import "./calendar.scss";
 
 const dayNames = {
   0: "S",
@@ -14,34 +15,17 @@ const dayNames = {
 
 // changes color of cell based on workload
 function Cell({ date, alpha }) {
-  let style = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    height: '20px',
-    width: '20px',
-    border: '1px solid rgba(0,0,0,0.1)',
-    margin: '2px',
-    borderRadius: '50px',
-    backgroundColor: `rgba(0, 256, 0, ${alpha})`,
-  };
+ let style = {
+        backgroundColor: `rgba(0, 256, 0, ${alpha})`
+    }
 
-  return <div className="timeline-cells-fill" style={style}></div>;
+  return <div className='timeline-cells-cell' style={style}></div>;
 }
 
 // will show the weeks that include the 7 weekday names
 function WeekDay({ index }) {
-    let style = {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        height: '#{(15 + 2) * 8}px',
-        margin: '1%',
-        justifyContent: 'space-evenly',
-        width: '20px'
-      }
-
-  return <div className="timeline-weekdays-weekday" style={style}>{dayNames[index]}</div>;
+  
+  return <div className='timeline-weekdays-weekday'>{dayNames[index]}</div>;
 }
 
 function Timeline({ range, data }) {
@@ -57,32 +41,16 @@ function Timeline({ range, data }) {
   let startDate = range[0];
   let dayFormat = "DDMMYYY";
 
-  let style = {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignContent: 'center',
-    alignItems: 'center',
-    height: 'height: #{(15 + 2) * 8}px',
-    maxWidth: '175px'
-  }
-
-  let timelineStyle = {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-  }
-
   return (
-    <div className="timeline" style={timelineStyle}>
-  
+    <div className='timeline'>
       <div className="timeline-body">
-        <div className="timeline-weekDays" style={style}>
+        <div className="timeline-weekdays">
           {weekDays.map((_, index) => (
             <WeekDay key={index} index={index} startDate={startDate} />
           ))}
         </div>
 
-        <div className="timeline-cells" style={style}>
+        <div className="timeline-cells">
           {cells.map((_, index) => {
             let date = moment(startDate).add(index, "day");
             let dataPoint = data.find(
@@ -102,10 +70,10 @@ function Timeline({ range, data }) {
 
 function App() {
   // 1 month range
-  let startDate = moment().add(-30, 'days');
+  let startDate = moment().add(-28, 'days');
   let dateRange = [startDate, moment()];
 
-  let data = Array.from(new Array(30)).map((_, index) => {
+  let data = Array.from(new Array(28)).map((_, index) => {
     return {
       date: moment(startDate).add(index, "day"),
       value: Math.floor(Math.random() * 100),

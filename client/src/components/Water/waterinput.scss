@@ -1,10 +1,11 @@
-@import '../../../styles/breakpoints.scss';
-@import '../../../styles/varibles.scss';
+@import '../../styles/breakpoints.scss';
+@import '../../styles/varibles.scss';
 
-.mindful-input-container {
+.water-input-container {
 	height: 50vh; //fallback option
 	height: calc(var(--vh, 1vh) * 50);
 	background-color: $white;
+	margin-top: 100px;
 	text-align: center;
 
 	@include media('<=tablet') {
@@ -49,37 +50,6 @@
 	}
 	.second-row {
 		margin: 100px 0;
-		.time {
-			h3 {
-				font-size: 2rem;
-				font-weight: 500;
-				@include media('<=tablet') {
-					font-size: 2rem;
-					line-height: 3rem;
-				}
-				@include media('<=phone') {
-					font-size: 1.7rem;
-					line-height: 2.2rem;
-				}
-			}
-
-			.time-counter {
-				font-size: 2rem;
-				font-weight: 500;
-				text-align: center;
-				width: 6rem;
-
-				@include media('<=tablet') {
-					font-size: 2rem;
-					line-height: 3rem;
-				}
-				@include media('<=phone') {
-					margin-top: 72px;
-					font-size: 1.7rem;
-					line-height: 2.2rem;
-				}
-			}
-		}
 
 			input {
 				font-size: 2rem;
@@ -98,6 +68,52 @@
 				}
 			}
 		}
+		.custom-amount {
+			h3 {
+				font-size: 2rem;
+				font-weight: 500;
+				@include media('<=tablet') {
+					font-size: 2rem;
+					line-height: 3rem;
+				}
+				@include media('<=phone') {
+					font-size: 1.7rem;
+					line-height: 2.2rem;
+				}
+			}
+
+			.amount-counter {
+				font-size: 2rem;
+				font-weight: 500;
+				text-align: center;
+				width: 6rem;
+
+				@include media('<=tablet') {
+					font-size: 2rem;
+					line-height: 3rem;
+				}
+				@include media('<=phone') {
+					margin-top: 72px;
+					font-size: 1.7rem;
+					line-height: 2.2rem;
+				}
+			}
+		}
+
+
+		.amount {
+			h3 {
+				font-size: 2rem;
+				font-weight: 500;
+				@include media('<=tablet') {
+					font-size: 2rem;
+					line-height: 3rem;
+				}
+				@include media('<=phone') {
+					font-size: 1.7rem;
+					line-height: 2.2rem;
+				}
+			}
 
 			button {
 				color: #000000;
@@ -119,7 +135,6 @@
 				}
 			}
 		}
-
 
 		.add-button {
 			button {
@@ -136,14 +151,15 @@
 				transition: all 0.3s ease 0s;
 				margin-right: 30px;
 				margin-top: 30px;
-				text-align: center;
+
 				&:hover {
 					transform: translate(0, 5px);
 					background-color: rgb(216, 243, 220, 0.8);
 				}
 			}
 		}
-	
+	}
+
 // Radio buttons
 
 .radio-toolbar input[type='radio'] {
