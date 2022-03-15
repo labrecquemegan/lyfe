@@ -5,13 +5,13 @@
 	height: 50vh; //fallback option
 	height: calc(var(--vh, 1vh) * 50);
 	background-color: $white;
-	padding-top: 450px;
+	padding-top: 400px;
 	.row {
 		flex-direction: column;
 		justify-content: center;
 		text-align: center;
 		h2 {
-			font-size: 3rem;
+			font-size: 2.4rem;
 			line-height: 4.2rem;
 			font-weight: 700;
 			@include media('<=tablet') {
@@ -27,7 +27,7 @@
 
 		.skills {
 			h2 {
-				font-size: 2.5rem;
+				font-size: 2.4rem;
 				font-weight: 600;
 				text-align: center;
 
