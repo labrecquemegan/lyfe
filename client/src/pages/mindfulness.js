@@ -1,12 +1,17 @@
 import React from "react";
-import Calendar from '../components/Calendar/index';
-import YogaBars from '../components/Mindfulness/YogaBars'
+import Calendar from "../components/Calendar/index";
+import YogaBars from "../components/Mindfulness/YogaBars";
+import MindfulnessInput from "../components/Mindfulness/MindfulInput/index";
 
 const Mindfulness = () => {
   return (
     <>
       <div className="page">
-         <YogaBars />
+        <div className="container">
+          <div>
+            <MindfulnessInput />
+          </div>
+        </div>
       </div>
     </>
   );
