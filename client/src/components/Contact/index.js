@@ -86,20 +86,6 @@ const Contact = () => {
                 </div>
             </div>
         </div>
-        
-
-        
-
-		// <div>
-        //     <h1>Meet the developers!</h1>
-        //     <a href='https://github.com/awidener3'>Alex Widener!</a>
-        //     <div></div>
-        //     <a href='https://github.com/awidener3'>Alex Borges!</a>
-        //     <div></div>
-        //     <a href='https://github.com/awidener3'>Megan Labrecque!</a>
-        //     <div></div>
-        //     <a href='https://github.com/awidener3'>Javier Mariscal!</a>
-        // </div>
 	);
 };
 
