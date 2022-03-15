@@ -77,11 +77,11 @@ const ExerciseInput = () => {
 								type="radio"
 								id="radioLight"
 								name="intensity"
-								value="light"
+								value="low"
 								onChange={handleInputChange}
 								defaultChecked
 							/>
-							<label htmlFor="radioLight">Light</label>
+							<label htmlFor="radioLight">Low</label>
 
 							<input
 								type="radio"
