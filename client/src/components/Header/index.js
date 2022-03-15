@@ -15,7 +15,7 @@ const Header = ({ history, dimensions }) => {
 			setMenuState({ menuOpened: false });
 		});
 		if (menuState.menuOpened === true) {
-			window.scrollTo(0,0);
+			window.scrollTo(0, 0);
 			openMenu(dimensions.width);
 		} else if (menuState.menuOpened === false) {
 			closeMenu();
@@ -28,7 +28,7 @@ const Header = ({ history, dimensions }) => {
 				<div className="row v-center space-between">
 					<div className="logo">
 						<NavLink to="/" exact>
-							<img src={logo} />
+							<img src={logo} alt="lyfe logo" />
 						</NavLink>
 					</div>
 					<div className="nav-toggle">
