@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 // import Calendar from '../components/Calendar/index';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import CalStats from '../components/Nutrition/CalsStats';
 import FoodInput from '../components/Nutrition/FoodInput';
-
-import Auth from '../utils/auth';
 
 const Nutrition = () => {
 	const { loading, data } = useQuery(QUERY_ME, {
