@@ -14,6 +14,10 @@ const Nutrition = () => {
 	});
 	const user = data?.me || [];
 
+	if (loading) {
+		return <div>Loading...</div>;
+	}
+
 	return (
 		<>
 			<div className="page">

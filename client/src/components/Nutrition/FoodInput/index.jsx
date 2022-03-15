@@ -21,6 +21,7 @@ const FoodInput = () => {
 		event.preventDefault();
 
 		try {
+			// add meal to user
 			await addMeal({
 				variables: {
 					calories: parseInt(formData.calories),
@@ -29,6 +30,9 @@ const FoodInput = () => {
 					fat: parseInt(formData.fat),
 				},
 			});
+
+			// reload the page
+			window.location.reload(false);
 		} catch (err) {
 			console.error(err);
 		}
@@ -52,12 +56,6 @@ const FoodInput = () => {
 		setFormData({ ...formData, [name]: value });
 	};
 
-	const handleIncrement = () => {
-		setFormData(() => formData.servings++);
-	};
-
-	const handleDecrement = () => {};
-
 	return (
 		<section className="nutrition-input-container">
 			<div className="rows">
@@ -72,7 +70,6 @@ const FoodInput = () => {
 							type="number"
 							name="calories"
 							id="calories-input"
-							// TODO: Update class time-counter to be descriptive of this form as well
 							className="time-counter"
 							value={formData.calories}
 							min={0}
