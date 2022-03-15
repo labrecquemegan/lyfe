@@ -1,3 +1,5 @@
+import UserBars from '../components/Dashboard/UserBars'
+
 
 const Dashboard = () => {
   return (
@@ -5,9 +7,7 @@ const Dashboard = () => {
     <div className='page'>
       <div className='container'>
         <div>
-          
-    {/* inputs */}
-
+          <UserBars />
         </div>
       </div>
     </div>
