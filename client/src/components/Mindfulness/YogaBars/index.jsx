@@ -1,7 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_EXERCISE } from "../../../utils/mutations";
 import "./yogabars.scss";
 
 export default function Yogabars() {
+  // declare state of formData
+  const [formData, setFormData] = useState({
+    duration: "0",
+    intensity: "",
+    metRating: "0",
+    notes: "Type your note here...",
+  });
+
+  // bring in addExercise mutation
+  const [addExercise, { error }] = useMutation(ADD_EXERCISE);
+
+  // handle submitting the form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await addExercise({
+        variables: {
+          duration: parseInt(formData.duration),
+          intensity: formData.intensity,
+          metRating: parseInt(formData.metRating),
+          notes: formData.notes,
+        },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+
+    // reset form data
+    setFormData({
+      duration: "0",
+      intensity: "",
+      metRating: "0",
+      notes: "Type your note here...",
+    });
+
+    // reset form values
+    document.getElementById("submit-exercise-form").reset();
+  };
+
+  // handle changes in the form
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <section className="yoga-container">
       <div className="row">
@@ -35,6 +83,18 @@ export default function Yogabars() {
                   <h2>Recommended</h2>
                   <p>Poses recommended to your skill level</p>
                 </div>
+              </div>
+
+              <div className="duration">
+                <h2>Duration</h2>
+                <input
+                  type="number"
+                  name="duration"
+                  id="duration"
+                  className="time-counter"
+                  placeholder={formData.duration}
+                  onChange={handleInputChange}
+                />
               </div>
             </div>
           </div>
