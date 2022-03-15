@@ -5,7 +5,6 @@
   height: 50vh; //fallback option
   height: calc(var(--vh, 1vh) * 50);
   background-color: $white;
-  padding-top: 630px;
   .row {
     flex-direction: column;
     justify-content: center;
@@ -28,7 +27,7 @@
     .user-info {
       display: flex;
       flex-direction: row;
-      padding-bottom: 100px;
+      justify-content: center;
       h3 {
         font-size: 2.3rem;
         font-weight: 600;
@@ -45,6 +44,7 @@
 
       .user-row {
         margin: 0 10px;
+        
 
         input {
             font-size: 2rem;
