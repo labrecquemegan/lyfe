@@ -19,7 +19,7 @@ const Nutrition = () => {
 		<>
 			<div className="page">
 				<CalStats user={user} />
-				<FoodInput />
+				{/* <FoodInput /> */}
 			</div>
 		</>
 	);

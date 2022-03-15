@@ -58,12 +58,12 @@ export default function UserMeters({ user }) {
 								})}
 							>
 								<div style={{ width: '80%' }}>
-									{/* NUTRITION RING */}
+									{/* EXERCISE RING */}
 									<CircularProgressbarWithChildren
 										value={
-											caloriePercentage === 0
+											exercisePercentage === 0
 												? 1
-												: caloriePercentage
+												: exercisePercentage
 										}
 										strokeWidth={10}
 										styles={buildStyles({
@@ -72,11 +72,12 @@ export default function UserMeters({ user }) {
 										})}
 									>
 										<div style={{ width: '76%' }}>
+											{/* NUTRITION RING */}
 											<CircularProgressbar
 												value={
-													exercisePercentage === 0
+													caloriePercentage === 0
 														? 1
-														: exercisePercentage
+														: caloriePercentage
 												}
 												strokeWidth={12}
 												styles={buildStyles({
