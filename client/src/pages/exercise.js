@@ -10,7 +10,7 @@ const Exercise = () => {
       <div className='container'>
         <div>
           <Stats />
-          <Workouts />
+          {/* <Workouts /> */}
           <ExerciseInput />
         </div>
       </div>

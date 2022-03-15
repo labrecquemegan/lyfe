@@ -1,4 +1,5 @@
 import UserBars from '../components/Dashboard/UserBars';
+import UserInfo from '../components/Dashboard/UserInfo';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 
@@ -18,9 +19,8 @@ const Dashboard = () => {
 		<>
 			<div className="page">
 				<div className="container">
-					<div>
 						<UserBars user={user} />
-					</div>
+						<UserInfo user={user} />
 				</div>
 			</div>
 		</>
