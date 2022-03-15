@@ -1,31 +1,45 @@
 import React from 'react';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import './style.scss';
 
 export default function Stats({ user }) {
+	const percentage =
+		(user.exercise_stats.todays_exercise_duration / user.exercise_goal) *
+		100;
+
+	const getProgressStatus = () => {
+		return user.exercise_stats.todays_exercise_duration >=
+			user.exercise_goal
+			? '#b5e48c'
+			: user.exercise_stats.todays_exercise_duration > 0
+			? '#e4e38c'
+			: '#e48c8c';
+	};
+
+	const dynamicBackgroundColor = getProgressStatus();
 	return (
 		<section className="stats-container">
 			<div className="row">
 				<h2>Your Exercise Statistics</h2>
-
-				<div className="main-stat-container">
-					{/* conditionally render background color based on duration */}
-					<div className="days">
-						<h3>Todays Progress (minutes)</h3>
-					</div>
-					<div
-						className={
-							user.exercise_stats.todays_exercise_duration >=
-							user.exercise_goal
-								? 'main-stat completed'
-								: user.exercise_stats.todays_exercise_duration >
-								  0
-								? 'main-stat in-progress'
-								: 'main-stat not-started'
-						}
-					>
-						{user.exercise_stats.todays_exercise_duration}/
-						<span>{user.exercise_goal}</span>
-					</div>
+				{/* conditionally render background color based on duration */}
+				<div className="days">
+					<h3>Todays Progress (minutes)</h3>
+				</div>
+				<div className="progress-bar">
+					<CircularProgressbar
+						value={percentage}
+						text={`${user.exercise_stats.todays_exercise_duration}/${user.exercise_goal}`}
+						background
+						backgroundPadding={6}
+						styles={buildStyles({
+							// backgroundColor: '#3e98c7',
+							backgroundColor: `${dynamicBackgroundColor}`,
+							textColor: '#fff',
+							pathColor: '#fff',
+							trailColor: 'transparent',
+						})}
+					/>
 				</div>
 				<div className="extra-stats-container">
 					<h3 className="extra-stats-title">Extra Stats</h3>

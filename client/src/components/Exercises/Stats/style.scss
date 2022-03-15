@@ -6,6 +6,10 @@
 	height: calc(var(--vh, 1vh) * 50);
 	padding-top: 400px;
 	background-color: $white;
+	.progress-bar {
+		width: 200px;
+		height: 200px;
+	}
 	.row {
 		flex-direction: column;
 		justify-content: center;
@@ -13,7 +17,7 @@
 			text-align: center;
 			.main-stat {
 				font-size: 4rem;
-				background-color: #999999;
+				background-color: #5d5c5c;
 				padding: 20px 10px;
 				border-radius: 1rem;
 				span {
