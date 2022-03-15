@@ -76,41 +76,43 @@ const FoodInput = () => {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div className="macros-title">
-						<h3>Macros</h3>
-					</div>
-					<div className="macros">
-						<h3>Carbs</h3>
-						<input
-							type="number"
-							name="carbohydrates"
-							id="carbohydrates-input"
-							value={formData.carbohydrates}
-							min={0}
-							onChange={handleInputChange}
-						/>
-					</div>
-					<div className="macros">
-						<h3>Protein</h3>
-						<input
-							type="number"
-							name="protein"
-							id="protein-input"
-							value={formData.protein}
-							min={0}
-							onChange={handleInputChange}
-						/>
-					</div>
-					<div className="macros">
-						<h3>Fats</h3>
-						<input
-							type="number"
-							name="fat"
-							id="fat-input"
-							value={formData.fat}
-							min={0}
-							onChange={handleInputChange}
-						/>
+					<div className="macros-container">
+						<div className="macros-title">
+							<h3>Macros</h3>
+						</div>
+						<div className="macros">
+							<h3>Carbs</h3>
+							<input
+								type="number"
+								name="carbohydrates"
+								id="carbohydrates-input"
+								value={formData.carbohydrates}
+								min={0}
+								onChange={handleInputChange}
+							/>
+						</div>
+						<div className="macros">
+							<h3>Protein</h3>
+							<input
+								type="number"
+								name="protein"
+								id="protein-input"
+								value={formData.protein}
+								min={0}
+								onChange={handleInputChange}
+							/>
+						</div>
+						<div className="macros">
+							<h3>Fats</h3>
+							<input
+								type="number"
+								name="fat"
+								id="fat-input"
+								value={formData.fat}
+								min={0}
+								onChange={handleInputChange}
+							/>
+						</div>
 					</div>
 					<div className="servings">
 						<div className="servings-div">

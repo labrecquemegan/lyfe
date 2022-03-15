@@ -72,14 +72,15 @@
 				transition-property: background-color;
 				transition-timing-function: ease-out;
 
+				width: 50rem;
 				border-radius: 1rem;
 				margin: 5px 0;
 				padding: 10px 20px;
-				background-color: rgb(181, 228, 140, 1);
+				background-color: #cacaca;
 				border-radius: 1em;
 
 				&:hover {
-					background-color: rgb(181, 228, 140, 0.7);
+					background-color: rgba(119, 119, 119, 0.7);
 					border-radius: 1em;
 				}
 
@@ -88,6 +89,9 @@
 					display: flex;
 					align-items: center;
 				}
+			}
+			.completed {
+				background-color: #b5e48c;
 			}
 		}
 	}

@@ -17,11 +17,21 @@ export default function UserBars({ user }) {
 				<div className="skills" id="skills" data-scroll-section>
 					<div>
 						<div className="skills-tree" data-scroll>
-							<a className="skill" href="/exercises">
-								<div className="skill-title">
-									<div>
-										<h2>Exercise</h2>
-									</div>
+							<a
+								className={
+									user.exercise_stats
+										.todays_exercise_duration >=
+									user.exercise_goal
+										? 'skill completed'
+										: 'skill'
+								}
+								href="/exercises"
+							>
+								{/* Exercise bar */}
+								<h2>Exercise</h2>
+
+								{user.exercise_stats.todays_exercise_duration >=
+								user.exercise_goal ? (
 									<IconContext.Provider
 										value={{
 											color: 'green',
@@ -33,22 +43,95 @@ export default function UserBars({ user }) {
 											<AiFillCheckCircle />
 										</div>
 									</IconContext.Provider>
-								</div>
+								) : (
+									<></>
+								)}
 							</a>
-							<a className="skill" href="/mindfulness">
-								<div className="skill-title">
-									<h2>Mindfulness</h2>
-								</div>
+							{/* Mindfulness bar */}
+							<a
+								className={
+									user.mindfulness_stats
+										.todays_mindful_duration >=
+									user.mindful_goal
+										? 'skill completed'
+										: 'skill'
+								}
+								href="/mindfulness"
+							>
+								<h2>Mindfulness</h2>
+								{user.mindfulness_stats
+									.todays_mindful_duration >=
+								user.mindful_goal ? (
+									<IconContext.Provider
+										value={{
+											color: 'green',
+											className: 'global-class-name',
+											size: '3.5rem',
+										}}
+									>
+										<div className="check">
+											<AiFillCheckCircle />
+										</div>
+									</IconContext.Provider>
+								) : (
+									<></>
+								)}
 							</a>
-							<a className="skill" href="water">
-								<div className="skill-title">
-									<h2>Water</h2>
-								</div>
+							{/* Water bar */}
+							<a
+								className={
+									user.water_stats.todays_water_intake >=
+									user.water_goal
+										? 'skill completed'
+										: 'skill'
+								}
+								href="water"
+							>
+								<h2>Water</h2>
+								{user.water_stats.todays_water_intake >=
+								user.water_goal ? (
+									<IconContext.Provider
+										value={{
+											color: 'green',
+											className: 'global-class-name',
+											size: '3.5rem',
+										}}
+									>
+										<div className="check">
+											<AiFillCheckCircle />
+										</div>
+									</IconContext.Provider>
+								) : (
+									<></>
+								)}
 							</a>
-							<a className="skill" href="nutrition">
-								<div className="skill-title">
-									<h2>Nutrition</h2>
-								</div>
+							{/* Nutrition bar */}
+							<a
+								className={
+									user.nutrition_stats.todays_calories >=
+									user.calorie_goal
+										? 'skill completed'
+										: 'skill'
+								}
+								href="nutrition"
+							>
+								<h2>Nutrition</h2>
+								{user.nutrition_stats.todays_calories >=
+								user.calorie_goal ? (
+									<IconContext.Provider
+										value={{
+											color: 'green',
+											className: 'global-class-name',
+											size: '3.5rem',
+										}}
+									>
+										<div className="check">
+											<AiFillCheckCircle />
+										</div>
+									</IconContext.Provider>
+								) : (
+									<></>
+								)}
 							</a>
 						</div>
 					</div>
