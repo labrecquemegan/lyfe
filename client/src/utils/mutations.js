@@ -77,3 +77,16 @@ export const ADD_MEAL = gql`
 		}
 	}
 `;
+
+export const ADD_MINDFULNESS = gql`
+	mutation addMindfulness(
+		$duration: Int!
+	) {
+		addMindfulness(
+			duration: $duration
+		) {
+			_id
+			duration
+		}
+	}
+`;
