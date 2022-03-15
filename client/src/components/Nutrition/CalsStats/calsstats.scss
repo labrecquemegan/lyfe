@@ -1,83 +1,88 @@
-@import "../../../styles/breakpoints.scss";
-@import "../../../styles/varibles.scss";
+@import '../../../styles/breakpoints.scss';
+@import '../../../styles/varibles.scss';
 
 .calstats-container {
-  height: 50vh; //fallback option
-  height: calc(var(--vh, 1vh) * 50);
-  background-color: $white;
-  padding-top: 100px;
-  text-align: center;
-  .row {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    h2 {
-      font-size: 3rem;
-      line-height: 4.2rem;
-      font-weight: 700;
-      @include media("<=tablet") {
-        font-size: 2.4rem;
-        line-height: 3rem;
-      }
-      @include media("<=phone") {
-        margin-top: 72px;
-        font-size: 1.7rem;
-        line-height: 2.2rem;
-      }
-    }
-  }
+	height: 50vh; //fallback option
+	height: calc(var(--vh, 1vh) * 50);
+	background-color: $white;
+	padding-top: 100px;
+	text-align: center;
+	.row {
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		h2 {
+			font-size: 3rem;
+			line-height: 4.2rem;
+			font-weight: 700;
+			@include media('<=tablet') {
+				font-size: 2.4rem;
+				line-height: 3rem;
+			}
+			@include media('<=phone') {
+				margin-top: 72px;
+				font-size: 1.7rem;
+				line-height: 2.2rem;
+			}
+		}
+		.total-calories {
+			font-size: 3rem;
+			font-weight: 700;
+			text-align: center;
+		}
+	}
 
-  .todays-cals {
-    h2 {
-      font-size: 2.4rem;
-      line-height: 4.2rem;
-      font-weight: 700;
-      @include media("<=tablet") {
-        font-size: 2.4rem;
-        line-height: 3rem;
-      }
-      @include media("<=phone") {
-        margin-top: 72px;
-        font-size: 1.7rem;
-        line-height: 2.2rem;
-      }
-    }
+	.todays-cals {
+		h2 {
+			font-size: 2.4rem;
+			line-height: 4.2rem;
+			font-weight: 700;
+			@include media('<=tablet') {
+				font-size: 2.4rem;
+				line-height: 3rem;
+			}
+			@include media('<=phone') {
+				margin-top: 72px;
+				font-size: 1.7rem;
+				line-height: 2.2rem;
+			}
+		}
 
-    input {
-      width: 300px;
-      height: 100px;
-    }
-  }
+		input {
+			width: 300px;
+			height: 100px;
+		}
+	}
 
-  .remaining-cals {
-    h2 {
-      font-size: 2.4rem;
-      line-height: 4.2rem;
-      font-weight: 700;
-      @include media("<=tablet") {
-        font-size: 2.4rem;
-        line-height: 3rem;
-      }
-      @include media("<=phone") {
-        margin-top: 72px;
-        font-size: 1.7rem;
-        line-height: 2.2rem;
-      }
-    }
+	.remaining-cals {
+		h2 {
+			font-size: 2.4rem;
+			line-height: 4.2rem;
+			font-weight: 700;
+			@include media('<=tablet') {
+				font-size: 2.4rem;
+				line-height: 3rem;
+			}
+			@include media('<=phone') {
+				margin-top: 72px;
+				font-size: 1.7rem;
+				line-height: 2.2rem;
+			}
+		}
 
-    span {
-      font-size: 2.4rem;
-      font-weight: 500;
-      color: orange;
-      @include media("<=tablet") {
-        font-size: 2.4rem;
-        line-height: 3rem;
-      }
-      @include media("<=phone") {
-        margin-top: 72px;
-        font-size: 1.7rem;
-        line-height: 2.2rem;
-      }
-    }
-  }
+		span {
+			font-size: 2.4rem;
+			font-weight: 500;
+			color: orange;
+			@include media('<=tablet') {
+				font-size: 2.4rem;
+				line-height: 3rem;
+			}
+			@include media('<=phone') {
+				margin-top: 72px;
+				font-size: 1.7rem;
+				line-height: 2.2rem;
+			}
+		}
+	}
 }

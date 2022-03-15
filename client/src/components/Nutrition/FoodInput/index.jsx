@@ -6,10 +6,11 @@ import './foodinput.scss';
 const FoodInput = () => {
 	// declare state of formData
 	const [formData, setFormData] = useState({
-		calories: '',
-		protein: '',
-		carbohydrates: '',
-		fat: '',
+		calories: 0,
+		protein: 0,
+		carbohydrates: 0,
+		fat: 0,
+		servings: 0,
 	});
 
 	// bring in addMeal mutation
@@ -20,6 +21,7 @@ const FoodInput = () => {
 		event.preventDefault();
 
 		try {
+			// add meal to user
 			await addMeal({
 				variables: {
 					calories: parseInt(formData.calories),
@@ -28,6 +30,9 @@ const FoodInput = () => {
 					fat: parseInt(formData.fat),
 				},
 			});
+
+			// reload the page
+			window.location.reload(false);
 		} catch (err) {
 			console.error(err);
 		}
@@ -38,6 +43,7 @@ const FoodInput = () => {
 			protein: '',
 			carbohydrates: '',
 			fat: '',
+			servings: '0',
 		});
 
 		// reset form values
@@ -64,9 +70,9 @@ const FoodInput = () => {
 							type="number"
 							name="calories"
 							id="calories-input"
-							// TODO: Update class time-counter to be descriptive of this form as well
 							className="time-counter"
-							placeholder={formData.calories}
+							value={formData.calories}
+							min={0}
 							onChange={handleInputChange}
 						/>
 					</div>
@@ -79,7 +85,8 @@ const FoodInput = () => {
 							type="number"
 							name="carbohydrates"
 							id="carbohydrates-input"
-							placeholder={formData.carbohydrates}
+							value={formData.carbohydrates}
+							min={0}
 							onChange={handleInputChange}
 						/>
 					</div>
@@ -89,7 +96,8 @@ const FoodInput = () => {
 							type="number"
 							name="protein"
 							id="protein-input"
-							placeholder={formData.protein}
+							value={formData.protein}
+							min={0}
 							onChange={handleInputChange}
 						/>
 					</div>
@@ -99,25 +107,23 @@ const FoodInput = () => {
 							type="number"
 							name="fat"
 							id="fat-input"
-							placeholder={formData.fat}
+							value={formData.fat}
+							min={0}
 							onChange={handleInputChange}
 						/>
 					</div>
 					<div className="servings">
 						<div className="servings-div">
 							<h3>Servings</h3>
-							{/* // TODO: Add pointer to mouse */}
-							<button className="left"> - </button>
-							{/* // ? Might not need to be an input since there are increment and decrement buttons */}
-							{/* // TODO: Update name, className and placeholder -> Add ID */}
 							<input
 								type="number"
-								name="metRating"
-								className="met-rating"
-								placeholder={formData.metRating}
+								id="servings-input"
+								name="servings"
+								value={formData.servings}
+								min={0}
+								max={20}
 								onChange={handleInputChange}
 							/>
-							<button className="right"> + </button>
 						</div>
 					</div>
 					<div className="notes">
