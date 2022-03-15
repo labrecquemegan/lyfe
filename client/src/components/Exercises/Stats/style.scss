@@ -2,108 +2,112 @@
 @import '../../../styles/varibles.scss';
 
 .stats-container {
-    height: 50vh; //fallback option
-    height: calc(var(--vh, 1vh) * 50);
-    background-color: $white;
-    .row {
-      flex-direction: column;
-      justify-content: center;
-      h2 {
-        font-size: 3rem;
-        line-height: 4.2rem;
-        font-weight: 700;
-        z-index: 10;
-        @include media("<=tablet") {
-          font-size: 2.4rem;
-          line-height: 3rem;
-        }
-        @include media("<=phone") {
-          margin-top: 72px;
-          padding-top: 200px;
-          font-size: 1.7rem;
-          line-height: 2.2rem;
-        }
-      }
-      .btn-row {
-        position: relative;
-        text-align: center;
-        z-index: 2;
-        width: 400px;
-        .days {
-            font-size: 1.6rem;
-          color: $black;
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          font-weight: 600;
-          @include media("<=tablet") {
-            font-size: 1.3rem;
-          }
-          @include media("<=phone") {
-            font-size: 1.1rem;
-            padding-top: 10px;
-            margin-left: 130px;
-          }
-        }
-        .streak {
-            font-size: 1.4rem;
-          color: $black;
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          font-weight: 600;
-          @include media("<=tablet") {
-            font-size: 1.3rem;
-          }
-          @include media("<=phone") {
-            font-size: 1.1rem;
-            padding-top: 10px;
-            margin-left: 90px;
-          }
-        }
-        .total {
-            font-size: 1.6rem;
-          color: $black;
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          font-weight: 600;
-          @include media("<=tablet") {
-            font-size: 1.3rem;
-          }
-          @include media("<=phone") {
-            font-size: 1.1rem;
-            padding-top: 10px;
-            margin-left: 130px;
-          }
-        }
-        .stats {
-            display: flex;
-            margin: 0 10px;
-            @include media("<=tablet") {
-                font-size: 1.3rem;
-              }
-              @include media("<=phone") {
-                display: flex;
-                flex-direction: column;
-                margin-left: 25px;
-                margin-top: 10px;
-              }
-        }
-        .stat-boxes span {
-            color: #000000;
-            font-weight: 500;
-            font-size: 1.4rem;
-            line-height: 25px;
-            outline: none;
-            padding: 9px 25px;
-            background-color: #f3d8d8;
-            border: none;
-            border-radius: 75px;
-            transition: all 0.3s ease 0s;
-            margin: 0 30px;
-        }
-      }
-    }
-  }
-  
+	height: 50vh; //fallback option
+	height: calc(var(--vh, 1vh) * 50);
+	background-color: $white;
+	.row {
+		flex-direction: column;
+		justify-content: center;
+		h2 {
+			font-size: 3rem;
+			line-height: 4.2rem;
+			font-weight: 700;
+			z-index: 10;
+			@include media('<=tablet') {
+				font-size: 2.4rem;
+				line-height: 3rem;
+			}
+			@include media('<=phone') {
+				margin-top: 72px;
+				padding-top: 200px;
+				font-size: 1.7rem;
+				line-height: 2.2rem;
+			}
+		}
+		.btn-row {
+			position: relative;
+			text-align: center;
+			z-index: 2;
+			width: 400px;
+			.days {
+				font-size: 1.6rem;
+				color: $black;
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+				font-weight: 600;
+				@include media('<=tablet') {
+					font-size: 1.3rem;
+				}
+				@include media('<=phone') {
+					font-size: 1.1rem;
+					padding-top: 10px;
+					margin-left: 130px;
+				}
+			}
+			.streak {
+				font-size: 1.4rem;
+				color: $black;
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+				font-weight: 600;
+				@include media('<=tablet') {
+					font-size: 1.3rem;
+				}
+				@include media('<=phone') {
+					font-size: 1.1rem;
+					padding-top: 10px;
+					margin-left: 90px;
+				}
+			}
+			.total {
+				font-size: 1.6rem;
+				color: $black;
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+				font-weight: 600;
+				@include media('<=tablet') {
+					font-size: 1.3rem;
+				}
+				@include media('<=phone') {
+					font-size: 1.1rem;
+					padding-top: 10px;
+					margin-left: 130px;
+				}
+			}
+			.stats {
+				display: flex;
+				margin: 0 10px;
+				@include media('<=tablet') {
+					font-size: 1.3rem;
+				}
+				@include media('<=phone') {
+					display: flex;
+					flex-direction: column;
+					margin-left: 25px;
+					margin-top: 10px;
+				}
+			}
+			.stat-boxes span {
+				color: #000000;
+				font-weight: 500;
+				font-size: 1.4rem;
+				line-height: 25px;
+				outline: none;
+				padding: 9px 25px;
+				background-color: #f3d8d8;
+				border: none;
+				border-radius: 75px;
+				transition: all 0.3s ease 0s;
+				margin: 0 30px;
+			}
+		}
+		.goal-div {
+			background-color: rgb(181, 228, 140, 1);
+			padding: 10px 20px;
+			border-radius: 1em;
+		}
+	}
+}
