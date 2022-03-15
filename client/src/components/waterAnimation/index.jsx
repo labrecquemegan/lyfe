@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './waterAnimation.css';
-import { setGaugeValue } from "./moving.js";
+import './waterAnimation.scss';
+import { setGaugeValue } from "./moving";
 
 
-const Water = () => {
+const WaterAnimation = () => {
 
 		const [data, setData] = useState(null);
 		const [print, setPrint] = useState(false);
@@ -17,6 +17,7 @@ const Water = () => {
 		}
 
 		return (
+            <section className="container">
 			<div className = "gauge">
 				<div className = "gauge__body"> 
 					<div className="gauge__fill" ></div>
@@ -43,7 +44,8 @@ const Water = () => {
 				
 				
 			</div>
+            </section>
 		)
 };
 
-export default Water;
+export default WaterAnimation;

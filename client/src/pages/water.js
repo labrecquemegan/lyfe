@@ -1,25 +1,18 @@
 import React from 'react';
 import Calendar from '../components/Calendar/index';
-import Wateranimation from '../components/waterAnimation/index';
+import WaterAnimation from '../components/waterAnimation/index';
+import WaterInput from '../components/Water/waterinput'
 
-let style = {
-	display: 'flex',
-	flexWrap: 'wrap',
-	flexDirection: 'row',
-	alignContent: 'center',
-	alignItems: 'center',
-	justifyContent: 'center',
-};
+
 
 const Water = () => {
 	return (
 		<>
 			<div className="page">
-				<div className="container" style={style}>
+				<div className="container">
 					<div>
 						<Calendar />
-						<Wateranimation />
-						
+						<WaterInput />
 					</div>
 				</div>
 			</div>
