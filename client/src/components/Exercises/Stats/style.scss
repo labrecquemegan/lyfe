@@ -1,33 +1,44 @@
 @import '../../../styles/breakpoints.scss';
 @import '../../../styles/varibles.scss';
 
+$green: #81db7e;
+$yellow: #e4e38c;
+$red: #e48c8c;
+$gray: #999999;
+$orange: #ffae18;
+
 .stats-container {
 	height: 50vh; //fallback option
 	height: calc(var(--vh, 1vh) * 50);
-	padding-top: 400px;
+	padding-top: 600px;
 	background-color: $white;
+	.progress-bar {
+		width: 200px;
+		height: 200px;
+	}
+	.page-icon {
+		font-size: 10rem;
+		line-height: 0;
+		margin: 0;
+		color: $orange;
+	}
+	.page-title {
+		margin: 0;
+		margin-top: 20px;
+	}
 	.row {
 		flex-direction: column;
 		justify-content: center;
-		.main-stat-container {
-			text-align: center;
-			.main-stat {
-				font-size: 4rem;
-				background-color: #999999;
-				padding: 20px 10px;
-				border-radius: 1rem;
-				span {
-					font-weight: 700;
-				}
-			}
-			.completed {
-				background-color: #b5e48c;
-			}
-			.in-progress {
-				background-color: #e4e38c;
-			}
-			.not-started {
-				background-color: #e48c8c;
+		.main-stat {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: 4rem;
+			padding: 20px 10px;
+			border-radius: 1rem;
+			.main-stat-title {
+				font-size: 2.5rem;
+				margin: 0 0 20px 0;
 			}
 		}
 		h2 {
@@ -116,7 +127,7 @@
 				padding: 10px;
 				line-height: 1;
 				.stat-value {
-					background-color: #b5e48c;
+					background-color: $green;
 					padding: 5px 20px;
 					margin-left: 5px;
 					border-radius: 1rem;

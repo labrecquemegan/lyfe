@@ -1,5 +1,6 @@
 import UserBars from '../components/Dashboard/UserBars';
 import UserInfo from '../components/Dashboard/UserInfo';
+import UserMeters from '../components/Dashboard/UserMeters';
 import ModalTest from '../components/Dashboard/ModalTest';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
@@ -20,8 +21,10 @@ const Dashboard = () => {
 		<>
 			<div className="page">
 				<div className="container">
-						<UserBars user={user} />
-						<ModalTest user={user} />
+					<UserMeters user={user} />
+					<UserBars user={user} />
+					<UserInfo user={user} />
+					<ModalTest user={user} />
 				</div>
 			</div>
 		</>

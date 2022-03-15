@@ -1,16 +1,44 @@
 @import '../../../styles/breakpoints.scss';
 @import '../../../styles/varibles.scss';
 
+$green: #49b64e;
+
 .calstats-container {
 	height: 50vh; //fallback option
 	height: calc(var(--vh, 1vh) * 50);
 	background-color: $white;
 	padding-top: 100px;
 	text-align: center;
+	.progress-bar {
+		width: 200px;
+		height: 200px;
+	}
+	.page-icon {
+		font-size: 10rem;
+		line-height: 0;
+		margin: 0;
+		color: $green;
+	}
+	.page-title {
+		margin: 0;
+		margin-top: 20px;
+	}
 	.row {
 		flex-direction: column;
 		justify-content: center;
 		text-align: center;
+		.main-stat {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: 4rem;
+			padding: 20px 10px;
+			border-radius: 1rem;
+			.main-stat-title {
+				font-size: 2.5rem;
+				margin: 0 0 20px 0;
+			}
+		}
 		h2 {
 			font-size: 3rem;
 			line-height: 4.2rem;

@@ -2,7 +2,6 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import Stats from '../components/Exercises/Stats';
-import Workouts from '../components/Exercises/Workouts';
 import ExerciseInput from '../components/Exercises/ExerInput';
 
 const Exercise = () => {
@@ -20,7 +19,7 @@ const Exercise = () => {
 				<div className="container">
 					<div>
 						<Stats user={user} />
-						<ExerciseInput />
+						{/* <ExerciseInput /> */}
 					</div>
 				</div>
 			</div>
