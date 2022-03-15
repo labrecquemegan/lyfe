@@ -21,6 +21,7 @@ import Contact from '../pages/contact';
 import Mindfulness from '../pages/mindfulness';
 import Exercise from '../pages/exercise';
 import Nutrition from '../pages/nutrition';
+import Dashboard from '../pages/dashboard';
 
 // Components
 import Header from '../components/Header';
@@ -54,6 +55,7 @@ const routes = [
 	{ path: '/contact', name: 'contact', Component: Contact },
 	{ path: '/login', name: 'Login', Component: LogIn },
 	{ path: '/signup', name: 'signup', Component: SignUp },
+	{ path: '/dashboard', name: 'dashboard', Component: Dashboard },
 ];
 
 function debounce(fn, ms) {

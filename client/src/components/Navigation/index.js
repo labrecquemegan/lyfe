@@ -10,6 +10,11 @@ const Navigation = () => {
 					<div className="nav-column">
 						<ul className="nav-links">
 							<li>
+								<NavLink to="/dashboard" exact>
+									<button type="button" className='dashboard' >Dashboard</button>
+								</NavLink>
+							</li>
+							<li>
 								<NavLink to="/exercises" exact>
 									Exercise
 								</NavLink>
