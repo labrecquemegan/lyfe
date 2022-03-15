@@ -9,31 +9,42 @@ const Navigation = () => {
 				<div className="nav-columns">
 					<div className="nav-column">
 						<ul className="nav-links">
-							<li>
-								<NavLink to="/dashboard" exact>
-									<button type="button" className='dashboard' >Dashboard</button>
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to="/exercises" exact>
-									Exercise
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to="/mindfulness" exact>
-									Mindfulness
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to="/nutrition" exact>
-									Nutrition
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to="/water" exact>
-									Water
-								</NavLink>
-							</li>
+							{Auth.loggedIn() ? (
+								<>
+									<li>
+										<NavLink to="/dashboard" exact>
+											<button
+												type="button"
+												className="dashboard"
+											>
+												Dashboard
+											</button>
+										</NavLink>
+									</li>
+									<li>
+										<NavLink to="/exercises" exact>
+											Exercise
+										</NavLink>
+									</li>
+									<li>
+										<NavLink to="/mindfulness" exact>
+											Mindfulness
+										</NavLink>
+									</li>
+									<li>
+										<NavLink to="/nutrition" exact>
+											Nutrition
+										</NavLink>
+									</li>
+									<li>
+										<NavLink to="/water" exact>
+											Water
+										</NavLink>
+									</li>
+								</>
+							) : (
+								<></>
+							)}
 						</ul>
 					</div>
 					<div className="nav-column">
@@ -41,20 +52,31 @@ const Navigation = () => {
 							<ul className="nav-info">
 								<li className="nav-info-label">Sign In</li>
 								<li>
-									<NavLink to="/signup" exact>
-										Sign Up
-									</NavLink>
-									<NavLink to="/login" exact>
-										<button type="button">Log In</button>
-									</NavLink>
-									<NavLink to="/" exact>
-										<button
-											type="button"
-											onClick={() => Auth.logout()}
-										>
-											Log Out
-										</button>
-									</NavLink>
+									{Auth.loggedIn() ? (
+										<>
+											<NavLink to="/" exact>
+												<button
+													type="button"
+													onClick={() =>
+														Auth.logout()
+													}
+												>
+													Log Out
+												</button>
+											</NavLink>
+										</>
+									) : (
+										<>
+											<NavLink to="/signup" exact>
+												Sign Up
+											</NavLink>
+											<NavLink to="/login" exact>
+												<button type="button">
+													Log In
+												</button>
+											</NavLink>
+										</>
+									)}
 								</li>
 								<li className="nav-info-label">Contact</li>
 								<li>
