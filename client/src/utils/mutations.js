@@ -90,3 +90,16 @@ export const ADD_MINDFULNESS = gql`
 		}
 	}
 `;
+
+export const ADD_WATER = gql`
+	mutation addWater(
+		$amount: Int!
+	) {
+		addMindfulness(
+			amount: $amount
+		) {
+			_id
+			amount
+		}
+	}
+`;
