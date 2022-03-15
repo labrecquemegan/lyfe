@@ -139,9 +139,14 @@ nav {
             margin-bottom: 1.6rem;
             display: none;
           }
+
+          .dashboard {
+            font-size: 1.6rem;
+          }
+
           a {
             font-weight: 600;
-            font-size: 2rem;
+            font-size: 1.6rem;
             text-decoration: none;
             color: $black;
             @include media("<=phone") {
