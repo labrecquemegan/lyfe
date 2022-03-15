@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../../utils/mutations';
 import Auth from '../../utils/auth';
-import "./login.scss"
+import './login.scss';
 
 const Login = (props) => {
 	const [formState, setFormState] = useState({ email: '', password: '' });
@@ -35,43 +35,44 @@ const Login = (props) => {
 
 	return (
 		<div className="page">
-				<div className="center">
+			<div className="center">
 				<h1>Login</h1>
-				<form onSubmit={handleFormSubmit}>
-					<div className="txt_field">						
+				<form onSubmit={handleFormSubmit} autoComplete="off">
+					<div className="txt_field">
 						<input
-							 name="email"
+							name="email"
 							type="text"
-							 id="email"
+							id="email"
 							onChange={handleChange}
 							required
 						/>
-						<span></span>
-							<label>Username</label>
+						<label>Username:</label>
 					</div>
-						<div className="txt_field">
-							<input
-								name="password"
-								type="password"
-								id="pwd"
-								onChange={handleChange}
-								required
-							/>
-							<span></span>
-							<label>Password:</label>
+					<div className="txt_field">
+						<input
+							name="password"
+							type="password"
+							id="pwd"
+							onChange={handleChange}
+							required
+						/>
+						<label>Password:</label>
+					</div>
+					<div className="pass">Forgot Password?</div>
+
+					{error ? (
+						<div>
+							<p className="error-text">{error.message}</p>
 						</div>
-						<div className = "pass">Forgot Password?</div>
-						
-						{error ? (
-							<div>
-								<p className="error-text">{error.message}</p>
-							</div>
-						) : null}
-							<button type="submit" className = "loginButton">Submit</button>
-							<Link to="/signup" className = "signup_link">← Go to Signup</Link>
-					</form>
-					
-				</div>
+					) : null}
+					<button type="submit" className="loginButton">
+						Submit
+					</button>
+					<Link to="/signup" className="signup_link">
+						← Go to Signup
+					</Link>
+				</form>
+			</div>
 		</div>
 	);
 };
