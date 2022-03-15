@@ -15,6 +15,7 @@ const Water = () => {
 			console.log(val.target.value);
 			setGaugeValue(val.target.value);
 		}
+		
 
 		return (
 			<div className = "gauge">
@@ -23,13 +24,13 @@ const Water = () => {
 
 					<div className="gauge__cover">
 
-					{
+					{/* {
 						// If print is true 
 					print?
 					
 					<h1>{data}</h1>
 					:null
-					}
+					} */}
 				
 					</div>
 				</div>
