@@ -117,10 +117,10 @@ const typeDefs = gql`
 			duration: Int!
 			intensity: String!
 			met_rating: Int!
-			notes: String!
+			notes: String
 		): Exercise
 
-		addMindfulness(duration: Int!, notes: String!): Mindfulness
+		addMindfulness(duration: Int!, notes: String): Mindfulness
 
 		addMeal(
 			calories: Int!
