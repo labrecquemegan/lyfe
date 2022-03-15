@@ -5,7 +5,7 @@ import { IconContext } from 'react-icons';
 export default function UserBars({ user }) {
 	console.log(user);
 	return (
-		<section className="userinfo-container">
+		<section className="userbars-container">
 			<div className="row">
 				<h2>
 					Welcome Back,
