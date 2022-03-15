@@ -1,6 +1,6 @@
 import React from 'react';
 import './calsstats.scss';
-// TODO: Import queries for retrieving nutrition stats
+// * Import queries for retrieving nutrition stats
 
 export default function CalStats() {
 	return (
