@@ -5,6 +5,7 @@ import { QUERY_ME } from '../utils/queries';
 import CalStats from '../components/Nutrition/CalsStats';
 import FoodModal from '../components/Nutrition/FoodModal';
 
+
 const Nutrition = () => {
 	const { loading, data } = useQuery(QUERY_ME, {
 		nextFetchPolicy: 'cache-first',

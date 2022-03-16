@@ -4,6 +4,8 @@ import ProgressProvider from '../../../utils/ProgressProvider';
 import 'react-circular-progressbar/dist/styles.css';
 import './calsstats.scss';
 import { FaAppleAlt } from 'react-icons/fa';
+import Calendar from '../../Calendar/index';
+
 
 const CalStats = ({ user }) => {
 	const percentage =
@@ -47,6 +49,7 @@ const CalStats = ({ user }) => {
 							)}
 						</ProgressProvider>
 					</div>
+					<Calendar />
 				</div>
 				<div className="remaining-cals">
 					<h3>Remaining Calories For The Day</h3>

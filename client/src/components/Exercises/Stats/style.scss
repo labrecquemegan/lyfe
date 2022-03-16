@@ -10,7 +10,7 @@ $orange: #ffae18;
 .stats-container {
 	height: 50vh; //fallback option
 	height: calc(var(--vh, 1vh) * 50);
-	padding-top: 600px;
+	padding-top: 700px;
 	background-color: $white;
 	.progress-bar {
 		width: 200px;

@@ -33,8 +33,8 @@ function Timeline({ range, data }) {
   let cells = Array.from(new Array(days));
   let weekDays = Array.from(new Array(7));
 
-  let min = Math.min(0, ...data.map((d) => data.value));
-  let max = Math.max(...data.map((d) => data.value));
+  let min = Math.min(0, ...data.map((d) => d.value));
+  let max = Math.max(...data.map((d) => d.value));
 
   let colorMultiplier = 1 / (max - min);
 

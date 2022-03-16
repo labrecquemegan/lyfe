@@ -1,5 +1,4 @@
 import React from 'react';
-import Calendar from '../components/Calendar/index';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import Stats from '../components/Mindfulness/Stats';

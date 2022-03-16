@@ -4,6 +4,8 @@ import ProgressProvider from '../../../utils/ProgressProvider';
 import 'react-circular-progressbar/dist/styles.css';
 import './style.scss';
 import { FaWalking } from 'react-icons/fa';
+import Calendar from '../../Calendar/index';
+
 
 export default function Stats({ user }) {
 	const percentage =
@@ -49,6 +51,7 @@ export default function Stats({ user }) {
 							)}
 						</ProgressProvider>
 					</div>
+					<Calendar />
 				</div>
 				<div className="extra-stats-container">
 					<h3 className="extra-stats-title">Extra Stats</h3>

@@ -4,6 +4,8 @@ import ProgressProvider from '../../../utils/ProgressProvider';
 import 'react-circular-progressbar/dist/styles.css';
 import './style.scss';
 import { FaSpa } from 'react-icons/fa';
+import Calendar from '../../Calendar/index';
+
 
 const Stats = ({ user }) => {
 	const percentage =
@@ -49,6 +51,7 @@ const Stats = ({ user }) => {
 							)}
 						</ProgressProvider>
 					</div>
+					<Calendar />
 					{/* <div
 						className={
 							user.mindfulness_stats.todays_mindful_duration >=
