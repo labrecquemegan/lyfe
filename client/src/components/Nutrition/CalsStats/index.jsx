@@ -6,9 +6,8 @@ import './calsstats.scss';
 import { FaAppleAlt } from 'react-icons/fa';
 import Calendar from '../../Calendar/index';
 
-import {gsap, Power3} from 'gsap';
-import UserMacros from '../Meters/index'
-
+import { gsap, Power3 } from 'gsap';
+import UserMacros from '../Meters/index';
 
 const CalStats = ({ user }) => {
 	const percentage =
@@ -33,7 +32,6 @@ const CalStats = ({ user }) => {
 		});
 	}, []);
 
-
 	return (
 		<section
 			className="calstats-container"
@@ -53,7 +51,7 @@ const CalStats = ({ user }) => {
 							{(value) => (
 								<CircularProgressbar
 									value={value}
-									text={`${user.nutrition_stats.todays_calories}/${user.calorie_goal}`}
+									text={`${user.nutrition_stats.todays_calories}`}
 									background
 									backgroundPadding={6}
 									styles={buildStyles({
@@ -68,7 +66,7 @@ const CalStats = ({ user }) => {
 						</ProgressProvider>
 					</div>
 					<Calendar />
-					<UserMacros user={user}/>
+					<UserMacros user={user} />
 				</div>
 				<div className="extra-stats-container">
 					<h3 className="extra-stats-title">Today's Macros</h3>
@@ -96,7 +94,7 @@ const CalStats = ({ user }) => {
 							{user.nutrition_stats.todays_fat}
 						</span>
 					</div>
-					</div>
+				</div>
 				<div className="remaining-cals">
 					<h3>Remaining Calories For The Day</h3>
 					<span>
@@ -104,7 +102,7 @@ const CalStats = ({ user }) => {
 							user.nutrition_stats.todays_calories}
 					</span>
 				</div>
-				</div>
+			</div>
 		</section>
 	);
 };
