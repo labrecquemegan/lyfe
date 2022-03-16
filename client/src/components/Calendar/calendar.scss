@@ -1,8 +1,8 @@
 @import '../../styles/breakpoints.scss';
 @import '../../styles/varibles.scss';
 
-$cell-height: 40px;
-$cell-width: 40px;
+$cell-height: 30px;
+$cell-width: 30px;
 $cell-margin: 4px;
 
 .timeline {
@@ -15,7 +15,7 @@ $cell-margin: 4px;
 		flex-wrap: wrap;
 		padding-top: 50px;
 		justify-content: center;
-		max-width: 350px;
+		max-width: 300px;
 		align-items: center;
 
 		.timeline-weekdays {
@@ -32,7 +32,7 @@ $cell-margin: 4px;
 				height: 30px;
 				border: 1px solid transparent;
 				margin-bottom: 20px;
-				margin: 7%;
+				margin: 5%;
 				text-align: center;
 				align-items: center;
 			}
