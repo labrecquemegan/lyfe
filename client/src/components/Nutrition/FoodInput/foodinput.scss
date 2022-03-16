@@ -164,13 +164,10 @@
 				padding: 12px;
 
 				@include media('<=tablet') {
-					font-size: 2rem;
-					line-height: 3rem;
+					font-size: 1rem;
 				}
 				@include media('<=phone') {
-					margin-top: 72px;
-					font-size: 1.7rem;
-					line-height: 2.2rem;
+					font-size: 1rem;
 					width: 350px;
 					height: 100px;
 				}
