@@ -32,7 +32,7 @@ export default function UserMeters({ user }) {
 	  console.log(UserAnim);
 	gsap.to(
 		UserAnim,
-		1.5,
+		3.5,
 		{
 			opacity: 1,
 			y: 40,

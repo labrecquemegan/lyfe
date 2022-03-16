@@ -8,10 +8,7 @@ export default function UserBars({ user }) {
   console.log(user);
 
   let UserAnim = useRef(null);
-  console.log(UserAnim);
-
   useEffect(() => {
-	  console.log(UserAnim);
 	gsap.to(
 		UserAnim,
 		5,
