@@ -5,15 +5,10 @@ import {
 	buildStyles,
 } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { FaSpa, FaWalking, FaAppleAlt, FaWater } from 'react-icons/fa';
-import './style.scss';
-import leaf from '../../../assets/leaf.png';
+import './ring.scss';
 import {gsap, Power3} from 'gsap'
 
 export default function UserMacros({ user }) {
-
-	const caloriePercentage =
-		(user.nutrition_stats.todays_calories / user.calorie_goal) * 100;
 
     const proteinPercentage =
 		(user.nutrition_stats.todays_protein / user.protein_goal) * 100;
@@ -50,7 +45,7 @@ export default function UserMacros({ user }) {
 				<div className="meter">
 					{/* EXERCISE RING */}
 					<CircularProgressbarWithChildren
-						value={caloriePercentage === 0 ? 1 : caloriePercentage}
+						value={proteinPercentage === 0 ? 1 : proteinPercentage}
 						strokeWidth={8}
 						styles={buildStyles({
 							pathColor: '#37a9d6',
@@ -61,9 +56,9 @@ export default function UserMacros({ user }) {
 							{/* MINDFULNESS RING */}
 							<CircularProgressbarWithChildren
 								value={
-									proteinPercentage === 0
+									carbohydratePercentage === 0
 										? 1
-										: proteinPercentage
+										: carbohydratePercentage
 								}
 								strokeWidth={9}
 								styles={buildStyles({
@@ -75,9 +70,9 @@ export default function UserMacros({ user }) {
 									{/* EXERCISE RING */}
 									<CircularProgressbarWithChildren
 										value={
-											carbohydratePercentage === 0
+											fatPercentage === 0
 												? 1
-												: carbohydratePercentage
+												: fatPercentage
 										}
 										strokeWidth={10}
 										styles={buildStyles({
@@ -85,21 +80,6 @@ export default function UserMacros({ user }) {
 											trailColor: '#e7e7e7',
 										})}
 									>
-										<div style={{ width: '76%' }}>
-											{/* NUTRITION RING */}
-											<CircularProgressbar
-												value={
-													fatPercentage === 0
-														? 1
-														: fatPercentage
-												}
-												strokeWidth={12}
-												styles={buildStyles({
-													pathColor: '#49b64e',
-													trailColor: '#e7e7e7',
-												})}
-											/>
-										</div>
 									</CircularProgressbarWithChildren>
 								</div>
 							</CircularProgressbarWithChildren>

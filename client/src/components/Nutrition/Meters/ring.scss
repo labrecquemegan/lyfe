@@ -1,0 +1,33 @@
+@import '../../../styles/breakpoints.scss';
+@import '../../../styles/varibles.scss';
+
+.meter-container {
+	padding-top: 10px;
+	display: flex;
+	justify-content: center;
+	opacity: 0;
+	.row {
+		display: flex;
+		flex-direction: column;
+		.page-title {
+			font-size: 2.5rem;
+		}
+		.meter {
+			border: 1px solid #dddddd;
+			border-radius: 100%;
+			.meter-inner-circle {
+				width: 130px;
+				height: 130px;
+				background-color: #81db7e;
+				border-radius: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.meter-logo {
+				width: 70px;
+				height: 70px;
+			}
+		}
+    }
+}

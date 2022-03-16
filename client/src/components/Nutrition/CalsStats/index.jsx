@@ -5,7 +5,10 @@ import 'react-circular-progressbar/dist/styles.css';
 import './calsstats.scss';
 import { FaAppleAlt } from 'react-icons/fa';
 import Calendar from '../../Calendar/index';
-import { gsap, Power3 } from 'gsap';
+
+import {gsap, Power3} from 'gsap';
+import UserMacros from '../Meters/index'
+
 
 const CalStats = ({ user }) => {
 	const percentage =
@@ -29,6 +32,7 @@ const CalStats = ({ user }) => {
 			ease: Power3.easeOut,
 		});
 	}, []);
+
 
 	return (
 		<section
@@ -64,30 +68,31 @@ const CalStats = ({ user }) => {
 						</ProgressProvider>
 					</div>
 					<Calendar />
+					<UserMacros user={user}/>
 				</div>
 				<div className="extra-stats-container">
 					<h3 className="extra-stats-title">Today's Macros</h3>
 					<div className="stat-row">
-						Total Calories:{' '}
+						Calories:{' '}
 						<span className="stat-value">
 							{user.nutrition_stats.todays_calories}
 						</span>
 					</div>
 					<div className="stat-row">
-						Total Protien:{' '}
-						<span className="stat-value">
+						Protein:{' '}
+						<span className="stat-value protein">
 							{user.nutrition_stats.todays_protein}
 						</span>
 					</div>
 					<div className="stat-row">
-						Total Carbohydrates:{' '}
-						<span className="stat-value">
+						Carbohydrates:{' '}
+						<span className="stat-value carbohydrate">
 							{user.nutrition_stats.todays_carbohydrates}
 						</span>
 					</div>
 					<div className="stat-row">
-						Total Fat:{' '}
-						<span className="stat-value">
+						Fat:{' '}
+						<span className="stat-value fat">
 							{user.nutrition_stats.todays_fat}
 						</span>
 					</div>
