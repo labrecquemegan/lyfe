@@ -68,8 +68,19 @@ const userSchema = new Schema(
 		meals: [mealSchema],
 		calorie_goal: {
 			type: Number,
-			// default 2000 calories/day
 			default: 2000,
+		},
+		protein_goal: {
+			type: Number,
+			default: 50,
+		},
+		carbohydrates_goal: {
+			type: Number,
+			default: 300,
+		},
+		fat_goal: {
+			type: Number,
+			default: 50,
 		},
 	},
 	{
@@ -207,8 +218,47 @@ userSchema.virtual('nutrition_stats').get(function () {
 		return total;
 	}
 
+	function getTodaysProtein(meals) {
+		let today = new Date().toISOString().slice(0, 10);
+
+		let todaysMeal = meals.filter(
+			(meal) => meal.createdAt.toISOString().slice(0, 10) === today
+		);
+
+		let total = 0;
+		todaysMeal.map((meal) => (total += meal.protein));
+		return total;
+	}
+
+	function getTodaysCarbohydrates(meals) {
+		let today = new Date().toISOString().slice(0, 10);
+
+		let todaysMeal = meals.filter(
+			(meal) => meal.createdAt.toISOString().slice(0, 10) === today
+		);
+
+		let total = 0;
+		todaysMeal.map((meal) => (total += meal.carbohydrates));
+		return total;
+	}
+
+	function getTodaysFat(meals) {
+		let today = new Date().toISOString().slice(0, 10);
+
+		let todaysMeal = meals.filter(
+			(meal) => meal.createdAt.toISOString().slice(0, 10) === today
+		);
+
+		let total = 0;
+		todaysMeal.map((meal) => (total += meal.fat));
+		return total;
+	}
+
 	stats.total_calories = getTotalCalories(userNutrition);
 	stats.todays_calories = getTodaysCalories(userNutrition);
+	stats.todays_protein = getTodaysProtein(userNutrition);
+	stats.todays_carbohydrates = getTodaysCarbohydrates(userNutrition);
+	stats.todays_fat = getTodaysFat(userNutrition);
 
 	return stats;
 });

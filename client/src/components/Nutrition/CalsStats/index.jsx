@@ -68,6 +68,33 @@ const CalStats = ({ user }) => {
 					</div>
 					<Calendar />
 				</div>
+				<div className="extra-stats-container">
+					<h3 className="extra-stats-title">Today's Macros</h3>
+					<div className="stat-row">
+						Total Calories:{' '}
+						<span className="stat-value">
+							{user.nutrition_stats.todays_calories}
+						</span>
+					</div>
+					<div className="stat-row">
+						Total Protien:{' '}
+						<span className="stat-value">
+							{user.nutrition_stats.todays_protein}
+						</span>
+					</div>
+					<div className="stat-row">
+						Total Carbohydrates:{' '}
+						<span className="stat-value">
+							{user.nutrition_stats.todays_carbohydrates}
+						</span>
+					</div>
+					<div className="stat-row">
+						Total Fat:{' '}
+						<span className="stat-value">
+							{user.nutrition_stats.todays_fat}
+						</span>
+					</div>
+					</div>
 				<div className="remaining-cals">
 					<h3>Remaining Calories For The Day</h3>
 					<span>
@@ -75,7 +102,7 @@ const CalStats = ({ user }) => {
 							user.nutrition_stats.todays_calories}
 					</span>
 				</div>
-			</div>
+				</div>
 		</section>
 	);
 };

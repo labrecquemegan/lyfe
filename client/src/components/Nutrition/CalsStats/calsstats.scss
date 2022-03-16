@@ -81,6 +81,34 @@ $green: #49b64e;
 		}
 	}
 
+	.extra-stats-container {
+		border: 1px solid #999999;
+		border-radius: 1rem;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		padding: 10px 20px;
+		.extra-stats-title {
+			text-align: center;
+			font-size: 1.7rem;
+			margin: 5px;
+		}
+		.stat-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 1.5rem;
+			padding: 10px;
+			line-height: 1;
+			.stat-value {
+				background-color: $green;
+				padding: 5px 20px;
+				margin-left: 5px;
+				border-radius: 1rem;
+			}
+		}
+	}
+
+
 	.remaining-cals {
 		h2 {
 			font-size: 2.4rem;
@@ -111,5 +139,7 @@ $green: #49b64e;
 				line-height: 2.2rem;
 			}
 		}
+
+
 	}
 }
