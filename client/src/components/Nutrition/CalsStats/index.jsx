@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import ProgressProvider from '../../../utils/ProgressProvider';
 import 'react-circular-progressbar/dist/styles.css';
 import './calsstats.scss';
 import { FaAppleAlt } from 'react-icons/fa';
 import Calendar from '../../Calendar/index';
+import {gsap, Power3} from 'gsap';
 
 
 const CalStats = ({ user }) => {
@@ -21,8 +22,24 @@ const CalStats = ({ user }) => {
 
 	const dynamicBackgroundColor = getProgressStatus();
 
+	let UserAnim = useRef(null);
+	useEffect(() => {
+	  gsap.to(
+		  UserAnim,
+		  5,
+		  {
+			  opacity: 1,
+			  y: 40,
+			  ease: Power3.easeOut
+		  }
+	  )
+	}, []);
+  
+
 	return (
-		<section className="calstats-container">
+		<section className="calstats-container" ref={(container) => {
+			UserAnim = container;
+		  }}>
 			<div className="row">
 				<h1 className="page-icon">
 					<FaAppleAlt />

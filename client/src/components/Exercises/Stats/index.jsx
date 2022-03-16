@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import ProgressProvider from '../../../utils/ProgressProvider';
 import 'react-circular-progressbar/dist/styles.css';
 import './style.scss';
 import { FaWalking } from 'react-icons/fa';
 import Calendar from '../../Calendar/index';
+import {gsap, Power3} from 'gsap';
 
 export default function Stats({ user }) {
 	const percentage =
@@ -22,8 +23,26 @@ export default function Stats({ user }) {
 
 	const dynamicBackgroundColor = getProgressStatus();
 
+	let UserAnim = useRef(null);
+	console.log(UserAnim);
+  
+	useEffect(() => {
+		console.log(UserAnim);
+	  gsap.to(
+		  UserAnim,
+		  5,
+		  {
+			  opacity: 1,
+			  y: 40,
+			  ease: Power3.easeOut
+		  }
+	  )
+	}, []);
+
 	return (
-		<section className="exercise-stats-container">
+		<section className="exercise-stats-container"ref={(container) => {
+			UserAnim = container;
+		  }}>
 			<div className="row">
 				<h1 className="page-icon">
 					<FaWalking />
