@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import "./contact.scss"
+import {gsap, Power2} from 'gsap';
 
 const Contact = () => {
 
@@ -19,9 +20,27 @@ const Contact = () => {
     const [job3,setJob3] = useState("Full Stack Developer");
     const [about3,setAbout3] = useState("Whatever you want honestly, but I will never give up on the animation!");
 
+    let UserAnim = useRef(null);
+	console.log(UserAnim);
+  
+	useEffect(() => {
+		console.log(UserAnim);
+	  gsap.to(
+		  UserAnim,
+		  5,
+		  {
+			  opacity: 1,
+			  y: 40,
+			  ease: Power2.easeOut
+		  }
+	  )
+	}, []);
+
 	return (
         <div className = "container">
-            <div className = "Everyone">
+            <div className = "Everyone" ref={(container) => {
+			UserAnim = container;
+		  }}>
                 <div className = "Card">
                     <div className = "upper-container">
                         <div className = "image-container">
