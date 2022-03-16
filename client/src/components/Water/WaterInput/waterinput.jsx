@@ -94,6 +94,8 @@ const WaterInput = () => {
 							type="number"
 							name="amount"
 							id="amount"
+							min={0}
+							max={500}
 							className="custom-amount"
 							placeholder={formData.amount}
 							onChange={handleInputChange}

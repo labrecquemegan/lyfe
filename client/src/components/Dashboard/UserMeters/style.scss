@@ -9,7 +9,9 @@
 	.row {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		.page-title {
+			width: 90%;
 			font-size: 2.5rem;
 		}
 		.meter {
