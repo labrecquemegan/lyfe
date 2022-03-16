@@ -7,7 +7,6 @@ import {
 import 'react-circular-progressbar/dist/styles.css';
 import { FaSpa, FaWalking, FaAppleAlt, FaWater } from 'react-icons/fa';
 import './style.scss';
-import leaf from '../../../assets/leaf.png';
 import {gsap, Power3} from 'gsap'
 
 export default function UserMeters({ user }) {
