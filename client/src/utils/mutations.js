@@ -23,6 +23,35 @@ export const ADD_USER = gql`
 	}
 `;
 
+export const UPDATE_USER = gql`
+	mutation UpdateUser(
+		$email: String!
+		$weight: Int
+		$height: Int
+		$age: Int
+		$gender: String
+		$password: String!
+	) {
+		updateUser(
+			email: $email
+			weight: $weight
+			height: $height
+			age: $age
+			gender: $gender
+			password: $password
+		) {
+			_id
+			first_name
+			last_name
+			username
+			weight
+			height
+			age
+			gender
+		}
+	}
+`;
+
 export const LOGIN = gql`
 	mutation login($email: String!, $password: String!) {
 		login(email: $email, password: $password) {

@@ -1,0 +1,29 @@
+@import '../../../styles/breakpoints.scss';
+@import '../../../styles/varibles.scss';
+
+.user-stat-container {
+	margin-top: 50px;
+	.row {
+		flex-direction: column;
+		justify-content: center;
+		.user-goals {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			.user-goal {
+				margin: 8px;
+				padding: 8px;
+				width: 8rem;
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				border: 1px solid #c2c2c2;
+				border-radius: 1rem;
+				h3 {
+					margin: 6px;
+				}
+			}
+		}
+	}
+}
