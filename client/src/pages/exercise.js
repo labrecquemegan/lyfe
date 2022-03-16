@@ -20,6 +20,7 @@ const Exercise = () => {
 					<div>
 						<Stats user={user} />
 						{/* <ExerciseInput /> */}
+
 					</div>
 				</div>
 			</div>
