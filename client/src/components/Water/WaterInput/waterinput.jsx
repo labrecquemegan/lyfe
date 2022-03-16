@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_WATER } from '../../utils/mutations';
+import { ADD_WATER } from '../../../utils/mutations';
 import './waterinput.scss';
 
 const WaterInput = () => {

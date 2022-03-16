@@ -1,25 +1,28 @@
 import React from 'react';
-import Calendar from '../components/Calendar/index';
-import WaterInput from '../components/Water/waterinput';
-import Wateranimation from '../components/waterAnimation/index';
+import WaterInput from '../components/Water/WaterInput/waterinput';
+import Stats from '../components/Water/Stats';
+import { useQuery } from '@apollo/client';
+import { QUERY_ME } from '../utils/queries';
 
-let style = {
-	display: 'flex',
-	flexWrap: 'wrap',
-	flexDirection: 'row',
-	alignContent: 'center',
-	alignItems: 'center',
-	justifyContent: 'center',
-};
+
 
 const Water = () => {
+	const { loading, data } = useQuery(QUERY_ME, {
+		nextFetchPolicy: 'cache-first',
+	});
+	const user = data?.me || [];
+
+	if (loading) {
+		return <div>Loading...</div>;
+	}
+
 	return (
 		<>
 			<div className="page">
-				<div className="container" style={style}>
+				<div className="container">
 					<div>
-						<Calendar />
-						<WaterInput />
+						<Stats user={user}/>
+						{/* <WaterInput /> */}
 					</div>
 				</div>
 			</div>
