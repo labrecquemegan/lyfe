@@ -130,7 +130,10 @@ nav {
           }
 
           .log-button {
-            padding: 5px 10px;
+            @include media("<=phone") {
+              font-size: 1rem;
+              margin-bottom: 0.875rem;
+            }
           }
         }
       }
