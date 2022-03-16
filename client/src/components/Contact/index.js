@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import "./contact.scss"
 import {gsap, Power2} from 'gsap';
+import {AiFillGithub} from 'react-icons/ai';
+import { IconContext } from "react-icons";
 
 const Contact = () => {
 
@@ -37,75 +39,109 @@ const Contact = () => {
 	}, []);
 
 	return (
-        <div className = "container">
-            <div className = "Everyone" ref={(container) => {
-			UserAnim = container;
-		  }}>
-                <div className = "Card">
-                    <div className = "upper-container">
-                        <div className = "image-container">
-                            <img src = "https://avatars.githubusercontent.com/u/70721378?v=4" alt = " " height = "100px" width = "100px" />
-                        </div>
-                    </div>
-                    <div className = "lower-container">
-                        <h3> { name }</h3>
-                        <h4> { job } </h4>
-                        <p> {about } </p>
-                        
-                        <button>Visit Profile</button>
-                    </div>
-                </div>
-
-                {/* Alex Borges */}
-                <div className = "Card">
-                    <div className = "upper-container">
-                        <div className = "image-container">
-                            <img src = "https://avatars.githubusercontent.com/u/94647436?v=4" alt = " " height = "100px" width = "100px" />
-                        </div>
-                    </div>
-                    <div className = "lower-container">
-                        <h3> { name1 }</h3>
-                        <h4> { job1 } </h4>
-                        <p> {about1 } </p>
-                        
-                        <button>Visit Profile</button>
-                    </div>
-                </div>
-
-                {/* Megan Labrecque */}
-                <div className = "Card">
-                    <div className = "upper-container">
-                        <div className = "image-container">
-                            <img src = "https://avatars.githubusercontent.com/u/91804768?v=4" alt = " " height = "100px" width = "100px" />
-                        </div>
-                    </div>
-                    <div className = "lower-container">
-                        <h3> { name2 }</h3>
-                        <h4> { job2 } </h4>
-                        <p> {about2 } </p>
-                        
-                        <button>Visit Profile</button>
-                    </div>
-                </div>
-
-                {/* Javier Mariscal */}
-                <div className = "Card">
-                    <div className = "upper-container">
-                        <div className = "image-container">
-                            <img src = "https://avatars.githubusercontent.com/u/77296553?v=4" alt = " " height = "100px" width = "100px" />
-                        </div>
-                    </div>
-                    <div className = "lower-container">
-                        <h3> { name3 }</h3>
-                        <h4> { job3 } </h4>
-                        <p> {about3 } </p>
-                        
-                        <button>Visit Profile</button>
-                    </div>
-                </div>
+    <div className="container">
+      <div
+        className="Everyone"
+        ref={(container) => {
+          UserAnim = container;
+        }}
+      >
+        <div className="Card">
+          <div className="upper-container">
+            <div className="image-container">
+              <img
+                src="https://avatars.githubusercontent.com/u/70721378?v=4"
+                alt=" "
+                height="100px"
+                width="100px"
+              />
             </div>
+          </div>
+          <div className="lower-container">
+            <h3> {name}</h3>
+            <h4> {job} </h4>
+            <p> {about} </p>
+
+            {/* <button>Visit Profile</button> */}
+            <IconContext.Provider
+                    value={{
+                      color: '#95D5B2',
+                      className: "global-class-name",
+                      size: "3.5rem",
+                    }}
+                  >
+                      <a href='https://github.com/awidener3' target="_blank">
+                      <AiFillGithub />
+                      </a>
+                  </IconContext.Provider>
+          </div>
         </div>
-	);
+
+        {/* Alex Borges */}
+        <div className="Card">
+          <div className="upper-container">
+            <div className="image-container">
+              <img
+                src="https://avatars.githubusercontent.com/u/94647436?v=4"
+                alt=" "
+                height="100px"
+                width="100px"
+              />
+            </div>
+          </div>
+          <div className="lower-container">
+            <h3> {name1}</h3>
+            <h4> {job1} </h4>
+            <p> {about1} </p>
+
+            <button>Visit Profile</button>
+          </div>
+        </div>
+
+        {/* Megan Labrecque */}
+        <div className="Card">
+          <div className="upper-container">
+            <div className="image-container">
+              <img
+                src="https://avatars.githubusercontent.com/u/91804768?v=4"
+                alt=" "
+                height="100px"
+                width="100px"
+              />
+            </div>
+          </div>
+          <div className="lower-container">
+            <h3> {name2}</h3>
+            <h4> {job2} </h4>
+            <p> {about2} </p>
+
+            <button>Visit Profile</button>
+          </div>
+        </div>
+
+        {/* Javier Mariscal */}
+        <div className="Card">
+          <div className="upper-container">
+            <div className="image-container">
+              <img
+                src="https://avatars.githubusercontent.com/u/77296553?v=4"
+                alt=" "
+                height="100px"
+                width="100px"
+              />
+            </div>
+          </div>
+          <div className="lower-container">
+            <h3> {name3}</h3>
+            <h4> {job3} </h4>
+            <p> {about3} </p>
+
+            <button>Visit Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Contact;
