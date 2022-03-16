@@ -7,7 +7,6 @@ import { FaWalking } from 'react-icons/fa';
 import Calendar from '../../Calendar/index';
 import {gsap, Power3} from 'gsap';
 
-
 export default function Stats({ user }) {
 	const percentage =
 		(user.exercise_stats.todays_exercise_duration / user.exercise_goal) *
@@ -41,7 +40,7 @@ export default function Stats({ user }) {
 	}, []);
 
 	return (
-		<section className="stats-container"ref={(container) => {
+		<section className="exercise-stats-container"ref={(container) => {
 			UserAnim = container;
 		  }}>
 			<div className="row">

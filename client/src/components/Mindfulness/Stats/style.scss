@@ -4,9 +4,7 @@
 $purple: #9f3ba3;
 
 .mindfulness-container {
-	height: 50vh; //fallback option
-	height: calc(var(--vh, 1vh) * 50);
-	padding-top: 550px;
+	padding-top: 120px;
 	background-color: $white;
 	opacity: 0;
 	.progress-bar {

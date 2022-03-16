@@ -4,10 +4,8 @@
 $green: #49b64e;
 
 .calstats-container {
-	height: 50vh; //fallback option
-	height: calc(var(--vh, 1vh) * 50);
 	background-color: $white;
-	padding-top: 100px;
+	padding-top: 120px;
 	text-align: center;
 	opacity: 0;
 	.progress-bar {

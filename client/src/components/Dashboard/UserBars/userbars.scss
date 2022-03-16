@@ -2,10 +2,8 @@
 @import '../../../styles/varibles.scss';
 
 .userbars-container {
-	height: 50vh; //fallback option
-	height: calc(var(--vh, 1vh) * 50);
 	background-color: $white;
-	padding-top: 200px;
+	padding-top: 25px;
 	opacity: 0;
 	.row {
 		flex-direction: column;
@@ -28,9 +26,9 @@
 
 		.skills {
 			h2 {
-				font-size: 2.4rem;
+				font-size: 2rem;
 				font-weight: 600;
-				text-align: center;
+				margin: 10px 0;
 
 				@include media('<=tablet') {
 					font-size: 2rem;
@@ -66,17 +64,16 @@
 
 			.skill {
 				display: flex;
-				flex-direction: row;
 				align-items: center;
 
 				transition-duration: 294ms;
 				transition-property: background-color;
 				transition-timing-function: ease-out;
 
-				width: 50rem;
+				width: 40rem;
 				border-radius: 1rem;
 				margin: 5px 0;
-				padding: 10px 20px;
+				padding: 5px 20px;
 				background-color: #cacaca;
 				border-radius: 1em;
 
