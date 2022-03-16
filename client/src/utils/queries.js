@@ -157,6 +157,10 @@ export const QUERY_ME = gql`
 				fat
 			}
 			calorie_goal
+			protein_goal
+			carbohydrates_goal
+			fat_goal
+
 			exercise_stats {
 				total_exercise_duration
 				todays_exercise_duration
@@ -172,6 +176,9 @@ export const QUERY_ME = gql`
 			nutrition_stats {
 				total_calories
 				todays_calories
+				todays_protein
+				todays_carbohydrates
+				todays_fat
 			}
 		}
 	}
