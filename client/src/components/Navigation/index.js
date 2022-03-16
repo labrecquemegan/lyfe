@@ -60,6 +60,7 @@ const Navigation = () => {
 													onClick={() =>
 														Auth.logout()
 													}
+													className='log-button'
 												>
 													Log Out
 												</button>
@@ -71,7 +72,7 @@ const Navigation = () => {
 												Sign Up
 											</NavLink>
 											<NavLink to="/login" exact>
-												<button type="button">
+												<button type="button" >
 													Log In
 												</button>
 											</NavLink>

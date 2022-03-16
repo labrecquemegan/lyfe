@@ -66,6 +66,7 @@ nav {
       flex-direction: column;
       @include media("<=phone") {
         padding: 0 16px;
+        flex-direction: row;
       }
     }
     .nav-column {
@@ -127,6 +128,10 @@ nav {
               color: $black;
             }
           }
+
+          .log-button {
+            padding: 5px 10px;
+          }
         }
       }
       .nav-links {
@@ -137,11 +142,13 @@ nav {
           margin-bottom: 2.4rem;
           @include media("<=phone") {
             margin-bottom: 1.6rem;
-            display: none;
           }
 
           .dashboard {
             font-size: 1.6rem;
+            @include media("<=phone") {
+              font-size: 1rem;
+            }
           }
 
           a {
@@ -150,7 +157,7 @@ nav {
             text-decoration: none;
             color: $black;
             @include media("<=phone") {
-              font-size: 2rem;
+              font-size: 1.4rem;
             }
           }
         }
