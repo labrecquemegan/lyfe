@@ -14,7 +14,7 @@ export default function UserBars({ user }) {
 	  console.log(UserAnim);
 	gsap.to(
 		UserAnim,
-		2,
+		5,
 		{
 			opacity: 1,
 			y: 40,
