@@ -99,6 +99,7 @@ const Signup = (props) => {
                         <button type="submit">Submit</button>
                     </div>
 
+                    {/* Links to the login page */}
                     <Link to="/login" className='signup_link'>← Go to Login</Link>
 
                 </form>
