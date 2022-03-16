@@ -20,7 +20,7 @@ const Contact = () => {
 
     const [name3,setName3] = useState("Javier Mariscal");
     const [job3,setJob3] = useState("Full Stack Developer");
-    const [about3,setAbout3] = useState("Whatever you want honestly, but I will never give up on the animation!");
+    const [about3,setAbout3] = useState("I am a 20 year old developer who just finished the UCF Bootcamp! I love overcoming new challenges and always open to learn new things as well as, try them! I try to mix up profressionalism and joking around from time to time in order to laugh. All in all, just a fun guy who is ready to go out into the real world!");
 
     let UserAnim = useRef(null);
 	console.log(UserAnim);
@@ -51,7 +51,7 @@ const Contact = () => {
             <div className="image-container">
               <img
                 src="https://avatars.githubusercontent.com/u/70721378?v=4"
-                alt=" "
+                alt="Alex Widener Profile Picture"
                 height="100px"
                 width="100px"
               />
@@ -82,7 +82,7 @@ const Contact = () => {
             <div className="image-container">
               <img
                 src="https://avatars.githubusercontent.com/u/94647436?v=4"
-                alt=" "
+                alt="Alex Borges Profile Picture"
                 height="100px"
                 width="100px"
               />
@@ -113,7 +113,7 @@ const Contact = () => {
             <div className="image-container">
               <img
                 src="https://avatars.githubusercontent.com/u/91804768?v=4"
-                alt=" "
+                alt="Megan Labrecque Profile Picture"
                 height="100px"
                 width="100px"
               />
@@ -144,7 +144,7 @@ const Contact = () => {
             <div className="image-container">
               <img
                 src="https://avatars.githubusercontent.com/u/77296553?v=4"
-                alt=" "
+                alt="Javier Mariscal Profile Picture"
                 height="100px"
                 width="100px"
               />
