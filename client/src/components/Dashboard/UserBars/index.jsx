@@ -10,21 +10,19 @@ export default function UserBars({ user }) {
 				<div className="skills" id="skills" data-scroll-section>
 					<div>
 						<div className="skills-tree" data-scroll>
+							{/* Water bar */}
 							<a
 								className={
-									user.exercise_stats
-										.todays_exercise_duration >=
-									user.exercise_goal
+									user.water_stats.todays_water_intake >=
+									user.water_goal
 										? 'skill completed'
 										: 'skill'
 								}
-								href="/exercises"
+								href="water"
 							>
-								{/* Exercise bar */}
-								<h2>Exercise</h2>
-
-								{user.exercise_stats.todays_exercise_duration >=
-								user.exercise_goal ? (
+								<h2>Water</h2>
+								{user.water_stats.todays_water_intake >=
+								user.water_goal ? (
 									<IconContext.Provider
 										value={{
 											color: 'green',
@@ -70,19 +68,22 @@ export default function UserBars({ user }) {
 									<></>
 								)}
 							</a>
-							{/* Water bar */}
+
 							<a
 								className={
-									user.water_stats.todays_water_intake >=
-									user.water_goal
+									user.exercise_stats
+										.todays_exercise_duration >=
+									user.exercise_goal
 										? 'skill completed'
 										: 'skill'
 								}
-								href="water"
+								href="/exercises"
 							>
-								<h2>Water</h2>
-								{user.water_stats.todays_water_intake >=
-								user.water_goal ? (
+								{/* Exercise bar */}
+								<h2>Exercise</h2>
+
+								{user.exercise_stats.todays_exercise_duration >=
+								user.exercise_goal ? (
 									<IconContext.Provider
 										value={{
 											color: 'green',
@@ -98,6 +99,7 @@ export default function UserBars({ user }) {
 									<></>
 								)}
 							</a>
+
 							{/* Nutrition bar */}
 							<a
 								className={
