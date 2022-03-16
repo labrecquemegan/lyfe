@@ -19,7 +19,7 @@ const ModalTest = ({ user }) => {
 				center
 				classNames={{
 					overlay: 'customOverlay',
-					modal: 'customModal',
+					modal: 'userModal',
 				}}
 			>
 				<UserInfo user={user} />
