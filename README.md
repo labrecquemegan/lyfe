@@ -1,4 +1,5 @@
 # 🍃 Lyfe
+[Link to Deployed Application](https://lyfe22.herokuapp.com/)
 
 ## Table of Contents
 - [🍃 Lyfe](#-lyfe)
