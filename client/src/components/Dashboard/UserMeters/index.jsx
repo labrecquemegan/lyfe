@@ -1,3 +1,4 @@
+import React, { useRef, useEffect } from "react";
 import {
 	CircularProgressbar,
 	CircularProgressbarWithChildren,
@@ -7,6 +8,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import { FaSpa, FaWalking, FaAppleAlt, FaWater } from 'react-icons/fa';
 import './style.scss';
 import leaf from '../../../assets/leaf.png';
+import {gsap, Power3} from 'gsap'
 
 export default function UserMeters({ user }) {
 	const waterPercentage =
@@ -23,8 +25,27 @@ export default function UserMeters({ user }) {
 		(user.exercise_stats.todays_exercise_duration / user.exercise_goal) *
 		100;
 
+		let UserAnim = useRef(null);
+  console.log(UserAnim);
+
+  useEffect(() => {
+	  console.log(UserAnim);
+	gsap.to(
+		UserAnim,
+		1.5,
+		{
+			opacity: 1,
+			y: 40,
+			ease: Power3.easeOut
+		}
+	)
+  }, []);
+
+
 	return (
-		<section className="meter-container">
+		<section className="meter-container" ref={(container) => {
+			UserAnim = container;
+		  }}>
 			<div className="row">
 				<h1 className="page-title">
 					Welcome Back,
