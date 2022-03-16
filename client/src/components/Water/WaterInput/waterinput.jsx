@@ -6,7 +6,7 @@ import './waterinput.scss';
 const WaterInput = () => {
 	// declare state of formData
 	const [formData, setFormData] = useState({
-		amount: '0',
+		amount: '8',
 	});
 
 	// bring in addExercise mutation
@@ -22,13 +22,15 @@ const WaterInput = () => {
 					amount: parseInt(formData.amount),
 				},
 			});
+			// reload the page
+			window.location.reload(false);
 		} catch (err) {
 			console.error(err);
 		}
 
 		// reset form data
 		setFormData({
-			amount: '0',
+			amount: '8',
 		});
 
 		// reset form values

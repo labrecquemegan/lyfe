@@ -7,7 +7,7 @@ const ExerciseInput = () => {
 	// declare state of formData
 	const [formData, setFormData] = useState({
 		duration: '0',
-		intensity: '',
+		intensity: 'low',
 		metRating: '0',
 		notes: 'Type your note here...',
 	});
@@ -28,6 +28,8 @@ const ExerciseInput = () => {
 					notes: formData.notes,
 				},
 			});
+			// reload the page
+			window.location.reload(false);
 		} catch (err) {
 			console.error(err);
 		}
@@ -35,7 +37,7 @@ const ExerciseInput = () => {
 		// reset form data
 		setFormData({
 			duration: '0',
-			intensity: '',
+			intensity: 'low',
 			metRating: '0',
 			notes: 'Type your note here...',
 		});
