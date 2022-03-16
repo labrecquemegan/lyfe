@@ -1,23 +1,23 @@
 @import '../../styles/varibles.scss';
 
-.center {
+.centering {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 400px;
-	height: 450px;
+	height: 600px;
 	background: #c8c8c8;
 	border-radius: 10px;
 }
 
-.center h1 {
+.centering h1 {
 	text-align: center;
 	padding: 0 0 20px 0;
 	border-bottom: 1px solid silver;
 }
 
-.center form {
+.centering form {
 	padding: 0 40px;
 	box-sizing: border-box;
 }
@@ -25,7 +25,7 @@ form .txt_field {
 	position: relative;
 	background-color: white;
 	border-bottom: 2px solid #adadad;
-	margin: 30px 0;
+	margin: 25px 0;
 }
 
 .txt_field input {
