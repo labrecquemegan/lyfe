@@ -44,6 +44,9 @@ export const QUERY_USERS = gql`
 				fat
 			}
 			calorie_goal
+			protein_goal
+			carbohydrates_goal
+			fat_goal
 		}
 	}
 `;
@@ -88,6 +91,9 @@ export const QUERY_USER = gql`
 				fat
 			}
 			calorie_goal
+			protein_goal
+			carbohydrates_goal
+			fat_goal
 			exercise_stats {
 				total_exercise_duration
 				todays_exercise_duration
@@ -103,6 +109,9 @@ export const QUERY_USER = gql`
 			nutrition_stats {
 				total_calories
 				todays_calories
+				todays_protein
+				todays_carbohydrates
+				todays_fat
 			}
 		}
 	}
