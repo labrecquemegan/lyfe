@@ -64,6 +64,8 @@ const ExerciseInput = () => {
 							type="number"
 							name="duration"
 							id="duration"
+							min={0}
+							max={720}
 							className="time-counter"
 							placeholder={formData.duration}
 							onChange={handleInputChange}
@@ -81,7 +83,12 @@ const ExerciseInput = () => {
 								onChange={handleInputChange}
 								defaultChecked
 							/>
-							<label htmlFor="radioLight">Low</label>
+							<label
+								htmlFor="radioLight"
+								className="intensity-button"
+							>
+								Low
+							</label>
 
 							<input
 								type="radio"
@@ -90,7 +97,12 @@ const ExerciseInput = () => {
 								value="medium"
 								onChange={handleInputChange}
 							/>
-							<label htmlFor="radioMedium">Medium</label>
+							<label
+								htmlFor="radioMedium"
+								className="intensity-button"
+							>
+								Medium
+							</label>
 
 							<input
 								type="radio"
@@ -99,7 +111,12 @@ const ExerciseInput = () => {
 								value="high"
 								onChange={handleInputChange}
 							/>
-							<label htmlFor="radioHigh">High</label>
+							<label
+								htmlFor="radioHigh"
+								className="intensity-button"
+							>
+								High
+							</label>
 						</div>
 					</div>
 					<div className="met">
@@ -108,6 +125,8 @@ const ExerciseInput = () => {
 							type="number"
 							name="metRating"
 							className="met-rating"
+							min={0}
+							max={12}
 							placeholder={formData.metRating}
 							onChange={handleInputChange}
 						/>

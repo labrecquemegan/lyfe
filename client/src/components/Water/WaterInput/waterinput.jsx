@@ -61,7 +61,9 @@ const WaterInput = () => {
 								onChange={handleInputChange}
 								defaultChecked
 							/>
-							<label htmlFor="radioLight">8 oz</label>
+							<label htmlFor="radioLight" className="oz-button">
+								8 oz
+							</label>
 
 							<input
 								type="radio"
@@ -70,7 +72,9 @@ const WaterInput = () => {
 								value="16"
 								onChange={handleInputChange}
 							/>
-							<label htmlFor="radioMedium">16 oz</label>
+							<label htmlFor="radioMedium" className="oz-button">
+								16 oz
+							</label>
 
 							<input
 								type="radio"
@@ -79,7 +83,9 @@ const WaterInput = () => {
 								value="20"
 								onChange={handleInputChange}
 							/>
-							<label htmlFor="radioHigh">20 oz</label>
+							<label htmlFor="radioHigh" className="oz-button">
+								20 oz
+							</label>
 						</div>
 					</div>
 					<div className="custom-amount">
@@ -91,18 +97,18 @@ const WaterInput = () => {
 							className="custom-amount"
 							placeholder={formData.amount}
 							onChange={handleInputChange}
-						/>					
-                        <div className="add-button">
-						<button type="submit">Add Info</button>
-					</div>
-					{error ? (
-						<div>
-							<p className="error-text">
-								The provided credentials are incorrect
-							</p>
+						/>
+						<div className="add-button">
+							<button type="submit">Add Info</button>
 						</div>
-					) : null}
-                    </div>
+						{error ? (
+							<div>
+								<p className="error-text">
+									The provided credentials are incorrect
+								</p>
+							</div>
+						) : null}
+					</div>
 				</form>
 			</div>
 		</section>

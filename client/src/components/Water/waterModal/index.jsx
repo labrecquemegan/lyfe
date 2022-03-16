@@ -19,7 +19,7 @@ const WaterModal = ({ user }) => {
 				center
 				classNames={{
 					overlay: 'customOverlay',
-					modal: 'customModal',
+					modal: 'waterModal',
 				}}
 			>
 				<WaterInput user={user} />

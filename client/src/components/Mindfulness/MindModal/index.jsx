@@ -17,9 +17,11 @@ const MindModal = ({ user }) => {
 				open={open}
 				onClose={onCloseModal}
 				center
+				min={0}
+				max={720}
 				classNames={{
 					overlay: 'customOverlay',
-					modal: 'customModal',
+					modal: 'mindModal',
 				}}
 			>
 				<MindfulnessInput user={user} />
