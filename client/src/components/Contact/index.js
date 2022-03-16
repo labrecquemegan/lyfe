@@ -14,7 +14,7 @@ const Contact = () => {
 	const [name1, setName1] = useState('Alex Borges');
 	const [job1, setJob1] = useState('Full Stack Developer');
 	const [about1, setAbout1] = useState(
-		'Whatever you want honestly, but give me a min to get my coffee.'
+		'Front-end developer keen on crafting integrative and intuitive programming to enable a smoother user experience. Excited to use technical skills and collaborative nature to write cleaner code, identify errors, and help your team to continue to develop innovative and impressive work.'
 	);
 
 	const [name2, setName2] = useState('Megan Labrecque');
