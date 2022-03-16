@@ -79,12 +79,8 @@ export const ADD_MEAL = gql`
 `;
 
 export const ADD_MINDFULNESS = gql`
-	mutation addMindfulness(
-		$duration: Int!
-	) {
-		addMindfulness(
-			duration: $duration
-		) {
+	mutation addMindfulness($duration: Int!) {
+		addMindfulness(duration: $duration) {
 			_id
 			duration
 		}
@@ -92,12 +88,8 @@ export const ADD_MINDFULNESS = gql`
 `;
 
 export const ADD_WATER = gql`
-	mutation addWater(
-		$amount: Int!
-	) {
-		addMindfulness(
-			amount: $amount
-		) {
+	mutation addWater($amount: Int!) {
+		addWater(amount: $amount) {
 			_id
 			amount
 		}

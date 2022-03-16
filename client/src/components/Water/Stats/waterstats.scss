@@ -8,8 +8,9 @@ $gray: #999999;
 $blue: #00b7ff;
 
 .water-stats-container {
-	padding-top: 120px;
+	padding-top: 70px;
 	background-color: $white;
+	opacity: 0;
 	.progress-bar {
 		width: 200px;
 		height: 200px;
@@ -49,8 +50,6 @@ $blue: #00b7ff;
 				line-height: 3rem;
 			}
 			@include media('<=phone') {
-				margin-top: 72px;
-				padding-top: 200px;
 				font-size: 1.7rem;
 				line-height: 2.2rem;
 			}

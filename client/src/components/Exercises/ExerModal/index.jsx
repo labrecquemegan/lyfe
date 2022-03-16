@@ -12,14 +12,14 @@ const ExerModal = ({ user }) => {
 
 	return (
 		<div className="exercise-modal-row">
-			<button onClick={onOpenModal}>Change User Info</button>
+			<button onClick={onOpenModal}>Log Exercise</button>
 			<Modal
 				open={open}
 				onClose={onCloseModal}
 				center
 				classNames={{
 					overlay: 'customOverlay',
-					modal: 'customModal',
+					modal: 'exerciseModal',
 				}}
 			>
 				<ExerciseInput user={user} />

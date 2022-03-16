@@ -59,6 +59,8 @@ const MindfulnessInput = () => {
 							type="number"
 							name="duration"
 							id="duration"
+							min={0}
+							max={720}
 							className="time-counter"
 							placeholder={formData.duration}
 							onChange={handleInputChange}

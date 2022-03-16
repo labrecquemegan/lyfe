@@ -76,16 +76,21 @@
 				padding: 5px 20px;
 				background-color: #cacaca;
 				border-radius: 1em;
+				@include media('<=tablet') {
+					width: 25rem;
+					height: 5rem;
+				}
+				@include media('<=phone') {
+					width: 20rem;
+				}
 
 				&:hover {
 					background-color: rgba(119, 119, 119, 0.7);
 					border-radius: 1em;
 				}
 
-				.skill-title {
-					padding-right: 900px;
-					display: flex;
-					align-items: center;
+				.bar-title {
+					margin: 0;
 				}
 			}
 			.completed {

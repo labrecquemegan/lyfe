@@ -46,14 +46,12 @@
 		}
 	}
 	.second-row {
-		margin: 100px 0;
 		.time {
 			h3 {
 				font-size: 2rem;
 				font-weight: 500;
 				@include media('<=tablet') {
 					font-size: 2rem;
-					line-height: 3rem;
 				}
 				@include media('<=phone') {
 					font-size: 1.7rem;
@@ -96,26 +94,6 @@
 			}
 		}
 	}
-
-	button {
-		color: #000000;
-		font-weight: 500;
-		font-size: 1.4rem;
-		line-height: 25px;
-		outline: none;
-		cursor: pointer;
-		padding: 9px 25px;
-		background-color: #d8f3dc;
-		border: none;
-		border-radius: 50px;
-		transition: all 0.3s ease 0s;
-		margin-right: 30px;
-
-		&:hover {
-			transform: translate(0, 5px);
-			background-color: rgb(216, 243, 220, 0.8);
-		}
-	}
 }
 
 .add-button {
@@ -131,9 +109,7 @@
 		border: none;
 		border-radius: 50px;
 		transition: all 0.3s ease 0s;
-		margin-right: 30px;
-		margin-top: 30px;
-		text-align: center;
+		margin: 20px auto;
 		&:hover {
 			transform: translate(0, 5px);
 			background-color: rgb(216, 243, 220, 0.8);

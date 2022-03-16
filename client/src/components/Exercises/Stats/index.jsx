@@ -40,7 +40,7 @@ export default function Stats({ user }) {
 	}, []);
 
 	return (
-		<section className="exercise-stats-container"ref={(container) => {
+		<section className="exercise-stats-container" ref={(container) => {
 			UserAnim = container;
 		  }}>
 			<div className="row">

@@ -19,7 +19,7 @@ const FoodModal = ({ user }) => {
 				center
 				classNames={{
 					overlay: 'customOverlay',
-					modal: 'customModal',
+					modal: 'foodModal',
 				}}
 			>
 				<FoodInput user={user} />
