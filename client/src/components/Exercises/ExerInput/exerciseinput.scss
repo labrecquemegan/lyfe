@@ -5,7 +5,6 @@
 	height: 50vh; //fallback option
 	height: calc(var(--vh, 1vh) * 50);
 	background-color: $white;
-	margin-top: 275px;
 	text-align: center;
 
 	@include media('<=tablet') {
@@ -142,7 +141,7 @@
 				margin-right: 30px;
 
 				&:hover {
-					transform: translate(0, 5px);
+					transform: translate(0, -5px);
 					background-color: rgb(216, 243, 220, 0.8);
 				}
 			}

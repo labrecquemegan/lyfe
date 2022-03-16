@@ -1,6 +1,6 @@
 import React from 'react';
 import Calendar from '../components/Calendar/index';
-import WaterInput from '../components/Water/waterinput';
+import WaterModal from '../components/Water/waterModal';
 import Wateranimation from '../components/waterAnimation/index';
 
 let style = {
@@ -19,7 +19,7 @@ const Water = () => {
 				<div className="container" style={style}>
 					<div>
 						<Calendar />
-						<WaterInput />
+						<WaterModal />
 					</div>
 				</div>
 			</div>

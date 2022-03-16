@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import Stats from '../components/Exercises/Stats';
-import ExerciseInput from '../components/Exercises/ExerInput';
+import ExerModal from '../components/Exercises/ExerModal';
 
 const Exercise = () => {
 	const { loading, data } = useQuery(QUERY_ME, {
@@ -19,8 +19,7 @@ const Exercise = () => {
 				<div className="container">
 					<div>
 						<Stats user={user} />
-						{/* <ExerciseInput /> */}
-
+						<ExerModal />
 					</div>
 				</div>
 			</div>
