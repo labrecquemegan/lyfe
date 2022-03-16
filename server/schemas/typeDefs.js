@@ -21,6 +21,9 @@ const typeDefs = gql`
 		water_goal: Int
 		meals: [Meal]
 		calorie_goal: Int
+		protein_goal: Int
+		carbohydrates_goal: Int
+		fat_goal: Int
 		exercise_stats: ExerciseStats
 		mindfulness_stats: MindfulnessStats
 		water_stats: WaterStats
@@ -72,6 +75,9 @@ const typeDefs = gql`
 	type NutritionStats {
 		total_calories: Int
 		todays_calories: Int
+		todays_protein: Int
+		todays_carbohydrates: Int
+		todays_fat: Int
 	}
 
 	type Auth {

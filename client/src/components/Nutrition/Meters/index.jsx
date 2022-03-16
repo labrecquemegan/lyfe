@@ -18,7 +18,7 @@ export default function UserMacros({ user }) {
 		100;
 
 	const fatPercentage =
-		(user.nutrition_stats.todays_fat / user.protein_fat) *
+		(user.nutrition_stats.todays_fat / user.fat_goal) *
 		100;
 
 		let UserAnim = useRef(null);
