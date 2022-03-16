@@ -6,7 +6,6 @@ import './style.scss';
 import { FaWalking } from 'react-icons/fa';
 import Calendar from '../../Calendar/index';
 
-
 export default function Stats({ user }) {
 	const percentage =
 		(user.exercise_stats.todays_exercise_duration / user.exercise_goal) *
@@ -24,7 +23,7 @@ export default function Stats({ user }) {
 	const dynamicBackgroundColor = getProgressStatus();
 
 	return (
-		<section className="stats-container">
+		<section className="exercise-stats-container">
 			<div className="row">
 				<h1 className="page-icon">
 					<FaWalking />

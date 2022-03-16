@@ -1,44 +1,45 @@
-@import "../../../styles/breakpoints.scss";
-@import "../../../styles/varibles.scss";
+@import '../../../styles/breakpoints.scss';
+@import '../../../styles/varibles.scss';
 
 .customOverlay {
-  background: rgba(36, 123, 160, 0.7);
+	background: rgba(36, 123, 160, 0.7);
 }
 
 .customModal {
-  max-width: 1280px;
-  width: 100%;
+	max-width: 1280px;
+	width: 100%;
 }
 
-.modal-row {
-  margin-left: 650px;
-  margin-top: 375px;
+.nutrition-modal-row {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
 }
 
 button {
-  color: $black;
-  font-weight: 500;
-  font-size: 1.4rem;
-  line-height: 25px;
-  outline: none;
-  cursor: pointer;
-  padding: 9px 25px;
-  background-color: rgb(216, 243, 220, 1);
-  border: none;
-  border-radius: 50px;
-  transition: all 0.3s ease 0s;
-  margin: 0 5px;
-  &:hover {
-    background-color: rgb(216, 243, 220, 0.8);
-    transform: translate(0, -5px);
-  }
-  @include media("<=tablet") {
-    font-size: 1rem;
-    margin-bottom: 1.4rem;
-  }
-  @include media("<=phone") {
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
-    margin: 0 5px;
-  }
+	color: $black;
+	font-weight: 500;
+	font-size: 1.4rem;
+	line-height: 25px;
+	outline: none;
+	cursor: pointer;
+	padding: 9px 25px;
+	background-color: rgb(216, 243, 220, 1);
+	border: none;
+	border-radius: 50px;
+	transition: all 0.3s ease 0s;
+	margin: 0 5px;
+	&:hover {
+		background-color: rgb(216, 243, 220, 0.8);
+		transform: translate(0, -5px);
+	}
+	@include media('<=tablet') {
+		font-size: 1rem;
+		margin-bottom: 1.4rem;
+	}
+	@include media('<=phone') {
+		font-size: 1rem;
+		margin-bottom: 1.2rem;
+		margin: 0 5px;
+	}
 }

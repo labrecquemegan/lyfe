@@ -2,8 +2,6 @@
 @import '../../../styles/varibles.scss';
 
 .mindful-input-container {
-	height: 50vh; //fallback option
-	height: calc(var(--vh, 1vh) * 50);
 	background-color: $white;
 	text-align: center;
 
@@ -81,69 +79,68 @@
 			}
 		}
 
-			input {
+		input {
+			font-size: 2rem;
+			font-weight: 500;
+			text-align: center;
+			width: 6rem;
+
+			@include media('<=tablet') {
 				font-size: 2rem;
-				font-weight: 500;
-				text-align: center;
-				width: 6rem;
-
-				@include media('<=tablet') {
-					font-size: 2rem;
-					line-height: 3rem;
-				}
-				@include media('<=phone') {
-					margin-top: 72px;
-					font-size: 1.7rem;
-					line-height: 2.2rem;
-				}
+				line-height: 3rem;
+			}
+			@include media('<=phone') {
+				margin-top: 72px;
+				font-size: 1.7rem;
+				line-height: 2.2rem;
 			}
 		}
+	}
 
-			button {
-				color: #000000;
-				font-weight: 500;
-				font-size: 1.4rem;
-				line-height: 25px;
-				outline: none;
-				cursor: pointer;
-				padding: 9px 25px;
-				background-color: #d8f3dc;
-				border: none;
-				border-radius: 50px;
-				transition: all 0.3s ease 0s;
-				margin-right: 30px;
+	button {
+		color: #000000;
+		font-weight: 500;
+		font-size: 1.4rem;
+		line-height: 25px;
+		outline: none;
+		cursor: pointer;
+		padding: 9px 25px;
+		background-color: #d8f3dc;
+		border: none;
+		border-radius: 50px;
+		transition: all 0.3s ease 0s;
+		margin-right: 30px;
 
-				&:hover {
-					transform: translate(0, 5px);
-					background-color: rgb(216, 243, 220, 0.8);
-				}
-			}
+		&:hover {
+			transform: translate(0, 5px);
+			background-color: rgb(216, 243, 220, 0.8);
 		}
+	}
+}
 
-
-		.add-button {
-			button {
-				color: #000000;
-				font-weight: 500;
-				font-size: 1.4rem;
-				line-height: 25px;
-				outline: none;
-				cursor: pointer;
-				padding: 9px 25px;
-				background-color: #d8f3dc;
-				border: none;
-				border-radius: 50px;
-				transition: all 0.3s ease 0s;
-				margin-right: 30px;
-				margin-top: 30px;
-				text-align: center;
-				&:hover {
-					transform: translate(0, 5px);
-					background-color: rgb(216, 243, 220, 0.8);
-				}
-			}
+.add-button {
+	button {
+		color: #000000;
+		font-weight: 500;
+		font-size: 1.4rem;
+		line-height: 25px;
+		outline: none;
+		cursor: pointer;
+		padding: 9px 25px;
+		background-color: #d8f3dc;
+		border: none;
+		border-radius: 50px;
+		transition: all 0.3s ease 0s;
+		margin-right: 30px;
+		margin-top: 30px;
+		text-align: center;
+		&:hover {
+			transform: translate(0, 5px);
+			background-color: rgb(216, 243, 220, 0.8);
 		}
-	
+	}
+}
+
 // Radio buttons
 
 .radio-toolbar input[type='radio'] {

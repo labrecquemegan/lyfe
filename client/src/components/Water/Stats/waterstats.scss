@@ -7,10 +7,8 @@ $red: #e48c8c;
 $gray: #999999;
 $blue: #00b7ff;
 
-.stats-container {
-	height: 50vh; //fallback option
-	height: calc(var(--vh, 1vh) * 50);
-	padding-top: 700px;
+.water-stats-container {
+	padding-top: 120px;
 	background-color: $white;
 	.progress-bar {
 		width: 200px;

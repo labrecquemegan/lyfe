@@ -1,10 +1,8 @@
 import React from 'react';
-import WaterInput from '../components/Water/WaterInput/waterinput';
 import Stats from '../components/Water/Stats';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
-
-
+import WaterModal from '../components/Water/waterModal';
 
 const Water = () => {
 	const { loading, data } = useQuery(QUERY_ME, {
@@ -21,8 +19,9 @@ const Water = () => {
 			<div className="page">
 				<div className="container">
 					<div>
-						<Stats user={user}/>
+						<Stats user={user} />
 						{/* <WaterInput /> */}
+						<WaterModal />
 					</div>
 				</div>
 			</div>

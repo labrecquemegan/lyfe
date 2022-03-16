@@ -21,7 +21,7 @@ export default function Stats({ user }) {
 	const dynamicBackgroundColor = getProgressStatus();
 
 	return (
-		<section className="stats-container">
+		<section className="water-stats-container">
 			<div className="row">
 				<h1 className="water-page-icon">
 					<FaWater />
