@@ -46,7 +46,7 @@ const Login = (props) => {
 							onChange={handleChange}
 							required
 						/>
-						<label>Username:</label>
+						<label>Email</label>
 					</div>
 					<div className="txt_field">
 						<input
