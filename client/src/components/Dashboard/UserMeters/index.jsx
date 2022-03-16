@@ -4,7 +4,7 @@ import {
 	buildStyles,
 } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { FaSpa, FaWalk } from 'react-icons/fa';
+import { FaSpa, FaWalking, FaAppleAlt, FaWater } from 'react-icons/fa';
 import './style.scss';
 import leaf from '../../../assets/leaf.png';
 
@@ -57,7 +57,7 @@ export default function UserMeters({ user }) {
 									trailColor: '#e7e7e7',
 								})}
 							>
-								<div style={{ width: '80%' }}>
+								<div style={{ width: '79.25%' }}>
 									{/* EXERCISE RING */}
 									<CircularProgressbarWithChildren
 										value={
@@ -91,6 +91,12 @@ export default function UserMeters({ user }) {
 							</CircularProgressbarWithChildren>
 						</div>
 					</CircularProgressbarWithChildren>
+				</div>
+				<div className="icons">
+					<FaWater className="icon water" />
+					<FaSpa className="icon mindful" />
+					<FaWalking className="icon exercise" />
+					<FaAppleAlt className="icon meal" />
 				</div>
 			</div>
 		</section>

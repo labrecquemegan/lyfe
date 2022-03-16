@@ -28,5 +28,25 @@
 				height: 70px;
 			}
 		}
+		.icons {
+			padding: 10px;
+			display: flex;
+			.icon {
+				font-size: 4rem;
+				margin: 15px;
+			}
+			.water {
+				color: #37a9d6;
+			}
+			.mindful {
+				color: #9f3ba3;
+			}
+			.exercise {
+				color: #ffae18;
+			}
+			.meal {
+				color: #49b64e;
+			}
+		}
 	}
 }
