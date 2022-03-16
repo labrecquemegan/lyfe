@@ -62,10 +62,9 @@ const Contact = () => {
             <h4> {job} </h4>
             <p> {about} </p>
 
-            {/* <button>Visit Profile</button> */}
             <IconContext.Provider
                     value={{
-                      color: '#95D5B2',
+                      color: 'black',
                       className: "global-class-name",
                       size: "3.5rem",
                     }}
@@ -94,7 +93,17 @@ const Contact = () => {
             <h4> {job1} </h4>
             <p> {about1} </p>
 
-            <button>Visit Profile</button>
+            <IconContext.Provider
+                    value={{
+                      color: 'black',
+                      className: "global-class-name",
+                      size: "3.5rem",
+                    }}
+                  >
+                      <a href='https://github.com/xndrbrgs' target="_blank">
+                      <AiFillGithub />
+                      </a>
+                  </IconContext.Provider>
           </div>
         </div>
 
@@ -115,7 +124,17 @@ const Contact = () => {
             <h4> {job2} </h4>
             <p> {about2} </p>
 
-            <button>Visit Profile</button>
+            <IconContext.Provider
+                    value={{
+                      color: 'black',
+                      className: "global-class-name",
+                      size: "3.5rem",
+                    }}
+                  >
+                      <a href='https://github.com/labrecquemegan' target="_blank">
+                      <AiFillGithub />
+                      </a>
+                  </IconContext.Provider>
           </div>
         </div>
 
@@ -136,7 +155,17 @@ const Contact = () => {
             <h4> {job3} </h4>
             <p> {about3} </p>
 
-            <button>Visit Profile</button>
+            <IconContext.Provider
+                    value={{
+                      color: 'black',
+                      className: "global-class-name",
+                      size: "3.5rem",
+                    }}
+                  >
+                      <a href='https://github.com/javier0607' target="_blank">
+                      <AiFillGithub />
+                      </a>
+                  </IconContext.Provider>
           </div>
         </div>
       </div>
