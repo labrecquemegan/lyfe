@@ -8,12 +8,10 @@ import Calendar from '../../Calendar/index';
 
 export default function Stats({ user }) {
 	const percentage =
-		(user.water_stats.todays_water_intake / user.water_goal) *
-		100;
+		(user.water_stats.todays_water_intake / user.water_goal) * 100;
 
 	const getProgressStatus = () => {
-		return user.water_stats.todays_water_intake >=
-			user.water_goal
+		return user.water_stats.todays_water_intake >= user.water_goal
 			? '#81db7e'
 			: user.water_stats.todays_water_intake > 0
 			? '#e4e38c'
@@ -25,7 +23,7 @@ export default function Stats({ user }) {
 	return (
 		<section className="stats-container">
 			<div className="row">
-				<h1 className="page-icon">
+				<h1 className="water-page-icon">
 					<FaWater />
 				</h1>
 				<h2 className="page-title">Your Water Statistics</h2>
