@@ -39,8 +39,8 @@
     .case {
       position: relative;
       background: $black;
-      cursor: pointer;
       &:hover {
+        pointer-events: none;
         .case-image {
           opacity: 0.4;
         }
