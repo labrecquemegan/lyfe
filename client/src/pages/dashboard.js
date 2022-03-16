@@ -23,7 +23,6 @@ const Dashboard = () => {
 				<div className="container">
 					<UserMeters user={user} />
 					<UserBars user={user} />
-					<UserInfo user={user} />
 					<ModalTest user={user} />
 				</div>
 			</div>
